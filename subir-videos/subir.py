@@ -19,7 +19,7 @@ FORA = set(('o a os as um uma uns umas de do da dos das d em no na nos nas num n
             'desde apos perante ante tras e que').split())  # comparado já sem acento (à, até, após, trás)
 REGISTRO = os.path.expanduser('~/videos/VVS_REGISTRO.csv')
 CAMPOS = ['data', 'campanha', 'video', 'arquivo', 'formato', 'duracao_real_s', 'destino', 'drive_link', 'direcao',
-          'processo', 'voz', 'trilha', 'projeto', 'origem', 'titulo']
+          'processo', 'voz', 'trilha', 'projeto', 'origem', 'titulo', 'nome_antigo']  # nome_antigo: se o arquivo foi renomeado
 
 
 def sem_acento(s):
@@ -68,7 +68,7 @@ def como_foi_feito(v, camp, dur_nom, arquivos):
         L += ['', '## Roteiro (narração)', ''] + [f'{i}. {t}' for i, t in enumerate(blocos, 1)]
     achou = bool(r)
     for arq, tit in [('ANALISE.md', 'Análise do projeto (brief, conceitos, bíblia, crítica)'), ('RELATORIO.md', 'Relatório de produção')]:
-        txt = ler(os.path.join(proj, arq)) if proj else ''
+        txt = next((ler(os.path.join(d, arq)) for d in (proj, os.path.dirname(proj.rstrip('/'))) if proj and ler(os.path.join(d, arq))), '')  # também na pasta de cima (projeto por duração)
         if txt:
             achou = True
             L += ['', f'## {tit}', '', re.sub(r'^(#+)', r'##\1', txt, flags=re.M)]  # títulos rebaixados para caber como seção
@@ -150,7 +150,7 @@ def main():
                 shutil.copy2(src, alvo)
             w.writerow([datetime.date.today().isoformat(), camp, pasta, os.path.basename(alvo), fmt, round(dur, 2),
                         os.path.relpath(alvo, dest), man.get('drive_link', ''), at.get('direcao', ''), at.get('processo', ''),
-                        at.get('voz', ''), at.get('trilha', ''), at.get('projeto', ''), src, tit])
+                        at.get('voz', ''), at.get('trilha', ''), at.get('projeto', ''), src, tit, ''])
     for md, v, d, arqs in docs:
         os.makedirs(os.path.dirname(md), exist_ok=True)
         open(md, 'w', encoding='utf-8').write(como_foi_feito(v, camp, d, arqs))
