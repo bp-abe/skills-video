@@ -1,0 +1,13 @@
+# nunca publicar
+video-animado/biblioteca/vozes/*/
+**/node_modules/
+**/referencias-brutas/
+**/out/
+**/assets_raw/
+mesa-de-estilos/teste/
+.DS_Store
+__pycache__/
+*.pyc
+.env
+secrets.env
+publicar.py

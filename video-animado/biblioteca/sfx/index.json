@@ -1,0 +1,683 @@
+{
+"digital-audio/high_down": [
+"audio/sfx/lib/kenney/digital-audio/high_down.ogg"
+],
+"digital-audio/high_up": [
+"audio/sfx/lib/kenney/digital-audio/high_up.ogg"
+],
+"digital-audio/laser": [
+"audio/sfx/lib/kenney/digital-audio/laser_1.ogg",
+"audio/sfx/lib/kenney/digital-audio/laser_2.ogg",
+"audio/sfx/lib/kenney/digital-audio/laser_3.ogg",
+"audio/sfx/lib/kenney/digital-audio/laser_4.ogg",
+"audio/sfx/lib/kenney/digital-audio/laser_5.ogg",
+"audio/sfx/lib/kenney/digital-audio/laser_6.ogg",
+"audio/sfx/lib/kenney/digital-audio/laser_7.ogg",
+"audio/sfx/lib/kenney/digital-audio/laser_8.ogg",
+"audio/sfx/lib/kenney/digital-audio/laser_9.ogg"
+],
+"digital-audio/low_down": [
+"audio/sfx/lib/kenney/digital-audio/low_down.ogg"
+],
+"digital-audio/low_random": [
+"audio/sfx/lib/kenney/digital-audio/low_random.ogg"
+],
+"digital-audio/low_three_tone": [
+"audio/sfx/lib/kenney/digital-audio/low_three_tone.ogg"
+],
+"digital-audio/pep_sound": [
+"audio/sfx/lib/kenney/digital-audio/pep_sound_1.ogg",
+"audio/sfx/lib/kenney/digital-audio/pep_sound_2.ogg",
+"audio/sfx/lib/kenney/digital-audio/pep_sound_3.ogg",
+"audio/sfx/lib/kenney/digital-audio/pep_sound_4.ogg",
+"audio/sfx/lib/kenney/digital-audio/pep_sound_5.ogg"
+],
+"digital-audio/phase_jump": [
+"audio/sfx/lib/kenney/digital-audio/phase_jump_1.ogg",
+"audio/sfx/lib/kenney/digital-audio/phase_jump_2.ogg",
+"audio/sfx/lib/kenney/digital-audio/phase_jump_3.ogg",
+"audio/sfx/lib/kenney/digital-audio/phase_jump_4.ogg",
+"audio/sfx/lib/kenney/digital-audio/phase_jump_5.ogg"
+],
+"digital-audio/phaser_down": [
+"audio/sfx/lib/kenney/digital-audio/phaser_down_1.ogg",
+"audio/sfx/lib/kenney/digital-audio/phaser_down_2.ogg",
+"audio/sfx/lib/kenney/digital-audio/phaser_down_3.ogg"
+],
+"digital-audio/phaser_up": [
+"audio/sfx/lib/kenney/digital-audio/phaser_up_1.ogg",
+"audio/sfx/lib/kenney/digital-audio/phaser_up_2.ogg",
+"audio/sfx/lib/kenney/digital-audio/phaser_up_3.ogg",
+"audio/sfx/lib/kenney/digital-audio/phaser_up_4.ogg",
+"audio/sfx/lib/kenney/digital-audio/phaser_up_5.ogg",
+"audio/sfx/lib/kenney/digital-audio/phaser_up_6.ogg",
+"audio/sfx/lib/kenney/digital-audio/phaser_up_7.ogg"
+],
+"digital-audio/power_up": [
+"audio/sfx/lib/kenney/digital-audio/power_up_1.ogg",
+"audio/sfx/lib/kenney/digital-audio/power_up_10.ogg",
+"audio/sfx/lib/kenney/digital-audio/power_up_11.ogg",
+"audio/sfx/lib/kenney/digital-audio/power_up_12.ogg",
+"audio/sfx/lib/kenney/digital-audio/power_up_2.ogg",
+"audio/sfx/lib/kenney/digital-audio/power_up_3.ogg",
+"audio/sfx/lib/kenney/digital-audio/power_up_4.ogg",
+"audio/sfx/lib/kenney/digital-audio/power_up_5.ogg",
+"audio/sfx/lib/kenney/digital-audio/power_up_6.ogg",
+"audio/sfx/lib/kenney/digital-audio/power_up_7.ogg",
+"audio/sfx/lib/kenney/digital-audio/power_up_8.ogg",
+"audio/sfx/lib/kenney/digital-audio/power_up_9.ogg"
+],
+"digital-audio/space_trash": [
+"audio/sfx/lib/kenney/digital-audio/space_trash_1.ogg",
+"audio/sfx/lib/kenney/digital-audio/space_trash_2.ogg",
+"audio/sfx/lib/kenney/digital-audio/space_trash_3.ogg",
+"audio/sfx/lib/kenney/digital-audio/space_trash_4.ogg",
+"audio/sfx/lib/kenney/digital-audio/space_trash_5.ogg"
+],
+"digital-audio/three_tone": [
+"audio/sfx/lib/kenney/digital-audio/three_tone_1.ogg",
+"audio/sfx/lib/kenney/digital-audio/three_tone_2.ogg"
+],
+"digital-audio/tone": [
+"audio/sfx/lib/kenney/digital-audio/tone_1.ogg"
+],
+"digital-audio/two_tone": [
+"audio/sfx/lib/kenney/digital-audio/two_tone_1.ogg",
+"audio/sfx/lib/kenney/digital-audio/two_tone_2.ogg"
+],
+"digital-audio/zap": [
+"audio/sfx/lib/kenney/digital-audio/zap_1.ogg",
+"audio/sfx/lib/kenney/digital-audio/zap_2.ogg"
+],
+"digital-audio/zap_three_tone_down": [
+"audio/sfx/lib/kenney/digital-audio/zap_three_tone_down.ogg"
+],
+"digital-audio/zap_three_tone_up": [
+"audio/sfx/lib/kenney/digital-audio/zap_three_tone_up.ogg"
+],
+"digital-audio/zap_two_tone": [
+"audio/sfx/lib/kenney/digital-audio/zap_two_tone.ogg",
+"audio/sfx/lib/kenney/digital-audio/zap_two_tone_2.ogg"
+],
+"impact-sounds/footstep_carpet": [
+"audio/sfx/lib/kenney/impact-sounds/footstep_carpet_000.ogg",
+"audio/sfx/lib/kenney/impact-sounds/footstep_carpet_001.ogg",
+"audio/sfx/lib/kenney/impact-sounds/footstep_carpet_002.ogg",
+"audio/sfx/lib/kenney/impact-sounds/footstep_carpet_003.ogg",
+"audio/sfx/lib/kenney/impact-sounds/footstep_carpet_004.ogg"
+],
+"impact-sounds/footstep_concrete": [
+"audio/sfx/lib/kenney/impact-sounds/footstep_concrete_000.ogg",
+"audio/sfx/lib/kenney/impact-sounds/footstep_concrete_001.ogg",
+"audio/sfx/lib/kenney/impact-sounds/footstep_concrete_002.ogg",
+"audio/sfx/lib/kenney/impact-sounds/footstep_concrete_003.ogg",
+"audio/sfx/lib/kenney/impact-sounds/footstep_concrete_004.ogg"
+],
+"impact-sounds/footstep_grass": [
+"audio/sfx/lib/kenney/impact-sounds/footstep_grass_000.ogg",
+"audio/sfx/lib/kenney/impact-sounds/footstep_grass_001.ogg",
+"audio/sfx/lib/kenney/impact-sounds/footstep_grass_002.ogg",
+"audio/sfx/lib/kenney/impact-sounds/footstep_grass_003.ogg",
+"audio/sfx/lib/kenney/impact-sounds/footstep_grass_004.ogg"
+],
+"impact-sounds/footstep_snow": [
+"audio/sfx/lib/kenney/impact-sounds/footstep_snow_000.ogg",
+"audio/sfx/lib/kenney/impact-sounds/footstep_snow_001.ogg",
+"audio/sfx/lib/kenney/impact-sounds/footstep_snow_002.ogg",
+"audio/sfx/lib/kenney/impact-sounds/footstep_snow_003.ogg",
+"audio/sfx/lib/kenney/impact-sounds/footstep_snow_004.ogg"
+],
+"impact-sounds/footstep_wood": [
+"audio/sfx/lib/kenney/impact-sounds/footstep_wood_000.ogg",
+"audio/sfx/lib/kenney/impact-sounds/footstep_wood_001.ogg",
+"audio/sfx/lib/kenney/impact-sounds/footstep_wood_002.ogg",
+"audio/sfx/lib/kenney/impact-sounds/footstep_wood_003.ogg",
+"audio/sfx/lib/kenney/impact-sounds/footstep_wood_004.ogg"
+],
+"impact-sounds/impact_bell_heavy": [
+"audio/sfx/lib/kenney/impact-sounds/impact_bell_heavy_000.ogg",
+"audio/sfx/lib/kenney/impact-sounds/impact_bell_heavy_001.ogg",
+"audio/sfx/lib/kenney/impact-sounds/impact_bell_heavy_002.ogg",
+"audio/sfx/lib/kenney/impact-sounds/impact_bell_heavy_003.ogg",
+"audio/sfx/lib/kenney/impact-sounds/impact_bell_heavy_004.ogg"
+],
+"impact-sounds/impact_generic_light": [
+"audio/sfx/lib/kenney/impact-sounds/impact_generic_light_000.ogg",
+"audio/sfx/lib/kenney/impact-sounds/impact_generic_light_001.ogg",
+"audio/sfx/lib/kenney/impact-sounds/impact_generic_light_002.ogg",
+"audio/sfx/lib/kenney/impact-sounds/impact_generic_light_003.ogg",
+"audio/sfx/lib/kenney/impact-sounds/impact_generic_light_004.ogg"
+],
+"impact-sounds/impact_glass_heavy": [
+"audio/sfx/lib/kenney/impact-sounds/impact_glass_heavy_000.ogg",
+"audio/sfx/lib/kenney/impact-sounds/impact_glass_heavy_001.ogg",
+"audio/sfx/lib/kenney/impact-sounds/impact_glass_heavy_002.ogg",
+"audio/sfx/lib/kenney/impact-sounds/impact_glass_heavy_003.ogg",
+"audio/sfx/lib/kenney/impact-sounds/impact_glass_heavy_004.ogg"
+],
+"impact-sounds/impact_glass_light": [
+"audio/sfx/lib/kenney/impact-sounds/impact_glass_light_000.ogg",
+"audio/sfx/lib/kenney/impact-sounds/impact_glass_light_001.ogg",
+"audio/sfx/lib/kenney/impact-sounds/impact_glass_light_002.ogg",
+"audio/sfx/lib/kenney/impact-sounds/impact_glass_light_003.ogg",
+"audio/sfx/lib/kenney/impact-sounds/impact_glass_light_004.ogg"
+],
+"impact-sounds/impact_glass_medium": [
+"audio/sfx/lib/kenney/impact-sounds/impact_glass_medium_000.ogg",
+"audio/sfx/lib/kenney/impact-sounds/impact_glass_medium_001.ogg",
+"audio/sfx/lib/kenney/impact-sounds/impact_glass_medium_002.ogg",
+"audio/sfx/lib/kenney/impact-sounds/impact_glass_medium_003.ogg",
+"audio/sfx/lib/kenney/impact-sounds/impact_glass_medium_004.ogg"
+],
+"impact-sounds/impact_metal_heavy": [
+"audio/sfx/lib/kenney/impact-sounds/impact_metal_heavy_000.ogg",
+"audio/sfx/lib/kenney/impact-sounds/impact_metal_heavy_001.ogg",
+"audio/sfx/lib/kenney/impact-sounds/impact_metal_heavy_002.ogg",
+"audio/sfx/lib/kenney/impact-sounds/impact_metal_heavy_003.ogg",
+"audio/sfx/lib/kenney/impact-sounds/impact_metal_heavy_004.ogg"
+],
+"impact-sounds/impact_metal_light": [
+"audio/sfx/lib/kenney/impact-sounds/impact_metal_light_000.ogg",
+"audio/sfx/lib/kenney/impact-sounds/impact_metal_light_001.ogg",
+"audio/sfx/lib/kenney/impact-sounds/impact_metal_light_002.ogg",
+"audio/sfx/lib/kenney/impact-sounds/impact_metal_light_003.ogg",
+"audio/sfx/lib/kenney/impact-sounds/impact_metal_light_004.ogg"
+],
+"impact-sounds/impact_metal_medium": [
+"audio/sfx/lib/kenney/impact-sounds/impact_metal_medium_000.ogg",
+"audio/sfx/lib/kenney/impact-sounds/impact_metal_medium_001.ogg",
+"audio/sfx/lib/kenney/impact-sounds/impact_metal_medium_002.ogg",
+"audio/sfx/lib/kenney/impact-sounds/impact_metal_medium_003.ogg",
+"audio/sfx/lib/kenney/impact-sounds/impact_metal_medium_004.ogg"
+],
+"impact-sounds/impact_mining": [
+"audio/sfx/lib/kenney/impact-sounds/impact_mining_000.ogg",
+"audio/sfx/lib/kenney/impact-sounds/impact_mining_001.ogg",
+"audio/sfx/lib/kenney/impact-sounds/impact_mining_002.ogg",
+"audio/sfx/lib/kenney/impact-sounds/impact_mining_003.ogg",
+"audio/sfx/lib/kenney/impact-sounds/impact_mining_004.ogg"
+],
+"impact-sounds/impact_plank_medium": [
+"audio/sfx/lib/kenney/impact-sounds/impact_plank_medium_000.ogg",
+"audio/sfx/lib/kenney/impact-sounds/impact_plank_medium_001.ogg",
+"audio/sfx/lib/kenney/impact-sounds/impact_plank_medium_002.ogg",
+"audio/sfx/lib/kenney/impact-sounds/impact_plank_medium_003.ogg",
+"audio/sfx/lib/kenney/impact-sounds/impact_plank_medium_004.ogg"
+],
+"impact-sounds/impact_plate_heavy": [
+"audio/sfx/lib/kenney/impact-sounds/impact_plate_heavy_000.ogg",
+"audio/sfx/lib/kenney/impact-sounds/impact_plate_heavy_001.ogg",
+"audio/sfx/lib/kenney/impact-sounds/impact_plate_heavy_002.ogg",
+"audio/sfx/lib/kenney/impact-sounds/impact_plate_heavy_003.ogg",
+"audio/sfx/lib/kenney/impact-sounds/impact_plate_heavy_004.ogg"
+],
+"impact-sounds/impact_plate_light": [
+"audio/sfx/lib/kenney/impact-sounds/impact_plate_light_000.ogg",
+"audio/sfx/lib/kenney/impact-sounds/impact_plate_light_001.ogg",
+"audio/sfx/lib/kenney/impact-sounds/impact_plate_light_002.ogg",
+"audio/sfx/lib/kenney/impact-sounds/impact_plate_light_003.ogg",
+"audio/sfx/lib/kenney/impact-sounds/impact_plate_light_004.ogg"
+],
+"impact-sounds/impact_plate_medium": [
+"audio/sfx/lib/kenney/impact-sounds/impact_plate_medium_000.ogg",
+"audio/sfx/lib/kenney/impact-sounds/impact_plate_medium_001.ogg",
+"audio/sfx/lib/kenney/impact-sounds/impact_plate_medium_002.ogg",
+"audio/sfx/lib/kenney/impact-sounds/impact_plate_medium_003.ogg",
+"audio/sfx/lib/kenney/impact-sounds/impact_plate_medium_004.ogg"
+],
+"impact-sounds/impact_punch_heavy": [
+"audio/sfx/lib/kenney/impact-sounds/impact_punch_heavy_000.ogg",
+"audio/sfx/lib/kenney/impact-sounds/impact_punch_heavy_001.ogg",
+"audio/sfx/lib/kenney/impact-sounds/impact_punch_heavy_002.ogg",
+"audio/sfx/lib/kenney/impact-sounds/impact_punch_heavy_003.ogg",
+"audio/sfx/lib/kenney/impact-sounds/impact_punch_heavy_004.ogg"
+],
+"impact-sounds/impact_punch_medium": [
+"audio/sfx/lib/kenney/impact-sounds/impact_punch_medium_000.ogg",
+"audio/sfx/lib/kenney/impact-sounds/impact_punch_medium_001.ogg",
+"audio/sfx/lib/kenney/impact-sounds/impact_punch_medium_002.ogg",
+"audio/sfx/lib/kenney/impact-sounds/impact_punch_medium_003.ogg",
+"audio/sfx/lib/kenney/impact-sounds/impact_punch_medium_004.ogg"
+],
+"impact-sounds/impact_soft_heavy": [
+"audio/sfx/lib/kenney/impact-sounds/impact_soft_heavy_000.ogg",
+"audio/sfx/lib/kenney/impact-sounds/impact_soft_heavy_001.ogg",
+"audio/sfx/lib/kenney/impact-sounds/impact_soft_heavy_002.ogg",
+"audio/sfx/lib/kenney/impact-sounds/impact_soft_heavy_003.ogg",
+"audio/sfx/lib/kenney/impact-sounds/impact_soft_heavy_004.ogg"
+],
+"impact-sounds/impact_soft_medium": [
+"audio/sfx/lib/kenney/impact-sounds/impact_soft_medium_000.ogg",
+"audio/sfx/lib/kenney/impact-sounds/impact_soft_medium_001.ogg",
+"audio/sfx/lib/kenney/impact-sounds/impact_soft_medium_002.ogg",
+"audio/sfx/lib/kenney/impact-sounds/impact_soft_medium_003.ogg",
+"audio/sfx/lib/kenney/impact-sounds/impact_soft_medium_004.ogg"
+],
+"impact-sounds/impact_tin_medium": [
+"audio/sfx/lib/kenney/impact-sounds/impact_tin_medium_000.ogg",
+"audio/sfx/lib/kenney/impact-sounds/impact_tin_medium_001.ogg",
+"audio/sfx/lib/kenney/impact-sounds/impact_tin_medium_002.ogg",
+"audio/sfx/lib/kenney/impact-sounds/impact_tin_medium_003.ogg",
+"audio/sfx/lib/kenney/impact-sounds/impact_tin_medium_004.ogg"
+],
+"impact-sounds/impact_wood_heavy": [
+"audio/sfx/lib/kenney/impact-sounds/impact_wood_heavy_000.ogg",
+"audio/sfx/lib/kenney/impact-sounds/impact_wood_heavy_001.ogg",
+"audio/sfx/lib/kenney/impact-sounds/impact_wood_heavy_002.ogg",
+"audio/sfx/lib/kenney/impact-sounds/impact_wood_heavy_003.ogg",
+"audio/sfx/lib/kenney/impact-sounds/impact_wood_heavy_004.ogg"
+],
+"impact-sounds/impact_wood_light": [
+"audio/sfx/lib/kenney/impact-sounds/impact_wood_light_000.ogg",
+"audio/sfx/lib/kenney/impact-sounds/impact_wood_light_001.ogg",
+"audio/sfx/lib/kenney/impact-sounds/impact_wood_light_002.ogg",
+"audio/sfx/lib/kenney/impact-sounds/impact_wood_light_003.ogg",
+"audio/sfx/lib/kenney/impact-sounds/impact_wood_light_004.ogg"
+],
+"impact-sounds/impact_wood_medium": [
+"audio/sfx/lib/kenney/impact-sounds/impact_wood_medium_000.ogg",
+"audio/sfx/lib/kenney/impact-sounds/impact_wood_medium_001.ogg",
+"audio/sfx/lib/kenney/impact-sounds/impact_wood_medium_002.ogg",
+"audio/sfx/lib/kenney/impact-sounds/impact_wood_medium_003.ogg",
+"audio/sfx/lib/kenney/impact-sounds/impact_wood_medium_004.ogg"
+],
+"interface-sounds/back": [
+"audio/sfx/lib/kenney/interface-sounds/back_001.wav",
+"audio/sfx/lib/kenney/interface-sounds/back_002.wav",
+"audio/sfx/lib/kenney/interface-sounds/back_003.wav",
+"audio/sfx/lib/kenney/interface-sounds/back_004.wav"
+],
+"interface-sounds/bong": [
+"audio/sfx/lib/kenney/interface-sounds/bong_001.wav"
+],
+"interface-sounds/click": [
+"audio/sfx/lib/kenney/interface-sounds/click_001.wav",
+"audio/sfx/lib/kenney/interface-sounds/click_002.wav",
+"audio/sfx/lib/kenney/interface-sounds/click_003.wav",
+"audio/sfx/lib/kenney/interface-sounds/click_004.wav",
+"audio/sfx/lib/kenney/interface-sounds/click_005.wav"
+],
+"interface-sounds/close": [
+"audio/sfx/lib/kenney/interface-sounds/close_001.wav",
+"audio/sfx/lib/kenney/interface-sounds/close_002.wav",
+"audio/sfx/lib/kenney/interface-sounds/close_003.wav",
+"audio/sfx/lib/kenney/interface-sounds/close_004.wav"
+],
+"interface-sounds/confirmation": [
+"audio/sfx/lib/kenney/interface-sounds/confirmation_001.wav",
+"audio/sfx/lib/kenney/interface-sounds/confirmation_002.wav",
+"audio/sfx/lib/kenney/interface-sounds/confirmation_003.wav",
+"audio/sfx/lib/kenney/interface-sounds/confirmation_004.wav"
+],
+"interface-sounds/drop": [
+"audio/sfx/lib/kenney/interface-sounds/drop_001.wav",
+"audio/sfx/lib/kenney/interface-sounds/drop_002.wav",
+"audio/sfx/lib/kenney/interface-sounds/drop_003.wav",
+"audio/sfx/lib/kenney/interface-sounds/drop_004.wav"
+],
+"interface-sounds/error": [
+"audio/sfx/lib/kenney/interface-sounds/error_001.wav",
+"audio/sfx/lib/kenney/interface-sounds/error_002.wav",
+"audio/sfx/lib/kenney/interface-sounds/error_003.wav",
+"audio/sfx/lib/kenney/interface-sounds/error_004.wav",
+"audio/sfx/lib/kenney/interface-sounds/error_005.wav",
+"audio/sfx/lib/kenney/interface-sounds/error_006.wav",
+"audio/sfx/lib/kenney/interface-sounds/error_007.wav",
+"audio/sfx/lib/kenney/interface-sounds/error_008.wav"
+],
+"interface-sounds/glass": [
+"audio/sfx/lib/kenney/interface-sounds/glass_001.wav",
+"audio/sfx/lib/kenney/interface-sounds/glass_002.wav",
+"audio/sfx/lib/kenney/interface-sounds/glass_003.wav",
+"audio/sfx/lib/kenney/interface-sounds/glass_004.wav",
+"audio/sfx/lib/kenney/interface-sounds/glass_005.wav",
+"audio/sfx/lib/kenney/interface-sounds/glass_006.wav"
+],
+"interface-sounds/glitch": [
+"audio/sfx/lib/kenney/interface-sounds/glitch_001.wav",
+"audio/sfx/lib/kenney/interface-sounds/glitch_002.wav",
+"audio/sfx/lib/kenney/interface-sounds/glitch_003.wav",
+"audio/sfx/lib/kenney/interface-sounds/glitch_004.wav"
+],
+"interface-sounds/maximize": [
+"audio/sfx/lib/kenney/interface-sounds/maximize_001.wav",
+"audio/sfx/lib/kenney/interface-sounds/maximize_002.wav",
+"audio/sfx/lib/kenney/interface-sounds/maximize_003.wav",
+"audio/sfx/lib/kenney/interface-sounds/maximize_004.wav",
+"audio/sfx/lib/kenney/interface-sounds/maximize_005.wav",
+"audio/sfx/lib/kenney/interface-sounds/maximize_006.wav",
+"audio/sfx/lib/kenney/interface-sounds/maximize_007.wav",
+"audio/sfx/lib/kenney/interface-sounds/maximize_008.wav",
+"audio/sfx/lib/kenney/interface-sounds/maximize_009.wav"
+],
+"interface-sounds/minimize": [
+"audio/sfx/lib/kenney/interface-sounds/minimize_001.wav",
+"audio/sfx/lib/kenney/interface-sounds/minimize_002.wav",
+"audio/sfx/lib/kenney/interface-sounds/minimize_003.wav",
+"audio/sfx/lib/kenney/interface-sounds/minimize_004.wav",
+"audio/sfx/lib/kenney/interface-sounds/minimize_005.wav",
+"audio/sfx/lib/kenney/interface-sounds/minimize_006.wav",
+"audio/sfx/lib/kenney/interface-sounds/minimize_007.wav",
+"audio/sfx/lib/kenney/interface-sounds/minimize_008.wav",
+"audio/sfx/lib/kenney/interface-sounds/minimize_009.wav"
+],
+"interface-sounds/open": [
+"audio/sfx/lib/kenney/interface-sounds/open_001.wav",
+"audio/sfx/lib/kenney/interface-sounds/open_002.wav",
+"audio/sfx/lib/kenney/interface-sounds/open_003.wav",
+"audio/sfx/lib/kenney/interface-sounds/open_004.wav"
+],
+"interface-sounds/pluck": [
+"audio/sfx/lib/kenney/interface-sounds/pluck_001.wav",
+"audio/sfx/lib/kenney/interface-sounds/pluck_002.wav"
+],
+"interface-sounds/question": [
+"audio/sfx/lib/kenney/interface-sounds/question_001.wav",
+"audio/sfx/lib/kenney/interface-sounds/question_002.wav",
+"audio/sfx/lib/kenney/interface-sounds/question_003.wav",
+"audio/sfx/lib/kenney/interface-sounds/question_004.wav"
+],
+"interface-sounds/scratch": [
+"audio/sfx/lib/kenney/interface-sounds/scratch_001.wav",
+"audio/sfx/lib/kenney/interface-sounds/scratch_002.wav",
+"audio/sfx/lib/kenney/interface-sounds/scratch_003.wav",
+"audio/sfx/lib/kenney/interface-sounds/scratch_004.wav",
+"audio/sfx/lib/kenney/interface-sounds/scratch_005.wav"
+],
+"interface-sounds/scroll": [
+"audio/sfx/lib/kenney/interface-sounds/scroll_001.wav",
+"audio/sfx/lib/kenney/interface-sounds/scroll_002.wav",
+"audio/sfx/lib/kenney/interface-sounds/scroll_003.wav",
+"audio/sfx/lib/kenney/interface-sounds/scroll_004.wav",
+"audio/sfx/lib/kenney/interface-sounds/scroll_005.wav"
+],
+"interface-sounds/select": [
+"audio/sfx/lib/kenney/interface-sounds/select_001.wav",
+"audio/sfx/lib/kenney/interface-sounds/select_002.wav",
+"audio/sfx/lib/kenney/interface-sounds/select_003.wav",
+"audio/sfx/lib/kenney/interface-sounds/select_004.wav",
+"audio/sfx/lib/kenney/interface-sounds/select_005.wav",
+"audio/sfx/lib/kenney/interface-sounds/select_006.wav",
+"audio/sfx/lib/kenney/interface-sounds/select_007.wav",
+"audio/sfx/lib/kenney/interface-sounds/select_008.wav"
+],
+"interface-sounds/switch": [
+"audio/sfx/lib/kenney/interface-sounds/switch_001.wav",
+"audio/sfx/lib/kenney/interface-sounds/switch_002.wav",
+"audio/sfx/lib/kenney/interface-sounds/switch_003.wav",
+"audio/sfx/lib/kenney/interface-sounds/switch_004.wav",
+"audio/sfx/lib/kenney/interface-sounds/switch_005.wav",
+"audio/sfx/lib/kenney/interface-sounds/switch_006.wav",
+"audio/sfx/lib/kenney/interface-sounds/switch_007.wav"
+],
+"interface-sounds/tick": [
+"audio/sfx/lib/kenney/interface-sounds/tick_001.wav",
+"audio/sfx/lib/kenney/interface-sounds/tick_002.wav",
+"audio/sfx/lib/kenney/interface-sounds/tick_004.wav"
+],
+"interface-sounds/toggle": [
+"audio/sfx/lib/kenney/interface-sounds/toggle_001.wav",
+"audio/sfx/lib/kenney/interface-sounds/toggle_002.wav",
+"audio/sfx/lib/kenney/interface-sounds/toggle_003.wav",
+"audio/sfx/lib/kenney/interface-sounds/toggle_004.wav"
+],
+"rpg-audio/belt_handle": [
+"audio/sfx/lib/kenney/rpg-audio/belt_handle_1.ogg",
+"audio/sfx/lib/kenney/rpg-audio/belt_handle_2.ogg"
+],
+"rpg-audio/book_close": [
+"audio/sfx/lib/kenney/rpg-audio/book_close.ogg"
+],
+"rpg-audio/book_flip": [
+"audio/sfx/lib/kenney/rpg-audio/book_flip_1.ogg",
+"audio/sfx/lib/kenney/rpg-audio/book_flip_2.ogg",
+"audio/sfx/lib/kenney/rpg-audio/book_flip_3.ogg"
+],
+"rpg-audio/book_open": [
+"audio/sfx/lib/kenney/rpg-audio/book_open.ogg"
+],
+"rpg-audio/book_place": [
+"audio/sfx/lib/kenney/rpg-audio/book_place_1.ogg",
+"audio/sfx/lib/kenney/rpg-audio/book_place_2.ogg",
+"audio/sfx/lib/kenney/rpg-audio/book_place_3.ogg"
+],
+"rpg-audio/chop": [
+"audio/sfx/lib/kenney/rpg-audio/chop.ogg"
+],
+"rpg-audio/cloth": [
+"audio/sfx/lib/kenney/rpg-audio/cloth_1.ogg",
+"audio/sfx/lib/kenney/rpg-audio/cloth_2.ogg",
+"audio/sfx/lib/kenney/rpg-audio/cloth_3.ogg",
+"audio/sfx/lib/kenney/rpg-audio/cloth_4.ogg"
+],
+"rpg-audio/cloth_belt": [
+"audio/sfx/lib/kenney/rpg-audio/cloth_belt.ogg",
+"audio/sfx/lib/kenney/rpg-audio/cloth_belt_2.ogg"
+],
+"rpg-audio/creak": [
+"audio/sfx/lib/kenney/rpg-audio/creak_1.ogg",
+"audio/sfx/lib/kenney/rpg-audio/creak_2.ogg",
+"audio/sfx/lib/kenney/rpg-audio/creak_3.ogg"
+],
+"rpg-audio/door_close": [
+"audio/sfx/lib/kenney/rpg-audio/door_close_1.ogg",
+"audio/sfx/lib/kenney/rpg-audio/door_close_2.ogg",
+"audio/sfx/lib/kenney/rpg-audio/door_close_3.ogg",
+"audio/sfx/lib/kenney/rpg-audio/door_close_4.ogg"
+],
+"rpg-audio/door_open": [
+"audio/sfx/lib/kenney/rpg-audio/door_open_1.ogg",
+"audio/sfx/lib/kenney/rpg-audio/door_open_2.ogg"
+],
+"rpg-audio/draw_knife": [
+"audio/sfx/lib/kenney/rpg-audio/draw_knife_1.ogg",
+"audio/sfx/lib/kenney/rpg-audio/draw_knife_2.ogg",
+"audio/sfx/lib/kenney/rpg-audio/draw_knife_3.ogg"
+],
+"rpg-audio/drop_leather": [
+"audio/sfx/lib/kenney/rpg-audio/drop_leather.ogg"
+],
+"rpg-audio/footstep": [
+"audio/sfx/lib/kenney/rpg-audio/footstep_0.ogg",
+"audio/sfx/lib/kenney/rpg-audio/footstep_1.ogg",
+"audio/sfx/lib/kenney/rpg-audio/footstep_2.ogg",
+"audio/sfx/lib/kenney/rpg-audio/footstep_3.ogg",
+"audio/sfx/lib/kenney/rpg-audio/footstep_4.ogg",
+"audio/sfx/lib/kenney/rpg-audio/footstep_5.ogg",
+"audio/sfx/lib/kenney/rpg-audio/footstep_6.ogg",
+"audio/sfx/lib/kenney/rpg-audio/footstep_7.ogg",
+"audio/sfx/lib/kenney/rpg-audio/footstep_8.ogg",
+"audio/sfx/lib/kenney/rpg-audio/footstep_9.ogg"
+],
+"rpg-audio/handle_coins": [
+"audio/sfx/lib/kenney/rpg-audio/handle_coins.ogg",
+"audio/sfx/lib/kenney/rpg-audio/handle_coins_2.ogg"
+],
+"rpg-audio/handle_small_leather": [
+"audio/sfx/lib/kenney/rpg-audio/handle_small_leather.ogg",
+"audio/sfx/lib/kenney/rpg-audio/handle_small_leather_2.ogg"
+],
+"rpg-audio/knife_slice": [
+"audio/sfx/lib/kenney/rpg-audio/knife_slice.ogg",
+"audio/sfx/lib/kenney/rpg-audio/knife_slice_2.ogg"
+],
+"rpg-audio/metal_click": [
+"audio/sfx/lib/kenney/rpg-audio/metal_click.ogg"
+],
+"rpg-audio/metal_latch": [
+"audio/sfx/lib/kenney/rpg-audio/metal_latch.ogg"
+],
+"rpg-audio/metal_pot": [
+"audio/sfx/lib/kenney/rpg-audio/metal_pot_1.ogg",
+"audio/sfx/lib/kenney/rpg-audio/metal_pot_2.ogg",
+"audio/sfx/lib/kenney/rpg-audio/metal_pot_3.ogg"
+],
+"sci-fi-sounds/computer_noise": [
+"audio/sfx/lib/kenney/sci-fi-sounds/computer_noise_000.ogg",
+"audio/sfx/lib/kenney/sci-fi-sounds/computer_noise_001.ogg",
+"audio/sfx/lib/kenney/sci-fi-sounds/computer_noise_002.ogg",
+"audio/sfx/lib/kenney/sci-fi-sounds/computer_noise_003.ogg"
+],
+"sci-fi-sounds/door_close": [
+"audio/sfx/lib/kenney/sci-fi-sounds/door_close_000.ogg",
+"audio/sfx/lib/kenney/sci-fi-sounds/door_close_001.ogg",
+"audio/sfx/lib/kenney/sci-fi-sounds/door_close_002.ogg"
+],
+"sci-fi-sounds/door_open": [
+"audio/sfx/lib/kenney/sci-fi-sounds/door_open_000.ogg",
+"audio/sfx/lib/kenney/sci-fi-sounds/door_open_001.ogg",
+"audio/sfx/lib/kenney/sci-fi-sounds/door_open_002.ogg"
+],
+"sci-fi-sounds/engine_circular": [
+"audio/sfx/lib/kenney/sci-fi-sounds/engine_circular_000.ogg",
+"audio/sfx/lib/kenney/sci-fi-sounds/engine_circular_001.ogg",
+"audio/sfx/lib/kenney/sci-fi-sounds/engine_circular_002.ogg",
+"audio/sfx/lib/kenney/sci-fi-sounds/engine_circular_003.ogg",
+"audio/sfx/lib/kenney/sci-fi-sounds/engine_circular_004.ogg"
+],
+"sci-fi-sounds/explosion_crunch": [
+"audio/sfx/lib/kenney/sci-fi-sounds/explosion_crunch_000.ogg",
+"audio/sfx/lib/kenney/sci-fi-sounds/explosion_crunch_001.ogg",
+"audio/sfx/lib/kenney/sci-fi-sounds/explosion_crunch_002.ogg",
+"audio/sfx/lib/kenney/sci-fi-sounds/explosion_crunch_003.ogg",
+"audio/sfx/lib/kenney/sci-fi-sounds/explosion_crunch_004.ogg"
+],
+"sci-fi-sounds/force_field": [
+"audio/sfx/lib/kenney/sci-fi-sounds/force_field_000.ogg",
+"audio/sfx/lib/kenney/sci-fi-sounds/force_field_001.ogg",
+"audio/sfx/lib/kenney/sci-fi-sounds/force_field_002.ogg",
+"audio/sfx/lib/kenney/sci-fi-sounds/force_field_003.ogg",
+"audio/sfx/lib/kenney/sci-fi-sounds/force_field_004.ogg"
+],
+"sci-fi-sounds/impact_metal": [
+"audio/sfx/lib/kenney/sci-fi-sounds/impact_metal_000.ogg",
+"audio/sfx/lib/kenney/sci-fi-sounds/impact_metal_001.ogg",
+"audio/sfx/lib/kenney/sci-fi-sounds/impact_metal_002.ogg",
+"audio/sfx/lib/kenney/sci-fi-sounds/impact_metal_003.ogg",
+"audio/sfx/lib/kenney/sci-fi-sounds/impact_metal_004.ogg"
+],
+"sci-fi-sounds/laser_large": [
+"audio/sfx/lib/kenney/sci-fi-sounds/laser_large_000.ogg",
+"audio/sfx/lib/kenney/sci-fi-sounds/laser_large_001.ogg",
+"audio/sfx/lib/kenney/sci-fi-sounds/laser_large_002.ogg",
+"audio/sfx/lib/kenney/sci-fi-sounds/laser_large_003.ogg",
+"audio/sfx/lib/kenney/sci-fi-sounds/laser_large_004.ogg"
+],
+"sci-fi-sounds/laser_retro": [
+"audio/sfx/lib/kenney/sci-fi-sounds/laser_retro_000.ogg",
+"audio/sfx/lib/kenney/sci-fi-sounds/laser_retro_001.ogg",
+"audio/sfx/lib/kenney/sci-fi-sounds/laser_retro_002.ogg",
+"audio/sfx/lib/kenney/sci-fi-sounds/laser_retro_003.ogg",
+"audio/sfx/lib/kenney/sci-fi-sounds/laser_retro_004.ogg"
+],
+"sci-fi-sounds/laser_small": [
+"audio/sfx/lib/kenney/sci-fi-sounds/laser_small_000.ogg",
+"audio/sfx/lib/kenney/sci-fi-sounds/laser_small_001.ogg",
+"audio/sfx/lib/kenney/sci-fi-sounds/laser_small_002.ogg",
+"audio/sfx/lib/kenney/sci-fi-sounds/laser_small_003.ogg",
+"audio/sfx/lib/kenney/sci-fi-sounds/laser_small_004.ogg"
+],
+"sci-fi-sounds/low_frequency_explosion": [
+"audio/sfx/lib/kenney/sci-fi-sounds/low_frequency_explosion_000.ogg",
+"audio/sfx/lib/kenney/sci-fi-sounds/low_frequency_explosion_001.ogg"
+],
+"sci-fi-sounds/slime": [
+"audio/sfx/lib/kenney/sci-fi-sounds/slime_000.ogg",
+"audio/sfx/lib/kenney/sci-fi-sounds/slime_001.ogg"
+],
+"sci-fi-sounds/space_engine": [
+"audio/sfx/lib/kenney/sci-fi-sounds/space_engine_000.ogg",
+"audio/sfx/lib/kenney/sci-fi-sounds/space_engine_001.ogg",
+"audio/sfx/lib/kenney/sci-fi-sounds/space_engine_002.ogg",
+"audio/sfx/lib/kenney/sci-fi-sounds/space_engine_003.ogg"
+],
+"sci-fi-sounds/space_engine_large": [
+"audio/sfx/lib/kenney/sci-fi-sounds/space_engine_large_000.ogg",
+"audio/sfx/lib/kenney/sci-fi-sounds/space_engine_large_001.ogg",
+"audio/sfx/lib/kenney/sci-fi-sounds/space_engine_large_002.ogg",
+"audio/sfx/lib/kenney/sci-fi-sounds/space_engine_large_003.ogg",
+"audio/sfx/lib/kenney/sci-fi-sounds/space_engine_large_004.ogg"
+],
+"sci-fi-sounds/space_engine_low": [
+"audio/sfx/lib/kenney/sci-fi-sounds/space_engine_low_000.ogg",
+"audio/sfx/lib/kenney/sci-fi-sounds/space_engine_low_001.ogg",
+"audio/sfx/lib/kenney/sci-fi-sounds/space_engine_low_002.ogg",
+"audio/sfx/lib/kenney/sci-fi-sounds/space_engine_low_003.ogg",
+"audio/sfx/lib/kenney/sci-fi-sounds/space_engine_low_004.ogg"
+],
+"sci-fi-sounds/space_engine_small": [
+"audio/sfx/lib/kenney/sci-fi-sounds/space_engine_small_000.ogg",
+"audio/sfx/lib/kenney/sci-fi-sounds/space_engine_small_001.ogg",
+"audio/sfx/lib/kenney/sci-fi-sounds/space_engine_small_002.ogg",
+"audio/sfx/lib/kenney/sci-fi-sounds/space_engine_small_003.ogg",
+"audio/sfx/lib/kenney/sci-fi-sounds/space_engine_small_004.ogg"
+],
+"sci-fi-sounds/thruster_fire": [
+"audio/sfx/lib/kenney/sci-fi-sounds/thruster_fire_000.ogg",
+"audio/sfx/lib/kenney/sci-fi-sounds/thruster_fire_001.ogg",
+"audio/sfx/lib/kenney/sci-fi-sounds/thruster_fire_002.ogg",
+"audio/sfx/lib/kenney/sci-fi-sounds/thruster_fire_003.ogg",
+"audio/sfx/lib/kenney/sci-fi-sounds/thruster_fire_004.ogg"
+],
+"ui-audio/click": [
+"audio/sfx/lib/kenney/ui-audio/click1.wav",
+"audio/sfx/lib/kenney/ui-audio/click2.wav",
+"audio/sfx/lib/kenney/ui-audio/click3.wav",
+"audio/sfx/lib/kenney/ui-audio/click4.wav",
+"audio/sfx/lib/kenney/ui-audio/click5.wav"
+],
+"ui-audio/mouseclick": [
+"audio/sfx/lib/kenney/ui-audio/mouseclick1.wav"
+],
+"ui-audio/mouserelease": [
+"audio/sfx/lib/kenney/ui-audio/mouserelease1.wav"
+],
+"ui-audio/rollover": [
+"audio/sfx/lib/kenney/ui-audio/rollover1.wav",
+"audio/sfx/lib/kenney/ui-audio/rollover2.wav",
+"audio/sfx/lib/kenney/ui-audio/rollover3.wav",
+"audio/sfx/lib/kenney/ui-audio/rollover4.wav",
+"audio/sfx/lib/kenney/ui-audio/rollover5.wav",
+"audio/sfx/lib/kenney/ui-audio/rollover6.wav"
+],
+"ui-audio/switch": [
+"audio/sfx/lib/kenney/ui-audio/switch1.wav",
+"audio/sfx/lib/kenney/ui-audio/switch10.wav",
+"audio/sfx/lib/kenney/ui-audio/switch11.wav",
+"audio/sfx/lib/kenney/ui-audio/switch12.wav",
+"audio/sfx/lib/kenney/ui-audio/switch13.wav",
+"audio/sfx/lib/kenney/ui-audio/switch14.wav",
+"audio/sfx/lib/kenney/ui-audio/switch15.wav",
+"audio/sfx/lib/kenney/ui-audio/switch16.wav",
+"audio/sfx/lib/kenney/ui-audio/switch17.wav",
+"audio/sfx/lib/kenney/ui-audio/switch18.wav",
+"audio/sfx/lib/kenney/ui-audio/switch19.wav",
+"audio/sfx/lib/kenney/ui-audio/switch2.wav",
+"audio/sfx/lib/kenney/ui-audio/switch20.wav",
+"audio/sfx/lib/kenney/ui-audio/switch21.wav",
+"audio/sfx/lib/kenney/ui-audio/switch22.wav",
+"audio/sfx/lib/kenney/ui-audio/switch23.wav",
+"audio/sfx/lib/kenney/ui-audio/switch24.wav",
+"audio/sfx/lib/kenney/ui-audio/switch25.wav",
+"audio/sfx/lib/kenney/ui-audio/switch26.wav",
+"audio/sfx/lib/kenney/ui-audio/switch27.wav",
+"audio/sfx/lib/kenney/ui-audio/switch28.wav",
+"audio/sfx/lib/kenney/ui-audio/switch29.wav",
+"audio/sfx/lib/kenney/ui-audio/switch3.wav",
+"audio/sfx/lib/kenney/ui-audio/switch30.wav",
+"audio/sfx/lib/kenney/ui-audio/switch31.wav",
+"audio/sfx/lib/kenney/ui-audio/switch32.wav",
+"audio/sfx/lib/kenney/ui-audio/switch33.wav",
+"audio/sfx/lib/kenney/ui-audio/switch34.wav",
+"audio/sfx/lib/kenney/ui-audio/switch35.wav",
+"audio/sfx/lib/kenney/ui-audio/switch36.wav",
+"audio/sfx/lib/kenney/ui-audio/switch37.wav",
+"audio/sfx/lib/kenney/ui-audio/switch38.wav",
+"audio/sfx/lib/kenney/ui-audio/switch4.wav",
+"audio/sfx/lib/kenney/ui-audio/switch5.wav",
+"audio/sfx/lib/kenney/ui-audio/switch6.wav",
+"audio/sfx/lib/kenney/ui-audio/switch7.wav",
+"audio/sfx/lib/kenney/ui-audio/switch8.wav",
+"audio/sfx/lib/kenney/ui-audio/switch9.wav"
+]
+}

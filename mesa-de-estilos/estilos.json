@@ -1,0 +1,2509 @@
+[
+  {
+    "id": "vetor-chapado",
+    "nome": "Vetor chapado (flat)",
+    "nome_en": "Flat vector / flat design",
+    "familia": "Ilustração 2D",
+    "descricao": "Ilustração vetorial com formas geométricas simples e cores sólidas, sem textura, com personagens e ícones simplificados. Passa clareza, modernidade e leveza: é o padrão dos explainers de tecnologia e ciência (Kurzgesagt, Alegria do Facebook).",
+    "assinatura": [
+      "paleta saturada e limitada, cores chapadas com no máximo um degradê suave",
+      "formas geométricas de cantos arredondados, sem contorno ou com contorno uniforme",
+      "personagens simplificados (olhos-ponto, membros alongados)",
+      "entradas em cascata com easing suave e leve overshoot",
+      "trilha leve e efeitos de 'pop' a cada aparição"
+    ],
+    "bom_para": [
+      "explicar",
+      "institucional",
+      "vender"
+    ],
+    "clima": [
+      "didático",
+      "divertido",
+      "calmo"
+    ],
+    "tecnica_codigo": "SVG/React puro: cada forma é um componente animado com spring() e interpolate(); cenas montadas com <Sequence> e stagger por índice; @remotion/shapes para primitivas.",
+    "dificuldade_codigo": "fácil",
+    "precisa_assets": "nenhum",
+    "referencias": [
+      {
+        "titulo": "Flat design",
+        "url": "https://en.wikipedia.org/wiki/Flat_design",
+        "fonte": "Wikipedia"
+      },
+      {
+        "titulo": "Facebook Alegria (sistema de ilustração e animação)",
+        "url": "https://buck.co/work/facebook-alegria",
+        "fonte": "BUCK (estúdio)"
+      },
+      {
+        "titulo": "Kurzgesagt: sobre o canal e o estilo",
+        "url": "https://kurzgesagt.org/what-we-do?visit=videos",
+        "fonte": "Kurzgesagt (estúdio)"
+      }
+    ]
+  },
+  {
+    "id": "quadro-a-quadro",
+    "nome": "Desenho quadro a quadro (cel)",
+    "nome_en": "Frame-by-frame / cel animation",
+    "familia": "Ilustração 2D",
+    "descricao": "Animação desenhada à mão, um desenho por quadro, com linha viva e deformações (squash & stretch) que nenhum rig imita. Passa calor humano, energia e acabamento autoral.",
+    "assinatura": [
+      "linha com 'boil' (tremor leve de redesenho a cada quadro)",
+      "animado em 'twos' (12 desenhos/s), com smears e quadros de impacto",
+      "squash & stretch exagerado, antecipação e follow-through",
+      "cor chapada com sombras em recorte",
+      "som e trilha marcando os acentos do movimento"
+    ],
+    "bom_para": [
+      "contar história",
+      "divertir",
+      "anunciar/lançar"
+    ],
+    "clima": [
+      "caloroso",
+      "enérgico",
+      "artesanal"
+    ],
+    "tecnica_codigo": "Difícil de gerar do zero em código. Caminhos: sequência de PNGs desenhada (ou gerada por IA quadro a quadro, com consistência) trocada por frame com <Img> e Math.floor(frame/2); ou traço SVG procedural com ruído (@remotion/noise) para simular boil em formas simples.",
+    "dificuldade_codigo": "difícil",
+    "precisa_assets": "ilustração sob medida",
+    "referencias": [
+      {
+        "titulo": "Cel Animation Inspiration: Cool Hand-Drawn Motion Design",
+        "url": "https://www.schoolofmotion.com/blog/cel-animation-inspiration",
+        "fonte": "School of Motion"
+      },
+      {
+        "titulo": "Giant Ant: The Last White Rhino (cel animation)",
+        "url": "https://www.giantant.ca/the-last-white-rhino",
+        "fonte": "Giant Ant (estúdio)"
+      },
+      {
+        "titulo": "Golden Wolf: estúdio de cartoon 2D enérgico",
+        "url": "https://www.goldenwolf.tv/about",
+        "fonte": "Golden Wolf (estúdio)"
+      }
+    ]
+  },
+  {
+    "id": "animacao-de-linha",
+    "nome": "Animação de linha (traço contínuo)",
+    "nome_en": "Line animation / monoline",
+    "familia": "Ilustração 2D",
+    "descricao": "Tudo é feito de uma linha fina que se desenha, se transforma e vira outra coisa, sobre fundo liso. Minimalista e elegante; prende pela curiosidade de ver o traço nascer.",
+    "assinatura": [
+      "traço monoline de espessura constante, 1–2 cores sobre fundo liso",
+      "revelação por stroke-dashoffset (a linha se desenha sozinha)",
+      "um objeto vira outro sem corte, pela própria linha",
+      "muito espaço negativo",
+      "trilha minimalista (piano, pulsos)"
+    ],
+    "bom_para": [
+      "explicar",
+      "institucional",
+      "anunciar/lançar"
+    ],
+    "clima": [
+      "elegante",
+      "calmo"
+    ],
+    "tecnica_codigo": "SVG com @remotion/paths: evolvePath() desenha o traço, interpolatePath() transforma uma forma em outra, getLength() sincroniza velocidades. Paths vêm de ícones ou SVG exportado.",
+    "dificuldade_codigo": "fácil",
+    "precisa_assets": "nenhum",
+    "referencias": [
+      {
+        "titulo": "La Linea (Osvaldo Cavandoli, 1971)",
+        "url": "https://en.wikipedia.org/wiki/La_Linea_(TV_series)",
+        "fonte": "Wikipedia"
+      },
+      {
+        "titulo": "How SVG Line Animation Works",
+        "url": "https://css-tricks.com/svg-line-animation-works/",
+        "fonte": "CSS-Tricks"
+      },
+      {
+        "titulo": "@remotion/paths",
+        "url": "https://www.remotion.dev/docs/paths/",
+        "fonte": "Documentação Remotion"
+      }
+    ]
+  },
+  {
+    "id": "isometrico",
+    "nome": "Isométrico 2.5D",
+    "nome_en": "Isometric",
+    "familia": "Ilustração 2D",
+    "descricao": "Mundo em projeção isométrica (ângulos de 30°, sem ponto de fuga), como maquete ou jogo de estratégia. Mostra sistemas, processos e cidades inteiras num só quadro; passa organização e tecnologia.",
+    "assinatura": [
+      "grade isométrica de 30°/120°, sem perspectiva",
+      "blocos e prédios com três faces em tons da mesma cor",
+      "objetos que sobem do chão e se empilham em cascata",
+      "pequenos loops vivos (carros, fluxos, engrenagens)",
+      "câmera só faz pan e zoom, nunca gira"
+    ],
+    "bom_para": [
+      "explicar",
+      "institucional",
+      "dados"
+    ],
+    "clima": [
+      "tecnológico",
+      "didático",
+      "calmo"
+    ],
+    "tecnica_codigo": "CSS 3D (rotateX(60deg) rotateZ(45deg)) num container, ou SVG com matriz isométrica calculada; cubos como componentes de três faces. Alternativa: three.js com câmera ortográfica via @remotion/three.",
+    "dificuldade_codigo": "médio",
+    "precisa_assets": "nenhum",
+    "referencias": [
+      {
+        "titulo": "The secret to Isometric Mograph in After Effects",
+        "url": "https://schoolofmotion.com/blog/secret-to-isometric-mograph-in-after-effects",
+        "fonte": "School of Motion"
+      },
+      {
+        "titulo": "Isometric video game graphics",
+        "url": "https://en.wikipedia.org/wiki/Isometric_video_game_graphics",
+        "fonte": "Wikipedia"
+      },
+      {
+        "titulo": "Tag: isometric",
+        "url": "https://motionographer.com/tag/isometric/",
+        "fonte": "Motionographer"
+      }
+    ]
+  },
+  {
+    "id": "ilustracao-texturizada",
+    "nome": "Ilustração texturizada (grão e riso)",
+    "nome_en": "Textured illustration / grain & risograph",
+    "familia": "Ilustração 2D",
+    "descricao": "Ilustração 2D com grão, pincel seco e o desalinhamento da impressão risográfica. Tira a frieza do vetor e dá um ar editorial, artesanal e acolhedor, muito usado por marcas de bem-estar e de tecnologia 'humana'.",
+    "assinatura": [
+      "grão/ruído sobre cores chapadas, sombras pontilhadas",
+      "paleta limitada tipo riso (rosa fluorescente, azul, amarelo) em sobreposição multiply",
+      "leve desregistro entre camadas de cor",
+      "bordas irregulares de pincel",
+      "ritmo mais lento, animado em twos"
+    ],
+    "bom_para": [
+      "institucional",
+      "contar história",
+      "explicar"
+    ],
+    "clima": [
+      "caloroso",
+      "artesanal",
+      "calmo"
+    ],
+    "tecnica_codigo": "SVG com filtros feTurbulence + feDisplacementMap para grão e borda irregular; mix-blend-mode: multiply para a sobreposição riso; textura de grão por cima com semente variando por frame para não ficar estática.",
+    "dificuldade_codigo": "médio",
+    "precisa_assets": "nenhum",
+    "referencias": [
+      {
+        "titulo": "Tricks for Creating a Hand-Drawn Look in After Effects",
+        "url": "https://schoolofmotion.com/blog/tricks-for-creating-a-hand-drawn-look-in-after-effects",
+        "fonte": "School of Motion"
+      },
+      {
+        "titulo": "Google Material 3: sistema de ilustração com textura",
+        "url": "https://oddfellows.tv/work/material-design-3",
+        "fonte": "Oddfellows (estúdio)"
+      },
+      {
+        "titulo": "Risograph",
+        "url": "https://en.wikipedia.org/wiki/Risograph",
+        "fonte": "Wikipedia"
+      }
+    ]
+  },
+  {
+    "id": "whiteboard",
+    "nome": "Quadro branco (mão que desenha)",
+    "nome_en": "Whiteboard animation",
+    "familia": "Ilustração 2D",
+    "descricao": "Uma mão desenha ilustrações e palavras em preto sobre fundo branco no ritmo da narração. Didático e barato; passa a sensação de aula ou palestra (estilo RSA Animate).",
+    "assinatura": [
+      "traço preto de marcador sobre branco, poucas cores de destaque",
+      "mão (real ou desenhada) acompanhando a caneta",
+      "revelação progressiva sincronizada com a fala",
+      "câmera que desliza para a próxima área do quadro",
+      "som de marcador e narração em primeiro plano"
+    ],
+    "bom_para": [
+      "explicar",
+      "institucional"
+    ],
+    "clima": [
+      "didático",
+      "calmo"
+    ],
+    "tecnica_codigo": "SVG paths revelados com evolvePath() (@remotion/paths) na ordem do traçado; PNG da mão posicionado no ponto atual do path (getPointAtLength). Câmera = translate do container.",
+    "dificuldade_codigo": "fácil",
+    "precisa_assets": "nenhum",
+    "referencias": [
+      {
+        "titulo": "Whiteboard animation",
+        "url": "https://en.wikipedia.org/wiki/Whiteboard_animation",
+        "fonte": "Wikipedia"
+      },
+      {
+        "titulo": "RSA Animate: Changing Education Paradigms (Cognitive Media)",
+        "url": "https://vimeo.com/208168088",
+        "fonte": "Vimeo"
+      }
+    ]
+  },
+  {
+    "id": "quadrinho-hq",
+    "nome": "Quadrinho / HQ com retícula",
+    "nome_en": "Comic book / halftone (Spider-Verse look)",
+    "familia": "Ilustração 2D",
+    "descricao": "Linguagem de revista em quadrinhos em movimento: retícula de pontos, hachuras, onomatopeias, requadros e desalinhamento de cor de impressão. Energia de ação e cultura pop.",
+    "assinatura": [
+      "retícula Ben-Day e hachuras no lugar de sombra suave",
+      "contorno preto grosso e cores CMYK com desregistro",
+      "onomatopeias e balões tipográficos",
+      "animação em twos com quadros de impacto e linhas de velocidade",
+      "tela dividida em painéis/requadros"
+    ],
+    "bom_para": [
+      "divertir",
+      "contar história",
+      "anunciar/lançar"
+    ],
+    "clima": [
+      "enérgico",
+      "divertido"
+    ],
+    "tecnica_codigo": "Shader de halftone (WebGL/three.js) sobre render ou imagem, ou pattern SVG de pontos com raio por luminância; painéis como divs com clip-path; onomatopeias com spring() e escala exagerada.",
+    "dificuldade_codigo": "médio",
+    "precisa_assets": "imagens geradas",
+    "referencias": [
+      {
+        "titulo": "Spider-Man: Into the Spider-Verse",
+        "url": "https://www.imageworks.com/our-craft/feature-animation/movies/spider-man-spider-verse",
+        "fonte": "Sony Pictures Imageworks"
+      },
+      {
+        "titulo": "Sequência para Spider-Man: Across the Spider-Verse",
+        "url": "https://buck.co/work/sony-pictures-animation-spider-man-across-the-spider-verse",
+        "fonte": "BUCK (estúdio)"
+      },
+      {
+        "titulo": "Halftone",
+        "url": "https://en.wikipedia.org/wiki/Halftone",
+        "fonte": "Wikipedia"
+      }
+    ]
+  },
+  {
+    "id": "blueprint",
+    "nome": "Planta técnica (blueprint)",
+    "nome_en": "Blueprint / technical drawing",
+    "familia": "Ilustração 2D",
+    "descricao": "Linhas brancas finas sobre azul de cianotipia, com cotas, grade e anotações de engenharia. Passa precisão, bastidor e 'como funciona por dentro'.",
+    "assinatura": [
+      "fundo azul-prussiano com grade milimetrada",
+      "traço branco fino, cotas e setas de medida",
+      "vistas explodidas e cortes de peças",
+      "anotações em fonte técnica monoespaçada",
+      "linhas que se desenham e depois ganham volume"
+    ],
+    "bom_para": [
+      "explicar",
+      "vender",
+      "institucional"
+    ],
+    "clima": [
+      "tecnológico",
+      "sério"
+    ],
+    "tecnica_codigo": "SVG com evolvePath() para o traço, grade como <pattern>, cotas geradas das coordenadas; vista explodida com translate de cada peça ao longo de um eixo.",
+    "dificuldade_codigo": "fácil",
+    "precisa_assets": "nenhum",
+    "referencias": [
+      {
+        "titulo": "Blueprint",
+        "url": "https://en.wikipedia.org/wiki/Blueprint",
+        "fonte": "Wikipedia"
+      },
+      {
+        "titulo": "Exploded-view drawing",
+        "url": "https://en.wikipedia.org/wiki/Exploded-view_drawing",
+        "fonte": "Wikipedia"
+      }
+    ]
+  },
+  {
+    "id": "tipografia-cinetica",
+    "nome": "Tipografia cinética",
+    "nome_en": "Kinetic typography",
+    "familia": "Tipografia",
+    "descricao": "O texto é o protagonista: palavras entram, crescem, giram e batem no ritmo da voz ou da música. Direto e enérgico; funciona para frases de impacto sem precisar de imagem.",
+    "assinatura": [
+      "palavras-chave gigantes, o resto pequeno",
+      "movimentos e cortes no tempo da sílaba ou da batida",
+      "câmera que gira e viaja entre blocos de texto",
+      "2–3 cores em alto contraste",
+      "grotescas pesadas misturadas a serifas"
+    ],
+    "bom_para": [
+      "anunciar/lançar",
+      "vender",
+      "explicar"
+    ],
+    "clima": [
+      "enérgico",
+      "provocativo"
+    ],
+    "tecnica_codigo": "React/CSS puro: cada palavra num <span> com spring(), timings vindos dos timestamps da narração (@remotion/captions ou TTS); câmera = transform no container; fontes via @remotion/google-fonts.",
+    "dificuldade_codigo": "fácil",
+    "precisa_assets": "nenhum",
+    "referencias": [
+      {
+        "titulo": "Kinetic typography",
+        "url": "https://en.wikipedia.org/wiki/Kinetic_typography",
+        "fonte": "Wikipedia"
+      },
+      {
+        "titulo": "North by Northwest (1959), títulos de Saul Bass",
+        "url": "https://www.artofthetitle.com/title/north-by-northwest/",
+        "fonte": "Art of the Title"
+      },
+      {
+        "titulo": "The best kinetic typography",
+        "url": "https://www.creativebloq.com/typography/examples-kinetic-typography-11121304",
+        "fonte": "Creative Bloq"
+      }
+    ]
+  },
+  {
+    "id": "suico-grid",
+    "nome": "Suíço / grade tipográfica",
+    "nome_en": "Swiss style / International Typographic Style",
+    "familia": "Tipografia",
+    "descricao": "Design modernista suíço em movimento: grade rígida, sans-serif neutra (Helvetica, Akzidenz), assimetria e muito branco. Passa rigor, inteligência e sofisticação editorial.",
+    "assinatura": [
+      "grade modular visível ou implícita, alinhamento à esquerda",
+      "grotesca neutra com pesos contrastantes",
+      "preto, branco e uma cor de destaque (vermelho ou amarelo)",
+      "movimentos secos em linha reta que param exatamente na grade",
+      "números e fios usados como elementos gráficos"
+    ],
+    "bom_para": [
+      "institucional",
+      "anunciar/lançar",
+      "dados"
+    ],
+    "clima": [
+      "elegante",
+      "sério"
+    ],
+    "tecnica_codigo": "CSS Grid como estrutura da cena; elementos animados com interpolate() e easing seco (Easing.bezier(0.7, 0, 0.3, 1)); posições sempre em múltiplos da unidade da grade.",
+    "dificuldade_codigo": "fácil",
+    "precisa_assets": "nenhum",
+    "referencias": [
+      {
+        "titulo": "International Typographic Style",
+        "url": "https://en.wikipedia.org/wiki/International_Typographic_Style",
+        "fonte": "Wikipedia"
+      },
+      {
+        "titulo": "The Influence of Swiss Design (em motion)",
+        "url": "https://wearefevr.com/the-influence-of-swiss-design",
+        "fonte": "FEVR (artigo)"
+      },
+      {
+        "titulo": "Helvetica (documentário, 2007)",
+        "url": "https://en.wikipedia.org/wiki/Helvetica_(film)",
+        "fonte": "Wikipedia"
+      }
+    ]
+  },
+  {
+    "id": "lettering-manuscrito",
+    "nome": "Lettering manuscrito (escrita que se desenha)",
+    "nome_en": "Hand lettering / write-on",
+    "familia": "Tipografia",
+    "descricao": "Letras cursivas ou de pincel que se escrevem na tela como se a caneta estivesse passando agora. Pessoal, afetivo e elegante; bom para assinaturas, títulos e mensagens emocionais.",
+    "assinatura": [
+      "script ou brush lettering com contraste de espessura",
+      "revelação seguindo a direção real do traço",
+      "floreios e sublinhados finalizando a palavra",
+      "fundo com textura (papel, quadro, parede)",
+      "ritmo lento e respirado"
+    ],
+    "bom_para": [
+      "contar história",
+      "institucional",
+      "anunciar/lançar"
+    ],
+    "clima": [
+      "caloroso",
+      "elegante"
+    ],
+    "tecnica_codigo": "Máscara de traço central (fonte single-line ou path desenhado à mão) revelada com evolvePath() de @remotion/paths e stroke largo, aplicada como mask sobre o lettering preenchido.",
+    "dificuldade_codigo": "médio",
+    "precisa_assets": "ilustração sob medida",
+    "referencias": [
+      {
+        "titulo": "Lettering Animation in After Effects",
+        "url": "https://motiondesign.school/blog/lettering-animation/",
+        "fonte": "Motion Design School"
+      },
+      {
+        "titulo": "Lettering",
+        "url": "https://en.wikipedia.org/wiki/Lettering",
+        "fonte": "Wikipedia"
+      }
+    ]
+  },
+  {
+    "id": "3d-realista",
+    "nome": "3D renderizado realista (produto)",
+    "nome_en": "Photoreal 3D / CGI product film",
+    "familia": "3D",
+    "descricao": "Objetos em 3D com materiais, luz e reflexos fotorrealistas, girando e se desmontando diante de uma câmera 'impossível'. Passa sofisticação, precisão e desejo; é o padrão de lançamento de produto.",
+    "assinatura": [
+      "materiais PBR (metal escovado, vidro, tecido) com luz de estúdio",
+      "câmera macro deslizando por detalhes, profundidade de campo rasa",
+      "vistas explodidas e peças se encaixando",
+      "fundo escuro ou gradiente limpo, poucos elementos",
+      "sound design de whooshes e cliques mecânicos"
+    ],
+    "bom_para": [
+      "vender",
+      "anunciar/lançar"
+    ],
+    "clima": [
+      "elegante",
+      "tecnológico"
+    ],
+    "tecnica_codigo": "three.js/react-three-fiber via @remotion/three com MeshPhysicalMaterial, HDRI de ambiente e pós-processamento (bloom, DOF), sobre modelo glTF do produto. Para fotorrealismo de verdade, render externo (Blender) importado como sequência de imagens.",
+    "dificuldade_codigo": "difícil",
+    "precisa_assets": "ilustração sob medida",
+    "referencias": [
+      {
+        "titulo": "Apple iMac Pro (ManvsMachine)",
+        "url": "https://vimeo.com/260279525",
+        "fonte": "Vimeo"
+      },
+      {
+        "titulo": "ManvsMachine: creativity with technology (Cinema 4D)",
+        "url": "https://www.maxon.net/en/article/man-vs-machine-fusing-creativity-with-technology-with-the-help-of-cinema-4d",
+        "fonte": "Maxon (artigo)"
+      },
+      {
+        "titulo": "Physically based rendering",
+        "url": "https://en.wikipedia.org/wiki/Physically_based_rendering",
+        "fonte": "Wikipedia"
+      }
+    ]
+  },
+  {
+    "id": "low-poly",
+    "nome": "Low poly",
+    "nome_en": "Low poly 3D",
+    "familia": "3D",
+    "descricao": "3D facetado, com poucos polígonos e sombreamento chapado, como origami digital ou jogo antigo. Leve, simpático e geométrico; bom para mundos e paisagens estilizadas.",
+    "assinatura": [
+      "faces triangulares visíveis com flat shading",
+      "gradiente de cor por altura (vale escuro, pico claro)",
+      "luz direcional forte, sem texturas",
+      "objetos que se montam triângulo a triângulo",
+      "câmera orbitando devagar uma ilha ou diorama"
+    ],
+    "bom_para": [
+      "explicar",
+      "contar história",
+      "divertir"
+    ],
+    "clima": [
+      "calmo",
+      "divertido"
+    ],
+    "tecnica_codigo": "@remotion/three com geometrias de baixa resolução e flatShading: true; terreno por ruído (@remotion/noise) numa PlaneGeometry; montagem animando vértices por frame.",
+    "dificuldade_codigo": "médio",
+    "precisa_assets": "nenhum",
+    "referencias": [
+      {
+        "titulo": "Low poly",
+        "url": "https://en.wikipedia.org/wiki/Low_poly",
+        "fonte": "Wikipedia"
+      },
+      {
+        "titulo": "PolyWorld: Low Poly Animation (Episode I)",
+        "url": "https://vimeo.com/161801658",
+        "fonte": "Vimeo"
+      },
+      {
+        "titulo": "Tag: low poly",
+        "url": "https://motionographer.com/tag/low-poly/",
+        "fonte": "Motionographer"
+      }
+    ]
+  },
+  {
+    "id": "3d-fofo",
+    "nome": "3D fofo (soft 3D)",
+    "nome_en": "Soft 3D / toy-like 3D",
+    "familia": "3D",
+    "descricao": "3D arredondado, de materiais foscos tipo plástico ou borracha, cores pastel e personagens de brinquedo. Amigável e acessível; virou a cara de emojis, apps e marcas jovens.",
+    "assinatura": [
+      "formas infladas e cantos muito arredondados",
+      "materiais foscos, sem reflexo duro",
+      "paleta pastel e luz suave de estúdio com sombra difusa",
+      "movimento elástico com bounce (squash & stretch em 3D)",
+      "fundo de cor única, composição centralizada"
+    ],
+    "bom_para": [
+      "vender",
+      "divertir",
+      "anunciar/lançar"
+    ],
+    "clima": [
+      "divertido",
+      "caloroso"
+    ],
+    "tecnica_codigo": "@remotion/three com geometrias arredondadas (RoundedBox, esferas deformadas), MeshStandardMaterial com roughness alta, luz ambiente + luz de área suave; bounce com spring() aplicado à escala.",
+    "dificuldade_codigo": "médio",
+    "precisa_assets": "nenhum",
+    "referencias": [
+      {
+        "titulo": "Emojis 3D (Tendril)",
+        "url": "https://tendril.ca/work/emojis",
+        "fonte": "Tendril (estúdio)"
+      },
+      {
+        "titulo": "Pastel-style 3D portrait made in Blender",
+        "url": "https://80.lv/articles/this-awesome-pastel-style-3d-portrait-was-made-using-blender",
+        "fonte": "80.lv (artigo)"
+      }
+    ]
+  },
+  {
+    "id": "simulacao-satisfatoria",
+    "nome": "Simulação 'satisfatória' (oddly satisfying)",
+    "nome_en": "Oddly satisfying 3D loops / physics simulation",
+    "familia": "3D",
+    "descricao": "Loops 3D hipnóticos com física impossível: esferas que se encaixam, tecidos que caem, mecanismos perfeitos, com som ASMR. Prende o olhar no feed e passa precisão e calma.",
+    "assinatura": [
+      "loop perfeito sem início nem fim visível",
+      "materiais táteis (borracha, areia, tecido, metal)",
+      "física exagerada: soft bodies, tecido, encaixes milimétricos",
+      "paleta pastel ou monocromática, luz suave",
+      "sound design ASMR em cada contato"
+    ],
+    "bom_para": [
+      "divertir",
+      "anunciar/lançar",
+      "vender"
+    ],
+    "clima": [
+      "calmo",
+      "elegante"
+    ],
+    "tecnica_codigo": "O render precisa ser determinístico: simular fora (cannon-es/rapier pré-computado e salvo em JSON por frame) e só tocar no @remotion/three. Mecanismos simples saem de funções periódicas do frame. Tecido e fluido real: Houdini/Blender, importados como vídeo.",
+    "dificuldade_codigo": "difícil",
+    "precisa_assets": "nenhum",
+    "referencias": [
+      {
+        "titulo": "Oddly and yet satisfying 3D loops (Andreas Wannerstedt)",
+        "url": "https://abduzeedo.com/oddly-yet-satisfying-3d-loops",
+        "fonte": "Abduzeedo (artigo)"
+      },
+      {
+        "titulo": "Oddly satisfying videos",
+        "url": "https://en.wikipedia.org/wiki/Oddly_satisfying",
+        "fonte": "Wikipedia"
+      },
+      {
+        "titulo": "Houdini Vellum Cloth Simulation R&D",
+        "url": "https://vimeo.com/355924563",
+        "fonte": "Vimeo"
+      }
+    ]
+  },
+  {
+    "id": "colagem",
+    "nome": "Colagem (recortes de foto)",
+    "nome_en": "Collage animation",
+    "familia": "Colagem e mixed media",
+    "descricao": "Fotos recortadas, papel rasgado, texturas e ilustração misturados numa composição que se mexe aos solavancos. Cru, autoral e editorial; chama atenção justamente por não parecer template.",
+    "assinatura": [
+      "recortes de foto com borda branca ou rasgada",
+      "mistura de escalas e épocas (foto antiga + ilustração)",
+      "textura de papel, fita adesiva e sombra projetada",
+      "movimento de stop motion (8–12 fps) com leve tremor",
+      "tipografia recortada de revista"
+    ],
+    "bom_para": [
+      "contar história",
+      "anunciar/lançar",
+      "divertir"
+    ],
+    "clima": [
+      "provocativo",
+      "artesanal",
+      "irreverente"
+    ],
+    "tecnica_codigo": "PNGs com fundo removido como camadas absolutas; borda rasgada com máscara SVG de ruído; movimento 'posado' arredondando o frame (Math.floor(frame/3)*3) e jitter de posição/rotação com random(seed).",
+    "dificuldade_codigo": "médio",
+    "precisa_assets": "fotos/vídeo reais",
+    "referencias": [
+      {
+        "titulo": "Tag: collage",
+        "url": "https://motionographer.com/tag/collage/",
+        "fonte": "Motionographer"
+      },
+      {
+        "titulo": "Collage",
+        "url": "https://en.wikipedia.org/wiki/Collage",
+        "fonte": "Wikipedia"
+      },
+      {
+        "titulo": "Terry Gilliam revela os segredos das animações do Monty Python",
+        "url": "https://www.openculture.com/2014/07/terry-gilliam-reveals-the-secrets-of-monty-python-animations.html",
+        "fonte": "Open Culture"
+      }
+    ]
+  },
+  {
+    "id": "explicativo-adesivos",
+    "nome": "Explicativo com adesivos",
+    "nome_en": "Sticker explainer / die-cut sticker style",
+    "familia": "Colagem e mixed media",
+    "descricao": "Ícones, personagens e palavras viram adesivos recortados com borda branca e sombra, 'colados' e descolados na tela. Leve, jovem e com cara de rede social; organiza a explicação em peças soltas.",
+    "assinatura": [
+      "borda branca grossa (die-cut) e sombra curta",
+      "entrada com 'slap': escala de 120% para 100% com leve rotação",
+      "descolar com dobra de canto (peel)",
+      "fundo liso ou quadriculado de caderno",
+      "paleta viva e tipografia arredondada"
+    ],
+    "bom_para": [
+      "explicar",
+      "divertir",
+      "vender"
+    ],
+    "clima": [
+      "divertido",
+      "enérgico"
+    ],
+    "tecnica_codigo": "CSS/SVG: contorno branco com feMorphology (dilate) ou drop-shadow empilhado sobre PNG/SVG; entrada com spring() em scale/rotate; peel com clip-path + gradiente simulando o verso do adesivo.",
+    "dificuldade_codigo": "fácil",
+    "precisa_assets": "imagens geradas",
+    "referencias": [
+      {
+        "titulo": "Sticker Peel Effect: After Effects tutorial (no plugins)",
+        "url": "https://jwatkiss.myblog.arts.ac.uk/2025/01/28/sticker-peel-effect-after-effects-easy-tutorial-no-plugins/",
+        "fonte": "UAL Creative Media (tutorial)"
+      },
+      {
+        "titulo": "How to Create a Holographic Sticker Animation",
+        "url": "https://www.premiumbeat.com/blog/holographic-sticker-animation/",
+        "fonte": "PremiumBeat (tutorial)"
+      },
+      {
+        "titulo": "WhatsApp Stickers",
+        "url": "https://buck.co/work/whatsapp-stickers",
+        "fonte": "BUCK (estúdio)"
+      }
+    ]
+  },
+  {
+    "id": "live-action-grafismo",
+    "nome": "Live action + grafismo",
+    "nome_en": "Mixed media (live action with motion graphics)",
+    "familia": "Colagem e mixed media",
+    "descricao": "Filmagem real com rabiscos, textos e personagens animados presos ao cenário. Mantém a credibilidade do real e acrescenta explicação ou humor por cima.",
+    "assinatura": [
+      "doodles e setas desenhados sobre a imagem, grudados no movimento",
+      "textos 'presos' em paredes e objetos (tracking)",
+      "pessoas recortadas com contorno colorido",
+      "cor natural da filmagem com gráficos chapados",
+      "cortes rápidos e zoom nos destaques"
+    ],
+    "bom_para": [
+      "vender",
+      "explicar",
+      "divertir"
+    ],
+    "clima": [
+      "enérgico",
+      "divertido"
+    ],
+    "tecnica_codigo": "<OffthreadVideo> como base + camadas SVG/React por cima; tracking feito fora (After Effects, Blender ou modelo de visão) exportado como JSON de pontos por frame e aplicado como transform; recorte de pessoa por segmentação (vídeo com alfa).",
+    "dificuldade_codigo": "difícil",
+    "precisa_assets": "fotos/vídeo reais",
+    "referencias": [
+      {
+        "titulo": "Live-action animation",
+        "url": "https://en.wikipedia.org/wiki/Live-action_animated_film",
+        "fonte": "Wikipedia"
+      },
+      {
+        "titulo": "Tag: mixed media",
+        "url": "https://motionographer.com/tag/mixed-media/",
+        "fonte": "Motionographer"
+      },
+      {
+        "titulo": "VideoDoodles: hand-drawn animations on videos",
+        "url": "https://em-yu.github.io/research/videodoodles/",
+        "fonte": "Pesquisa acadêmica"
+      }
+    ]
+  },
+  {
+    "id": "xerox-grunge",
+    "nome": "Xerox / grunge de fotocópia",
+    "nome_en": "Photocopy / grunge (xerox art)",
+    "familia": "Colagem e mixed media",
+    "descricao": "Imagens estouradas em alto contraste, sujeira de fotocópia, riscos, letras datilografadas e rabiscadas, cortes nervosos. Sombrio, urgente e underground: do zine punk à abertura de Se7en.",
+    "assinatura": [
+      "preto e branco estourado (threshold) com manchas de toner",
+      "riscos de película, fita e letras arranhadas à mão",
+      "quadros que piscam e pulam (cortes de 2–4 frames)",
+      "máquina de escrever misturada a manuscrito",
+      "trilha industrial e ruído"
+    ],
+    "bom_para": [
+      "contar história",
+      "anunciar/lançar",
+      "abertura/vinheta"
+    ],
+    "clima": [
+      "sombrio",
+      "provocativo"
+    ],
+    "tecnica_codigo": "Filtro CSS/SVG (grayscale + contraste alto, ou shader de threshold) sobre imagens; textura de toner e riscos em overlay com posição sorteada por random(frame); flicker variando opacidade; fontes typewriter.",
+    "dificuldade_codigo": "médio",
+    "precisa_assets": "fotos/vídeo reais",
+    "referencias": [
+      {
+        "titulo": "Se7en (1995), títulos de Kyle Cooper",
+        "url": "https://www.artofthetitle.com/title/se7en/",
+        "fonte": "Art of the Title"
+      },
+      {
+        "titulo": "Xerox art",
+        "url": "https://en.wikipedia.org/wiki/Xerox_art",
+        "fonte": "Wikipedia"
+      },
+      {
+        "titulo": "Zine",
+        "url": "https://en.wikipedia.org/wiki/Zine",
+        "fonte": "Wikipedia"
+      }
+    ]
+  },
+  {
+    "id": "infografico-animado",
+    "nome": "Infográfico animado",
+    "nome_en": "Animated infographic / data storytelling",
+    "familia": "Dados e infográfico",
+    "descricao": "Gráficos, números e comparações que se constroem na tela conduzidos pela narração, como num documentário de dados. Dá peso de evidência e torna a estatística compreensível.",
+    "assinatura": [
+      "barras, linhas e bolhas crescendo a partir do zero",
+      "contadores numéricos rolando até o valor final",
+      "um dado em cor, o resto em cinza",
+      "escala humana (pessoas, objetos) para dar dimensão",
+      "câmera percorrendo o eixo do tempo"
+    ],
+    "bom_para": [
+      "dados",
+      "explicar",
+      "institucional"
+    ],
+    "clima": [
+      "sério",
+      "didático",
+      "jornalístico"
+    ],
+    "tecnica_codigo": "SVG + d3-scale/d3-shape para escalas e paths; valores interpolados por frame com interpolate(); números com Intl.NumberFormat; corrida de barras = reordenar por valor a cada frame e interpolar o Y. Dados de JSON/CSV.",
+    "dificuldade_codigo": "médio",
+    "precisa_assets": "nenhum",
+    "referencias": [
+      {
+        "titulo": "The Fallen of World War II (Neil Halloran)",
+        "url": "https://www.neilfilms.com/ww2/",
+        "fonte": "Neil Halloran (documentário de dados)"
+      },
+      {
+        "titulo": "200 years that changed the world (Hans Rosling)",
+        "url": "https://www.gapminder.org/videos/200-years-that-changed-the-world/",
+        "fonte": "Gapminder"
+      },
+      {
+        "titulo": "How to make Bar Chart Race visualizations",
+        "url": "https://flourish.studio/blog/bar-chart-race/",
+        "fonte": "Flourish"
+      }
+    ]
+  },
+  {
+    "id": "mapa-animado",
+    "nome": "Mapa animado (rota e território)",
+    "nome_en": "Animated map / travel route",
+    "familia": "Dados e infográfico",
+    "descricao": "Mapas com zoom de continente para cidade, rotas que se traçam em vermelho e fronteiras que mudam com o tempo. Situa a história no espaço; clássico de documentário e de filme de aventura (Indiana Jones).",
+    "assinatura": [
+      "mapa envelhecido ou vetorial limpo, com relevo sutil",
+      "rota tracejada avançando com um ícone na ponta",
+      "zoom contínuo da escala global para a local",
+      "territórios que se pintam e se apagam conforme a data",
+      "rótulos de lugar entrando com a câmera"
+    ],
+    "bom_para": [
+      "contar história",
+      "explicar",
+      "dados"
+    ],
+    "clima": [
+      "histórico",
+      "didático"
+    ],
+    "tecnica_codigo": "GeoJSON + d3-geo (projeção) desenhado em SVG; rota com evolvePath(); zoom interpolando escala e centro da projeção; textura de mapa antigo (ou imagem gerada) como fundo.",
+    "dificuldade_codigo": "médio",
+    "precisa_assets": "nenhum",
+    "referencias": [
+      {
+        "titulo": "Animated mapping",
+        "url": "https://en.wikipedia.org/wiki/Animated_mapping",
+        "fonte": "Wikipedia"
+      },
+      {
+        "titulo": "Charles Joseph Minard (mapa de fluxo da campanha de Napoleão)",
+        "url": "https://en.wikipedia.org/wiki/Charles_Joseph_Minard",
+        "fonte": "Wikipedia"
+      }
+    ]
+  },
+  {
+    "id": "isotype",
+    "nome": "Isotype (pictogramas contáveis)",
+    "nome_en": "Isotype / pictogram charts",
+    "familia": "Dados e infográfico",
+    "descricao": "Quantidades mostradas como fileiras de ícones iguais, em que cada bonequinho vale X pessoas. Método de Otto Neurath (anos 1920): imediato, didático e legível por qualquer público.",
+    "assinatura": [
+      "pictogramas idênticos repetidos em grade",
+      "cada ícone = uma unidade fixa (1 ícone = 1 milhão)",
+      "cores chapadas por categoria, sem perspectiva",
+      "ícones surgindo em sequência contável",
+      "legenda mínima e números grandes"
+    ],
+    "bom_para": [
+      "dados",
+      "explicar"
+    ],
+    "clima": [
+      "didático",
+      "sério"
+    ],
+    "tecnica_codigo": "Um componente de ícone SVG repetido com Array.from; aparição com stagger (atraso = índice × n frames); reagrupar categorias interpolando as posições na grade.",
+    "dificuldade_codigo": "fácil",
+    "precisa_assets": "nenhum",
+    "referencias": [
+      {
+        "titulo": "Isotype (picture language)",
+        "url": "https://en.wikipedia.org/wiki/Isotype_(picture_language)",
+        "fonte": "Wikipedia"
+      },
+      {
+        "titulo": "Otto Neurath",
+        "url": "https://en.wikipedia.org/wiki/Otto_Neurath",
+        "fonte": "Wikipedia"
+      }
+    ]
+  },
+  {
+    "id": "linha-do-tempo",
+    "nome": "Linha do tempo animada",
+    "nome_en": "Animated timeline",
+    "familia": "Dados e infográfico",
+    "descricao": "Um eixo de datas percorrido pela câmera, com fotos, eventos e marcos surgindo em ordem. Organiza história e evolução; passa senso de progresso e contexto.",
+    "assinatura": [
+      "eixo horizontal ou vertical com anos em destaque",
+      "câmera em travelling contínuo ao longo do eixo",
+      "cartões de evento com foto, data e legenda curta",
+      "faixas paralelas de épocas ou impérios em camadas (tipo Histomap)",
+      "contador de ano acelerando entre marcos"
+    ],
+    "bom_para": [
+      "contar história",
+      "explicar",
+      "institucional"
+    ],
+    "clima": [
+      "histórico",
+      "didático"
+    ],
+    "tecnica_codigo": "Container largo em React com translateX interpolado pelo frame; eventos posicionados por data (d3-scaleTime); cartões entrando com spring() ao cruzar a viewport; ano corrente com interpolate + Math.round.",
+    "dificuldade_codigo": "fácil",
+    "precisa_assets": "fotos/vídeo reais",
+    "referencias": [
+      {
+        "titulo": "Timeline",
+        "url": "https://en.wikipedia.org/wiki/Timeline",
+        "fonte": "Wikipedia"
+      },
+      {
+        "titulo": "The 1931 Histomap: toda a história do mundo num só gráfico",
+        "url": "https://slate.com/human-interest/2013/08/the-1931-histomap-the-entire-history-of-the-world-distilled-into-a-single-map-chart.html",
+        "fonte": "Slate"
+      },
+      {
+        "titulo": "The History of the World in One 5-Foot-Long Chart (1931)",
+        "url": "https://www.openculture.com/2025/06/the-history-of-the-world-in-one-beautiful-5-foot-long-chart-1931.html",
+        "fonte": "Open Culture"
+      }
+    ]
+  },
+  {
+    "id": "demo-de-interface",
+    "nome": "Demo de interface (UI em movimento)",
+    "nome_en": "UI animation / product demo",
+    "familia": "Interface e tecnologia",
+    "descricao": "A tela do app ou site vira protagonista: cursor que clica, cartões que deslizam, zoom no botão certo e transições fluidas entre telas. Mostra o produto funcionando sem a crueza de uma gravação de tela.",
+    "assinatura": [
+      "mockup limpo do produto em device ou janela flutuante",
+      "cursor animado, cliques com ripple e zoom no detalhe",
+      "transições de estado com easing de sistema (Material/iOS)",
+      "fundo em gradiente suave e sombras longas",
+      "tipografia do próprio produto e callouts curtos"
+    ],
+    "bom_para": [
+      "vender",
+      "anunciar/lançar",
+      "explicar"
+    ],
+    "clima": [
+      "tecnológico",
+      "elegante"
+    ],
+    "tecnica_codigo": "Recriar a UI em React/HTML dentro da composição (nítida em qualquer resolução) e animar estados com interpolate()/spring(); cursor como componente seguindo curva Bezier; zoom = scale no container. Alternativa: gravação real com <OffthreadVideo> e zoom por cima.",
+    "dificuldade_codigo": "médio",
+    "precisa_assets": "nenhum",
+    "referencias": [
+      {
+        "titulo": "Motion (Material Design 3)",
+        "url": "https://m3.material.io/styles/motion/overview",
+        "fonte": "Google Material Design"
+      },
+      {
+        "titulo": "Screencast",
+        "url": "https://en.wikipedia.org/wiki/Screencast",
+        "fonte": "Wikipedia"
+      },
+      {
+        "titulo": "UI Animation Videos for Software Marketing",
+        "url": "https://hera.video/blog/ui-animation-video-for-software-marketing",
+        "fonte": "Hera (artigo)"
+      }
+    ]
+  },
+  {
+    "id": "vidro-fosco-aurora",
+    "nome": "Vidro fosco e aurora",
+    "nome_en": "Glassmorphism / aurora gradients",
+    "familia": "Interface e tecnologia",
+    "descricao": "Painéis translúcidos com desfoque sobre gradientes de cor que fluem devagar, como aurora boreal. Moderno, sofisticado e calmo: a estética de iOS, Stripe e lançamentos de tecnologia.",
+    "assinatura": [
+      "cartões semitransparentes com backdrop-blur e borda clara de 1px",
+      "blobs de gradiente saturado em movimento lento",
+      "reflexo especular e brilho na borda do vidro",
+      "sans leve e muito espaço",
+      "parallax suave entre camadas"
+    ],
+    "bom_para": [
+      "anunciar/lançar",
+      "vender",
+      "institucional"
+    ],
+    "clima": [
+      "elegante",
+      "calmo",
+      "tecnológico"
+    ],
+    "tecnica_codigo": "CSS backdrop-filter: blur() + fundo rgba nos cartões; aurora com blobs radial-gradient movidos por noise2D (@remotion/noise) ou shader de gradiente mesh (estilo Stripe) em WebGL. backdrop-filter pesa no render: testar cedo.",
+    "dificuldade_codigo": "fácil",
+    "precisa_assets": "nenhum",
+    "referencias": [
+      {
+        "titulo": "Glassmorphism",
+        "url": "https://en.wikipedia.org/wiki/Glassmorphism",
+        "fonte": "Wikipedia"
+      },
+      {
+        "titulo": "How to create the Stripe website gradient effect",
+        "url": "https://kevinhufnagl.com/how-to-stripe-website-gradient-effect/",
+        "fonte": "Kevin Hufnagl (tutorial)"
+      },
+      {
+        "titulo": "Apple apresenta o design Liquid Glass",
+        "url": "https://www.apple.com/newsroom/2025/06/apple-introduces-a-delightful-and-elegant-new-software-design/",
+        "fonte": "Apple Newsroom"
+      }
+    ]
+  },
+  {
+    "id": "hud-cyberpunk",
+    "nome": "HUD / interface de ficção científica",
+    "nome_en": "Sci-fi HUD / FUI (fictional user interface)",
+    "familia": "Interface e tecnologia",
+    "descricao": "Painéis de interface futurista: anéis girando, dados rolando, mira, alertas e wireframes em neon sobre fundo escuro. Tecnológico, tenso e cinematográfico.",
+    "assinatura": [
+      "linhas finas ciano/laranja sobre preto, com glow",
+      "anéis concêntricos girando em velocidades diferentes",
+      "texto monoespaçado e números mudando sem parar",
+      "scanlines, flicker e glitches de alerta",
+      "bipes e sons de interface"
+    ],
+    "bom_para": [
+      "anunciar/lançar",
+      "dados",
+      "divertir"
+    ],
+    "clima": [
+      "tecnológico",
+      "futurista",
+      "enérgico"
+    ],
+    "tecnica_codigo": "SVG procedural: arcos com stroke-dasharray girando por frame, grades e marcações geradas em loop; números pseudoaleatórios com random(seed + frame); glow com drop-shadow. Opcional: wireframe 3D em @remotion/three.",
+    "dificuldade_codigo": "médio",
+    "precisa_assets": "nenhum",
+    "referencias": [
+      {
+        "titulo": "Guardians of the Galaxy UI Reel (Territory Studio)",
+        "url": "https://vimeo.com/103533906",
+        "fonte": "Vimeo"
+      },
+      {
+        "titulo": "Screen Graphics Projects",
+        "url": "https://territorystudio.com/project-category/screen-graphics/",
+        "fonte": "Territory Studio (estúdio)"
+      },
+      {
+        "titulo": "SciFi Interfaces Q&A with Territory Studio",
+        "url": "https://scifiinterfaces.com/2020/06/23/scifi-interfaces-qa-with-territory-studio/",
+        "fonte": "Sci-fi Interfaces (artigo)"
+      }
+    ]
+  },
+  {
+    "id": "terminal-codigo",
+    "nome": "Terminal e código",
+    "nome_en": "Terminal / code-typing aesthetic",
+    "familia": "Interface e tecnologia",
+    "descricao": "Texto monoespaçado digitado num terminal ou editor, com comandos, logs e 'chuva de código'. Passa bastidor técnico, autenticidade hacker e tensão.",
+    "assinatura": [
+      "fundo escuro, fonte mono e cursor piscando",
+      "digitação caractere a caractere com pausas humanas",
+      "syntax highlighting ou verde fósforo",
+      "logs rolando rápido e mensagens de sucesso/erro",
+      "som de teclado mecânico"
+    ],
+    "bom_para": [
+      "explicar",
+      "anunciar/lançar",
+      "divertir"
+    ],
+    "clima": [
+      "tecnológico",
+      "sério"
+    ],
+    "tecnica_codigo": "React puro: string fatiada por frame (text.slice(0, n)) com velocidade variável; highlighting pré-renderizado com Shiki/Prism; cursor alternando opacidade a cada 15 frames. Para gravações reais de terminal, charmbracelet/vhs gera o vídeo a partir de um script.",
+    "dificuldade_codigo": "fácil",
+    "precisa_assets": "nenhum",
+    "referencias": [
+      {
+        "titulo": "Digital rain (Matrix)",
+        "url": "https://en.wikipedia.org/wiki/Matrix_digital_rain",
+        "fonte": "Wikipedia"
+      },
+      {
+        "titulo": "charmbracelet/vhs: gravador de terminal por script",
+        "url": "https://github.com/charmbracelet/vhs",
+        "fonte": "GitHub"
+      }
+    ]
+  },
+  {
+    "id": "neo-brutalismo",
+    "nome": "Neo-brutalismo",
+    "nome_en": "Neo-brutalism",
+    "familia": "Interface e tecnologia",
+    "descricao": "Blocos de cor berrante, bordas pretas grossas, sombras duras deslocadas e tipografia pesada, com cara de inacabado de propósito. Ousado, jovem e anticorporativo.",
+    "assinatura": [
+      "contorno preto de 3–4px em tudo",
+      "sombra sólida deslocada, sem desfoque",
+      "cores primárias ou fluorescentes chapadas",
+      "grotesca bold, ícones e emojis simples",
+      "movimentos secos com 'clique' físico de botão"
+    ],
+    "bom_para": [
+      "vender",
+      "anunciar/lançar",
+      "divertir"
+    ],
+    "clima": [
+      "irreverente",
+      "enérgico",
+      "provocativo"
+    ],
+    "tecnica_codigo": "CSS puro: border: 4px solid #000 e box-shadow: 6px 6px 0 #000; 'aperto' de botão reduzindo o deslocamento da sombra; spring() com damping alto para movimentos secos.",
+    "dificuldade_codigo": "fácil",
+    "precisa_assets": "nenhum",
+    "referencias": [
+      {
+        "titulo": "Neobrutalism: Definition and Best Practices",
+        "url": "https://www.nngroup.com/articles/neobrutalism/",
+        "fonte": "Nielsen Norman Group"
+      }
+    ]
+  },
+  {
+    "id": "synthwave",
+    "nome": "Synthwave / outrun",
+    "nome_en": "Synthwave / retrowave",
+    "familia": "Retrô e época",
+    "descricao": "Retrofuturismo dos anos 80: sol listrado no horizonte, grade neon em perspectiva infinita, cromados e pôr do sol magenta. Nostálgico, cinematográfico e descolado.",
+    "assinatura": [
+      "grade magenta/ciano em perspectiva correndo para o horizonte",
+      "sol com faixas horizontais em degradê laranja-rosa",
+      "letras cromadas com reflexo e script em neon",
+      "névoa, glow e scanlines",
+      "trilha de sintetizador com bateria eletrônica"
+    ],
+    "bom_para": [
+      "anunciar/lançar",
+      "divertir",
+      "abertura/vinheta"
+    ],
+    "clima": [
+      "nostálgico",
+      "enérgico"
+    ],
+    "tecnica_codigo": "Grade em CSS 3D (perspective + rotateX com background-position animado) ou shader; sol com linear-gradient e máscara de faixas; texto cromado com gradiente e text-shadow; montanhas wireframe em @remotion/three.",
+    "dificuldade_codigo": "fácil",
+    "precisa_assets": "nenhum",
+    "referencias": [
+      {
+        "titulo": "Synthwave",
+        "url": "https://en.wikipedia.org/wiki/Synthwave",
+        "fonte": "Wikipedia"
+      },
+      {
+        "titulo": "Kung Fury (2015)",
+        "url": "https://en.wikipedia.org/wiki/Kung_Fury",
+        "fonte": "Wikipedia"
+      },
+      {
+        "titulo": "The Visual Styles of the Synthwave and Vaporwave Video",
+        "url": "https://www.premiumbeat.com/blog/synthwave-vaporwave-visual-styles/",
+        "fonte": "PremiumBeat (artigo)"
+      }
+    ]
+  },
+  {
+    "id": "pixel-art",
+    "nome": "Pixel art",
+    "nome_en": "Pixel art / 8-bit",
+    "familia": "Retrô e época",
+    "descricao": "Tudo em pixels visíveis e paleta limitada, como videogame de 8 ou 16 bits. Nostálgico e divertido; ótimo para gamificar uma explicação ou falar com público gamer.",
+    "assinatura": [
+      "pixels grandes sem anti-aliasing, grade fixa",
+      "paleta de 8 a 32 cores",
+      "sprites com poucos quadros por ciclo (2–6)",
+      "movimento que pula de pixel em pixel, sem subpixel",
+      "chiptune e efeitos 8-bit"
+    ],
+    "bom_para": [
+      "divertir",
+      "explicar",
+      "anunciar/lançar"
+    ],
+    "clima": [
+      "nostálgico",
+      "divertido"
+    ],
+    "tecnica_codigo": "Canvas em baixa resolução (ex.: 320×180) escalado com image-rendering: pixelated; sprites como matrizes de cor; posições arredondadas para inteiros; sprite sheets gerados por IA e limpos à mão.",
+    "dificuldade_codigo": "médio",
+    "precisa_assets": "nenhum",
+    "referencias": [
+      {
+        "titulo": "Pixel art",
+        "url": "https://en.wikipedia.org/wiki/Pixel_art",
+        "fonte": "Wikipedia"
+      },
+      {
+        "titulo": "Pixelblog 8: Intro to Animation",
+        "url": "https://www.slynyrd.com/blog/2018/8/19/pixelblog-8-intro-to-animation",
+        "fonte": "SLYNYRD (tutorial)"
+      },
+      {
+        "titulo": "Tag: pixel art",
+        "url": "https://motionographer.com/tag/pixel-art/",
+        "fonte": "Motionographer"
+      }
+    ]
+  },
+  {
+    "id": "vhs-analogico",
+    "nome": "VHS / vídeo analógico",
+    "nome_en": "VHS / analog video",
+    "familia": "Retrô e época",
+    "descricao": "Imagem com cara de fita VHS: cor vazando, linhas de tracking, chiado, data no canto e 'PLAY'. Nostalgia caseira dos anos 80 e 90, ou inquietação no estilo analog horror.",
+    "assinatura": [
+      "aberração cromática (canais RGB deslocados) e cor sangrando",
+      "faixas de tracking e jitter horizontal",
+      "scanlines, ruído e vinheta de tubo (CRT)",
+      "OSD 'PLAY ▶', timecode e data em fonte de vídeo",
+      "áudio abafado com chiado"
+    ],
+    "bom_para": [
+      "contar história",
+      "divertir",
+      "abertura/vinheta"
+    ],
+    "clima": [
+      "nostálgico",
+      "sombrio"
+    ],
+    "tecnica_codigo": "Pós-processo em shader WebGL (deslocar canais R/B, ruído por frame, distorção por faixas) ou SVG feColorMatrix + feOffset por canal; scanlines com repeating-linear-gradient; OSD com fonte VCR.",
+    "dificuldade_codigo": "médio",
+    "precisa_assets": "fotos/vídeo reais",
+    "referencias": [
+      {
+        "titulo": "How to Create a VHS Effect in After Effects",
+        "url": "https://borisfx.com/blog/vhs-effect-in-after-effects-how-to-create/",
+        "fonte": "Boris FX (tutorial)"
+      },
+      {
+        "titulo": "The VHS Glitch Aesthetic Explained",
+        "url": "https://www.glitchart.studio/blog/posts/vhs-glitch-aesthetic",
+        "fonte": "GlitchArt (artigo)"
+      },
+      {
+        "titulo": "Analog horror",
+        "url": "https://en.wikipedia.org/wiki/Analog_horror",
+        "fonte": "Wikipedia"
+      }
+    ]
+  },
+  {
+    "id": "rubber-hose",
+    "nome": "Cartoon anos 30 (rubber hose)",
+    "nome_en": "Rubber hose animation",
+    "familia": "Retrô e época",
+    "descricao": "Personagens de braços de mangueira, luvas brancas e olhos em fatia de torta, dançando no ritmo do jazz sobre cenários em aquarela. Nostálgico, travesso e cheio de energia.",
+    "assinatura": [
+      "membros curvos sem articulação e luvas brancas",
+      "olhos pie-cut e corpo de borracha (squash & stretch constante)",
+      "preto e branco ou cor desbotada com grão de filme",
+      "tudo balança no mesmo compasso",
+      "jazz de big band e efeitos de cartoon"
+    ],
+    "bom_para": [
+      "divertir",
+      "contar história",
+      "vender"
+    ],
+    "clima": [
+      "nostálgico",
+      "divertido",
+      "irreverente"
+    ],
+    "tecnica_codigo": "Personagens em SVG com membros como curvas Bezier cujos pontos de controle oscilam com Math.sin(frame) num BPM comum; filtro sépia, grão e flicker de projetor por cima.",
+    "dificuldade_codigo": "médio",
+    "precisa_assets": "ilustração sob medida",
+    "referencias": [
+      {
+        "titulo": "Rubber hose animation",
+        "url": "https://en.wikipedia.org/wiki/Rubber_hose_animation",
+        "fonte": "Wikipedia"
+      },
+      {
+        "titulo": "Cuphead Overflows With Classic Cartoon Surrealism",
+        "url": "https://www.cartoonbrew.com/videogames/cuphead-overflows-classic-cartoon-surrealism-153824.html",
+        "fonte": "Cartoon Brew"
+      },
+      {
+        "titulo": "Cuphead",
+        "url": "https://en.wikipedia.org/wiki/Cuphead",
+        "fonte": "Wikipedia"
+      }
+    ]
+  },
+  {
+    "id": "mid-century",
+    "nome": "Mid-century / Saul Bass",
+    "nome_en": "Mid-century modern / UPA limited animation",
+    "familia": "Retrô e época",
+    "descricao": "Estética dos anos 50 e 60: recortes geométricos, silhuetas, cores terrosas chapadas, animação limitada e jazz. Elegante, espirituoso e cinematográfico, como as aberturas de Saul Bass e de 'Prenda-me se For Capaz'.",
+    "assinatura": [
+      "formas recortadas com borda irregular de papel",
+      "mostarda, laranja queimado, turquesa e preto",
+      "silhuetas e personagens angulosos",
+      "animação limitada: poucas poses, movimentos em bloco",
+      "tipografia condensada ou estendida e trilha jazz"
+    ],
+    "bom_para": [
+      "abertura/vinheta",
+      "contar história",
+      "anunciar/lançar"
+    ],
+    "clima": [
+      "elegante",
+      "nostálgico",
+      "divertido"
+    ],
+    "tecnica_codigo": "SVG com formas de borda irregular (paths com ruído leve); movimento em 'holds' (valores que só mudam a cada 4–6 frames); textura de papel e grão por cima.",
+    "dificuldade_codigo": "fácil",
+    "precisa_assets": "nenhum",
+    "referencias": [
+      {
+        "titulo": "Catch Me If You Can (2002), títulos de Kuntzel + Deygas",
+        "url": "https://www.artofthetitle.com/title/catch-me-if-you-can/",
+        "fonte": "Art of the Title"
+      },
+      {
+        "titulo": "United Productions of America (UPA)",
+        "url": "https://en.wikipedia.org/wiki/UPA_(animation_studio)",
+        "fonte": "Wikipedia"
+      },
+      {
+        "titulo": "Saul Bass",
+        "url": "https://en.wikipedia.org/wiki/Saul_Bass",
+        "fonte": "Wikipedia"
+      }
+    ]
+  },
+  {
+    "id": "bauhaus",
+    "nome": "Bauhaus",
+    "nome_en": "Bauhaus",
+    "familia": "Retrô e época",
+    "descricao": "Círculo, quadrado e triângulo em vermelho, amarelo, azul e preto, compondo e recompondo a tela com rigor geométrico. Intelectual, ousado e atemporal.",
+    "assinatura": [
+      "só formas primárias (círculo, quadrado, triângulo) e barras",
+      "vermelho, amarelo, azul, preto e creme",
+      "composições assimétricas sobre grade",
+      "formas que rolam, deslizam e se encaixam como engrenagens",
+      "sans geométrica (tipo Futura)"
+    ],
+    "bom_para": [
+      "anunciar/lançar",
+      "institucional",
+      "abertura/vinheta"
+    ],
+    "clima": [
+      "elegante",
+      "provocativo"
+    ],
+    "tecnica_codigo": "SVG/CSS puro com @remotion/shapes; movimento por spring() e rotações exatas; composição sobre grid; textura de papel creme opcional.",
+    "dificuldade_codigo": "fácil",
+    "precisa_assets": "nenhum",
+    "referencias": [
+      {
+        "titulo": "Bauhaus",
+        "url": "https://en.wikipedia.org/wiki/Bauhaus",
+        "fonte": "Wikipedia"
+      },
+      {
+        "titulo": "The graphic designer's guide to Bauhaus design",
+        "url": "https://www.linearity.io/blog/bauhaus-design/",
+        "fonte": "Linearity (artigo)"
+      },
+      {
+        "titulo": "Balé Triádico (Oskar Schlemmer, Bauhaus)",
+        "url": "https://en.wikipedia.org/wiki/Triadic_Ballet",
+        "fonte": "Wikipedia"
+      }
+    ]
+  },
+  {
+    "id": "y2k-frutiger",
+    "nome": "Y2K / Frutiger Aero",
+    "nome_en": "Y2K aesthetic / Frutiger Aero",
+    "familia": "Retrô e época",
+    "descricao": "O otimismo digital da virada do milênio: cromados líquidos, bolhas, ícones brilhantes, céu azul, água e o verde do Windows XP. Nostalgia pop de tecnologia amigável.",
+    "assinatura": [
+      "efeito gel brilhante e reflexos de plástico e cromo",
+      "bolhas, peixes, grama e céu com lens flare",
+      "azul-água e verde-limão em gradientes lustrosos",
+      "ícones 3D brilhantes e janelas translúcidas",
+      "trilha eletrônica leve e sons de sistema"
+    ],
+    "bom_para": [
+      "divertir",
+      "anunciar/lançar",
+      "vender"
+    ],
+    "clima": [
+      "nostálgico",
+      "divertido"
+    ],
+    "tecnica_codigo": "CSS com gradientes múltiplos e highlights brancos (radial-gradient) para o efeito gel; texto cromado com background-clip; bolhas em radial-gradient movidas por ruído; objetos brilhantes com MeshPhysicalMaterial (clearcoat) no @remotion/three.",
+    "dificuldade_codigo": "médio",
+    "precisa_assets": "imagens geradas",
+    "referencias": [
+      {
+        "titulo": "Y2K aesthetic",
+        "url": "https://en.wikipedia.org/wiki/Y2K_aesthetic",
+        "fonte": "Wikipedia"
+      },
+      {
+        "titulo": "Frutiger Aero",
+        "url": "https://en.wikipedia.org/wiki/Frutiger_Aero",
+        "fonte": "Wikipedia"
+      }
+    ]
+  },
+  {
+    "id": "psicodelico",
+    "nome": "Psicodélico anos 60–70",
+    "nome_en": "Psychedelic 60s/70s",
+    "familia": "Retrô e época",
+    "descricao": "Cores vibrantes em choque, formas que derretem e pulsam, letras ondulantes e metamorfoses sem lógica, como em Yellow Submarine. Onírico, festivo e contracultural.",
+    "assinatura": [
+      "cores complementares saturadas vibrando lado a lado",
+      "letras orgânicas que se deformam",
+      "padrões concêntricos e espirais pulsando",
+      "metamorfose contínua de uma forma em outra",
+      "rock psicodélico e fuzz"
+    ],
+    "bom_para": [
+      "divertir",
+      "contar história",
+      "abertura/vinheta"
+    ],
+    "clima": [
+      "onírico",
+      "enérgico",
+      "nostálgico"
+    ],
+    "tecnica_codigo": "Shader de distorção (ondas senoidais nas coordenadas) em WebGL sobre ilustração, ou SVG feTurbulence + feDisplacementMap animados por frame; paleta ciclando com hue-rotate; morphing com interpolatePath().",
+    "dificuldade_codigo": "médio",
+    "precisa_assets": "imagens geradas",
+    "referencias": [
+      {
+        "titulo": "Psychedelic art",
+        "url": "https://en.wikipedia.org/wiki/Psychedelic_art",
+        "fonte": "Wikipedia"
+      },
+      {
+        "titulo": "An Analysis of George Dunning's Yellow Submarine",
+        "url": "https://www.fantasy-animation.org/current-posts/an-analysis-of-george-dunnings-yellow-submarine",
+        "fonte": "Fantasy/Animation (artigo)"
+      },
+      {
+        "titulo": "Yellow Submarine (1968)",
+        "url": "https://en.wikipedia.org/wiki/Yellow_Submarine_(film)",
+        "fonte": "Wikipedia"
+      }
+    ]
+  },
+  {
+    "id": "construtivismo",
+    "nome": "Construtivismo soviético",
+    "nome_en": "Russian Constructivism / propaganda poster",
+    "familia": "Retrô e época",
+    "descricao": "Vermelho, preto e creme, diagonais agressivas, fotomontagem e tipografia em bloco gritando palavras de ordem. Forte, político e histórico: a linguagem do cartaz de propaganda.",
+    "assinatura": [
+      "diagonais de 45° e composição em tensão",
+      "vermelho e preto sobre creme envelhecido",
+      "fotomontagem em alto contraste com retícula",
+      "sans condensada em blocos",
+      "entradas de impacto com slam e tremor"
+    ],
+    "bom_para": [
+      "contar história",
+      "abertura/vinheta",
+      "anunciar/lançar"
+    ],
+    "clima": [
+      "histórico",
+      "provocativo",
+      "épico"
+    ],
+    "tecnica_codigo": "SVG/CSS com grupos rotacionados em diagonal; fotos em duotone/threshold via feColorMatrix e retícula; textos com spring() de alta rigidez e shake de câmera; textura de papel envelhecido.",
+    "dificuldade_codigo": "fácil",
+    "precisa_assets": "fotos/vídeo reais",
+    "referencias": [
+      {
+        "titulo": "Constructivism (art)",
+        "url": "https://en.wikipedia.org/wiki/Constructivism_(art)",
+        "fonte": "Wikipedia"
+      },
+      {
+        "titulo": "Stenberg brothers (cartazes de cinema soviéticos)",
+        "url": "https://en.wikipedia.org/wiki/Stenberg_brothers",
+        "fonte": "Wikipedia"
+      },
+      {
+        "titulo": "Movie Poster of the Week: The Posters of the Stenberg Brothers",
+        "url": "https://mubi.com/en/notebook/posts/movie-poster-of-the-week-the-posters-of-the-stenberg-brothers",
+        "fonte": "MUBI Notebook"
+      }
+    ]
+  },
+  {
+    "id": "gravura",
+    "nome": "Gravura / xilogravura",
+    "nome_en": "Woodcut / engraving",
+    "familia": "Retrô e época",
+    "descricao": "Ilustração em hachuras e cortes de goiva, preto sobre papel, como livros antigos e cordel. Histórico, grave e literário; dá peso de época a uma narrativa.",
+    "assinatura": [
+      "hachuras paralelas e cruzadas no lugar de degradê",
+      "preto chapado sobre papel creme, no máximo uma cor extra",
+      "marcas de entalhe e tinta irregular",
+      "animação econômica: poucos elementos se movendo, câmera lenta",
+      "textura de impressão"
+    ],
+    "bom_para": [
+      "contar história",
+      "institucional",
+      "abertura/vinheta"
+    ],
+    "clima": [
+      "histórico",
+      "sério",
+      "artesanal"
+    ],
+    "tecnica_codigo": "Imagens geradas por IA no estilo gravura, separadas em camadas para parallax; shader de hachura (linhas por luminância) para converter imagens; textura de papel e leve boil de posição.",
+    "dificuldade_codigo": "médio",
+    "precisa_assets": "imagens geradas",
+    "referencias": [
+      {
+        "titulo": "Woodcut",
+        "url": "https://en.wikipedia.org/wiki/Woodcut",
+        "fonte": "Wikipedia"
+      },
+      {
+        "titulo": "Linocut",
+        "url": "https://en.wikipedia.org/wiki/Linocut",
+        "fonte": "Wikipedia"
+      },
+      {
+        "titulo": "Animations made from laser engraved wood (Nando Costa)",
+        "url": "https://makezine.com/article/craft/animations-made-from-laser-engraved-wood/",
+        "fonte": "Make: (artigo)"
+      }
+    ]
+  },
+  {
+    "id": "stop-motion-objetos",
+    "nome": "Stop motion de objetos",
+    "nome_en": "Object stop motion",
+    "familia": "Artesanal",
+    "descricao": "Objetos reais fotografados quadro a quadro ganham vida: comida, papelaria, brinquedos, produtos. Tátil, criativo e surpreendente; transforma o banal em mágico (PES).",
+    "assinatura": [
+      "objetos físicos com textura e sombra verdadeiras",
+      "8–12 fps com leve variação de luz entre quadros",
+      "substituição criativa (um objeto fazendo o papel de outro)",
+      "câmera de cima (top shot) ou de mesa",
+      "foley real exagerado"
+    ],
+    "bom_para": [
+      "vender",
+      "divertir",
+      "anunciar/lançar"
+    ],
+    "clima": [
+      "artesanal",
+      "divertido"
+    ],
+    "tecnica_codigo": "Com fotos reais: sequência tocada com <Img> trocando a cada 2–3 frames. Imitação em código: recortes PNG de objetos movidos em passos discretos (Math.floor) com jitter de posição e de luz para parecer fotografado.",
+    "dificuldade_codigo": "difícil",
+    "precisa_assets": "fotos/vídeo reais",
+    "referencias": [
+      {
+        "titulo": "Western Spaghetti (PES, 2008)",
+        "url": "https://en.wikipedia.org/wiki/Western_Spaghetti",
+        "fonte": "Wikipedia"
+      },
+      {
+        "titulo": "PES: site oficial",
+        "url": "https://www.pesfilm.com/",
+        "fonte": "PES (estúdio)"
+      },
+      {
+        "titulo": "Tag: stop-motion",
+        "url": "https://motionographer.com/tag/stop-motion/",
+        "fonte": "Motionographer"
+      }
+    ]
+  },
+  {
+    "id": "massinha",
+    "nome": "Massinha (claymation)",
+    "nome_en": "Claymation",
+    "familia": "Artesanal",
+    "descricao": "Personagens e cenários de massa de modelar, com digitais e imperfeições à mostra, animados quadro a quadro. Caloroso, engraçado e artesanal (Aardman, Wallace & Gromit).",
+    "assinatura": [
+      "superfície fosca com marcas de dedo",
+      "cores fortes e formas arredondadas",
+      "movimento levemente irregular (boil da forma)",
+      "bocas por substituição e olhos expressivos",
+      "cenários em miniatura com luz real"
+    ],
+    "bom_para": [
+      "divertir",
+      "contar história",
+      "vender"
+    ],
+    "clima": [
+      "caloroso",
+      "divertido",
+      "artesanal"
+    ],
+    "tecnica_codigo": "Imitação em 3D: @remotion/three com roughness alta + normal map de digitais, deslocamento de vértices por ruído trocado a cada 2 frames (boil) e animação em twos. Ou imagens de massinha geradas por IA animadas em recorte.",
+    "dificuldade_codigo": "difícil",
+    "precisa_assets": "imagens geradas",
+    "referencias": [
+      {
+        "titulo": "Clay animation",
+        "url": "https://en.wikipedia.org/wiki/Clay_animation",
+        "fonte": "Wikipedia"
+      },
+      {
+        "titulo": "Tutorial: Create a Claymation in Cinema 4D",
+        "url": "https://schoolofmotion.com/blog/claymation-cinema-4d",
+        "fonte": "School of Motion"
+      },
+      {
+        "titulo": "Aardman",
+        "url": "https://www.aardman.com/",
+        "fonte": "Aardman (estúdio)"
+      }
+    ]
+  },
+  {
+    "id": "recorte-papel",
+    "nome": "Recorte de papel (paper craft)",
+    "nome_en": "Paper cut-out / papercraft",
+    "familia": "Artesanal",
+    "descricao": "Cenários e personagens de papel colorido recortado, em camadas com sombra entre elas, dobrando e se desdobrando. Delicado, lúdico e artesanal, com profundidade de diorama.",
+    "assinatura": [
+      "camadas de papel sobrepostas com sombra entre elas",
+      "bordas levemente irregulares e textura de fibra",
+      "papéis coloridos foscos",
+      "dobras, pop-ups e deslizamentos laterais",
+      "luz lateral quente"
+    ],
+    "bom_para": [
+      "contar história",
+      "explicar",
+      "institucional"
+    ],
+    "clima": [
+      "artesanal",
+      "caloroso",
+      "calmo"
+    ],
+    "tecnica_codigo": "Camadas SVG com drop-shadow e textura de papel (feTurbulence sutil); parallax por profundidade; dobras e pop-ups em CSS 3D (rotateX/Y com transform-origin na borda); movimento em passos de 2 frames.",
+    "dificuldade_codigo": "médio",
+    "precisa_assets": "nenhum",
+    "referencias": [
+      {
+        "titulo": "Cutout animation",
+        "url": "https://en.wikipedia.org/wiki/Cutout_animation",
+        "fonte": "Wikipedia"
+      },
+      {
+        "titulo": "Canal Paper cutout animation",
+        "url": "https://vimeo.com/channels/cutouts",
+        "fonte": "Vimeo"
+      },
+      {
+        "titulo": "Tag: paper",
+        "url": "https://motionographer.com/tag/paper/",
+        "fonte": "Motionographer"
+      }
+    ]
+  },
+  {
+    "id": "rotoscopia",
+    "nome": "Rotoscopia",
+    "nome_en": "Rotoscoping",
+    "familia": "Artesanal",
+    "descricao": "Filmagem real redesenhada quadro a quadro: o movimento humano fica exato e a aparência vira desenho. Onírico e realista ao mesmo tempo (Take On Me, A Scanner Darkly).",
+    "assinatura": [
+      "movimento humano natural com traço desenhado",
+      "linha de lápis ou nanquim com boil",
+      "cor chapada ou só contorno sobre papel",
+      "transição entre filmagem real e desenho",
+      "preenchimento pintado variando a cada quadro"
+    ],
+    "bom_para": [
+      "contar história",
+      "abertura/vinheta",
+      "divertir"
+    ],
+    "clima": [
+      "onírico",
+      "artesanal"
+    ],
+    "tecnica_codigo": "Vídeo real processado: detecção de bordas (shader Sobel) + posterização por frame dá o ar rotoscópico; qualidade de verdade pede estilização vídeo a vídeo por IA, depois tocada com <OffthreadVideo>.",
+    "dificuldade_codigo": "difícil",
+    "precisa_assets": "fotos/vídeo reais",
+    "referencias": [
+      {
+        "titulo": "Rotoscoping",
+        "url": "https://en.wikipedia.org/wiki/Rotoscoping",
+        "fonte": "Wikipedia"
+      },
+      {
+        "titulo": "A-ha's rotoscoped 1985 music video for 'Take On Me'",
+        "url": "https://beforesandafters.com/2020/02/20/a-has-rotoscoped-1985-music-video-for-take-on-me-has-been-watched-a-lot/",
+        "fonte": "befores & afters (artigo)"
+      },
+      {
+        "titulo": "Tag: rotoscope",
+        "url": "https://motionographer.com/tag/rotoscope/",
+        "fonte": "Motionographer"
+      }
+    ]
+  },
+  {
+    "id": "pintura-animada",
+    "nome": "Pintura animada (óleo sobre vidro)",
+    "nome_en": "Paint-on-glass / painterly animation",
+    "familia": "Artesanal",
+    "descricao": "Cada quadro é uma pintura: pinceladas de tinta a óleo que escorrem e se transformam, como em 'O Velho e o Mar', de Petrov, ou 'Com Amor, Van Gogh'. Poético, intenso e de museu.",
+    "assinatura": [
+      "pinceladas visíveis que mudam a cada quadro",
+      "transições por metamorfose da tinta",
+      "luz e paleta de pintor (impressionista)",
+      "ritmo lento e contemplativo",
+      "trilha orquestral ou piano"
+    ],
+    "bom_para": [
+      "contar história",
+      "institucional",
+      "abertura/vinheta"
+    ],
+    "clima": [
+      "onírico",
+      "elegante",
+      "artesanal"
+    ],
+    "tecnica_codigo": "Imagens geradas por IA em estilo pintura, com transições por shader de 'smear' (deslocamento por ruído) entre elas; ou filtro de pintura (Kuwahara) em shader sobre vídeo ou 3D. Textura de tela por cima.",
+    "dificuldade_codigo": "difícil",
+    "precisa_assets": "imagens geradas",
+    "referencias": [
+      {
+        "titulo": "Paint-on-glass animation",
+        "url": "https://en.wikipedia.org/wiki/Paint-on-glass_animation",
+        "fonte": "Wikipedia"
+      },
+      {
+        "titulo": "The Old Man and The Sea, finger-painted and animated on glass",
+        "url": "https://www.themarginalian.org/2011/05/04/the-old-man-and-the-sea-aleksandr-petrov/",
+        "fonte": "The Marginalian"
+      },
+      {
+        "titulo": "Loving Vincent (2017)",
+        "url": "https://en.wikipedia.org/wiki/Loving_Vincent",
+        "fonte": "Wikipedia"
+      }
+    ]
+  },
+  {
+    "id": "silhueta",
+    "nome": "Silhueta (teatro de sombras)",
+    "nome_en": "Silhouette animation",
+    "familia": "Artesanal",
+    "descricao": "Figuras recortadas em preto contra fundo de luz colorida, com detalhes rendados, como nos filmes de Lotte Reiniger. Encantado, de conto de fadas e dramático.",
+    "assinatura": [
+      "silhuetas pretas recortadas com detalhes finos",
+      "fundo em degradê de luz (âmbar, azul, magenta)",
+      "personagens articulados como marionetes, juntas visíveis",
+      "ação de perfil, como num palco",
+      "trilha de câmara ou folclórica"
+    ],
+    "bom_para": [
+      "contar história",
+      "abertura/vinheta"
+    ],
+    "clima": [
+      "onírico",
+      "histórico",
+      "elegante"
+    ],
+    "tecnica_codigo": "SVG preto sobre gradiente; personagens como grupos articulados (rotate com transform-origin nas juntas) animados por keyframes; camadas em parallax lateral.",
+    "dificuldade_codigo": "médio",
+    "precisa_assets": "ilustração sob medida",
+    "referencias": [
+      {
+        "titulo": "Silhouette animation",
+        "url": "https://en.wikipedia.org/wiki/Silhouette_animation",
+        "fonte": "Wikipedia"
+      },
+      {
+        "titulo": "Lotte Reiniger",
+        "url": "https://en.wikipedia.org/wiki/Lotte_Reiniger",
+        "fonte": "Wikipedia"
+      }
+    ]
+  },
+  {
+    "id": "tinta-aquarela",
+    "nome": "Nanquim e aquarela",
+    "nome_en": "Ink wash / watercolor animation",
+    "familia": "Artesanal",
+    "descricao": "Pinceladas de tinta que se espalham no papel molhado, manchas que florescem e paisagens em tons de cinza, como a animação chinesa em nanquim. Contemplativo e poético.",
+    "assinatura": [
+      "manchas que se espalham com borda difusa",
+      "tons de cinza ou sépia com um único acento de cor",
+      "muito papel vazio na composição",
+      "pinceladas desenhando-se em tempo real",
+      "som ambiente (vento, água) e instrumentos tradicionais"
+    ],
+    "bom_para": [
+      "contar história",
+      "institucional"
+    ],
+    "clima": [
+      "calmo",
+      "onírico",
+      "artesanal"
+    ],
+    "tecnica_codigo": "Revelação por máscara de ruído crescente (feTurbulence + feDisplacementMap animados) para simular a tinta espalhando; texturas de aquarela geradas por IA como camadas; blend multiply sobre papel.",
+    "dificuldade_codigo": "médio",
+    "precisa_assets": "imagens geradas",
+    "referencias": [
+      {
+        "titulo": "Ink wash animation",
+        "url": "https://en.wikipedia.org/wiki/Ink_wash_animation",
+        "fonte": "Wikipedia"
+      },
+      {
+        "titulo": "Feelings from Mountain and Water (Te Wei, 1988)",
+        "url": "https://vimeo.com/65464332",
+        "fonte": "Vimeo"
+      }
+    ]
+  },
+  {
+    "id": "morphing",
+    "nome": "Morphing de formas",
+    "nome_en": "Shape morphing",
+    "familia": "Abstrato e generativo",
+    "descricao": "Uma forma se transforma continuamente em outra (ícone vira letra, que vira logo) sem cortes. Fluido, inteligente e hipnótico; costura ideias numa linha só.",
+    "assinatura": [
+      "transições contínuas sem corte entre formas",
+      "formas chapadas ou de linha sobre fundo limpo",
+      "easing forte (acelera e desacelera) em cada metamorfose",
+      "um único elemento guia o olhar o tempo todo",
+      "swoosh contínuo"
+    ],
+    "bom_para": [
+      "explicar",
+      "anunciar/lançar",
+      "institucional"
+    ],
+    "clima": [
+      "elegante",
+      "tecnológico"
+    ],
+    "tecnica_codigo": "@remotion/paths: interpolatePath() entre SVGs (normalizando o número de pontos), ou flubber para metamorfoses complexas; cores com interpolateColors().",
+    "dificuldade_codigo": "fácil",
+    "precisa_assets": "nenhum",
+    "referencias": [
+      {
+        "titulo": "How to Create Morphing Letters in After Effects",
+        "url": "https://schoolofmotion.com/blog/morphing-letters-after-effects",
+        "fonte": "School of Motion"
+      },
+      {
+        "titulo": "Morphing",
+        "url": "https://en.wikipedia.org/wiki/Morphing",
+        "fonte": "Wikipedia"
+      },
+      {
+        "titulo": "Goodbooks (animação de transição)",
+        "url": "https://buck.co/work/goodbooks",
+        "fonte": "BUCK (estúdio)"
+      }
+    ]
+  },
+  {
+    "id": "liquido",
+    "nome": "Líquido (fluid motion)",
+    "nome_en": "Liquid motion",
+    "familia": "Abstrato e generativo",
+    "descricao": "Formas que escorrem, respingam e se fundem como gotas até virar a próxima cena. Orgânico, sensorial e cheio de energia; muito usado em transições e em marcas de bebida e beleza.",
+    "assinatura": [
+      "blobs que se fundem e se separam (metaballs)",
+      "respingos e gotas com antecipação e overshoot",
+      "transições em que o líquido cobre a tela",
+      "cores chapadas vibrantes ou brilho molhado",
+      "splash e bolhas no som"
+    ],
+    "bom_para": [
+      "anunciar/lançar",
+      "vender",
+      "divertir"
+    ],
+    "clima": [
+      "enérgico",
+      "divertido"
+    ],
+    "tecnica_codigo": "Efeito gooey em SVG (feGaussianBlur + feColorMatrix com limiar de alfa) sobre círculos animados; metaballs em shader WebGL para versão sofisticada; respingos como partículas com gravidade calculada em função do frame.",
+    "dificuldade_codigo": "médio",
+    "precisa_assets": "nenhum",
+    "referencias": [
+      {
+        "titulo": "Tag: fluid",
+        "url": "https://motionographer.com/tag/fluid/",
+        "fonte": "Motionographer"
+      },
+      {
+        "titulo": "Creating a liquid animation in After Effects",
+        "url": "https://www.motionboutique.com/learn/liquid-animation",
+        "fonte": "Motion Boutique (tutorial)"
+      },
+      {
+        "titulo": "Metaballs",
+        "url": "https://en.wikipedia.org/wiki/Metaballs",
+        "fonte": "Wikipedia"
+      }
+    ]
+  },
+  {
+    "id": "particulas-generativo",
+    "nome": "Partículas e arte generativa",
+    "nome_en": "Particles / generative art",
+    "familia": "Abstrato e generativo",
+    "descricao": "Milhares de pontos regidos por algoritmos formam fluxos, nuvens e figuras que se desfazem e se refazem. Tecnológico, grandioso e abstrato, da visualização de IA à abertura de evento (Refik Anadol).",
+    "assinatura": [
+      "milhares de partículas com rastro",
+      "campos de fluxo e ruído guiando o movimento",
+      "partículas que formam logo ou rosto e explodem",
+      "fundo escuro com cores luminosas e bloom",
+      "trilha ambient ou eletrônica"
+    ],
+    "bom_para": [
+      "anunciar/lançar",
+      "dados",
+      "institucional"
+    ],
+    "clima": [
+      "tecnológico",
+      "onírico",
+      "épico"
+    ],
+    "tecnica_codigo": "Canvas 2D ou WebGL (three.js Points / shader) com posições calculadas como função pura do frame (noise3D de @remotion/noise), nunca estado acumulado, para o render ser determinístico; formas-alvo amostradas de SVG ou imagem.",
+    "dificuldade_codigo": "difícil",
+    "precisa_assets": "nenhum",
+    "referencias": [
+      {
+        "titulo": "Particle system",
+        "url": "https://en.wikipedia.org/wiki/Particle_system",
+        "fonte": "Wikipedia"
+      },
+      {
+        "titulo": "Machine Hallucinations: Nature Dreams",
+        "url": "https://refikanadol.com/works/machine-hallucinations-nature-dreams/",
+        "fonte": "Refik Anadol (estúdio)"
+      },
+      {
+        "titulo": "Generative art",
+        "url": "https://en.wikipedia.org/wiki/Generative_art",
+        "fonte": "Wikipedia"
+      }
+    ]
+  },
+  {
+    "id": "loop-geometrico",
+    "nome": "Loop geométrico hipnótico",
+    "nome_en": "Geometric loops / math GIFs",
+    "familia": "Abstrato e generativo",
+    "descricao": "Padrões de formas simples em grade que giram, ondulam e se recombinam num loop perfeito, com defasagem calculada. Matemático, hipnótico e minimalista (Bees & Bombs).",
+    "assinatura": [
+      "grade de formas idênticas com atraso por posição",
+      "loop perfeito de 2 a 6 segundos",
+      "preto e branco ou 2–3 cores",
+      "ilusões de ótica e moiré",
+      "easing senoidal suave"
+    ],
+    "bom_para": [
+      "divertir",
+      "anunciar/lançar",
+      "abertura/vinheta"
+    ],
+    "clima": [
+      "calmo",
+      "elegante"
+    ],
+    "tecnica_codigo": "SVG ou Canvas: t = (frame % duração) / duração; cada elemento usa uma fase f(x, y) com Math.sin/easing; tudo função pura do frame, loop garantido pela periodicidade.",
+    "dificuldade_codigo": "fácil",
+    "precisa_assets": "nenhum",
+    "referencias": [
+      {
+        "titulo": "Dizzying geometric GIFs by David Whyte",
+        "url": "https://www.thisiscolossal.com/2014/06/dizzying-geometric-gifs-by-david-whyte/",
+        "fonte": "Colossal"
+      },
+      {
+        "titulo": "Bees & Bombs",
+        "url": "https://beesandbombs.tumblr.com/",
+        "fonte": "Bees & Bombs (artista)"
+      },
+      {
+        "titulo": "Op art",
+        "url": "https://en.wikipedia.org/wiki/Op_art",
+        "fonte": "Wikipedia"
+      }
+    ]
+  },
+  {
+    "id": "visualizador-audio",
+    "nome": "Visualizador de áudio",
+    "nome_en": "Audio-reactive visualizer",
+    "familia": "Abstrato e generativo",
+    "descricao": "Formas de onda, barras de espectro e formas pulsando exatamente com a voz ou a música. Ideal para podcast, trecho de entrevista e música: dá vida a conteúdo que é só som.",
+    "assinatura": [
+      "barras ou ondas reagindo à amplitude e à frequência",
+      "pulsos de escala e brilho no bumbo",
+      "onda circular em volta de foto ou logo",
+      "fundo escuro com cor de destaque neon",
+      "legendas sincronizadas junto"
+    ],
+    "bom_para": [
+      "divertir",
+      "anunciar/lançar",
+      "explicar"
+    ],
+    "clima": [
+      "enérgico",
+      "tecnológico"
+    ],
+    "tecnica_codigo": "@remotion/media-utils: useAudioData() + visualizeAudio() dão o espectro por frame; mapear para altura de barras SVG ou raio de um círculo. Determinístico por construção.",
+    "dificuldade_codigo": "fácil",
+    "precisa_assets": "nenhum",
+    "referencias": [
+      {
+        "titulo": "Music visualization",
+        "url": "https://en.wikipedia.org/wiki/Music_visualization",
+        "fonte": "Wikipedia"
+      },
+      {
+        "titulo": "Audio visualization",
+        "url": "https://www.remotion.dev/docs/audio/visualization",
+        "fonte": "Documentação Remotion"
+      },
+      {
+        "titulo": "MilkDrop",
+        "url": "https://en.wikipedia.org/wiki/Milkdrop",
+        "fonte": "Wikipedia"
+      }
+    ]
+  },
+  {
+    "id": "ken-burns-parallax",
+    "nome": "Fotos com Ken Burns e parallax 2.5D",
+    "nome_en": "Ken Burns effect / 2.5D photo parallax",
+    "familia": "Cinema e documentário",
+    "descricao": "Fotografias paradas ganham vida com zoom lento, pan e camadas (primeiro plano, fundo) que se deslocam em profundidade. A base do documentário histórico: sério, envolvente e barato.",
+    "assinatura": [
+      "zoom e pan lentos e constantes",
+      "foto separada em 2–4 camadas com parallax",
+      "grão e vinheta suaves",
+      "transições por dissolve",
+      "narração grave e trilha orquestral"
+    ],
+    "bom_para": [
+      "contar história",
+      "institucional"
+    ],
+    "clima": [
+      "histórico",
+      "sério",
+      "calmo"
+    ],
+    "tecnica_codigo": "<Img> com scale/translate interpolados; para 2.5D, recortar camadas (remoção de fundo por IA + preenchimento do fundo) e mover cada uma em velocidade diferente, ou mapa de profundidade + shader de deslocamento.",
+    "dificuldade_codigo": "fácil",
+    "precisa_assets": "fotos/vídeo reais",
+    "referencias": [
+      {
+        "titulo": "Ken Burns effect",
+        "url": "https://en.wikipedia.org/wiki/Ken_Burns_effect",
+        "fonte": "Wikipedia"
+      },
+      {
+        "titulo": "The Kid Stays in the Picture (2002), que popularizou o parallax de fotos",
+        "url": "https://en.wikipedia.org/wiki/The_Kid_Stays_in_the_Picture",
+        "fonte": "Wikipedia"
+      },
+      {
+        "titulo": "Turning photos into 2.5D parallax animations with machine learning",
+        "url": "https://waxy.org/2019/11/turning-photos-into-2-5d-parallax-animations-with-machine-learning/",
+        "fonte": "Waxy.org"
+      }
+    ]
+  },
+  {
+    "id": "arquivo-grao",
+    "nome": "Arquivo com grão de película",
+    "nome_en": "Archival footage / film grain",
+    "familia": "Cinema e documentário",
+    "descricao": "Imagens de arquivo, cinejornal e película com grão, riscos, queimados de luz e tremor de projetor. Dá autenticidade histórica e textura de cinema.",
+    "assinatura": [
+      "grão de película e riscos verticais",
+      "tremor de quadro (gate weave) e flicker de exposição",
+      "light leaks e queimado de fim de rolo",
+      "4:3 ou letterbox com bordas de película",
+      "som de projetor e trilha de época"
+    ],
+    "bom_para": [
+      "contar história",
+      "institucional",
+      "abertura/vinheta"
+    ],
+    "clima": [
+      "histórico",
+      "nostálgico",
+      "sério"
+    ],
+    "tecnica_codigo": "<OffthreadVideo>/<Img> de arquivo + overlays: grão como ruído por frame (Canvas ou vídeo de grão em blend overlay), riscos e poeira sorteados por random(frame), gate weave = translate aleatório de 1–2px, flicker = brilho oscilando.",
+    "dificuldade_codigo": "fácil",
+    "precisa_assets": "fotos/vídeo reais",
+    "referencias": [
+      {
+        "titulo": "Film grain",
+        "url": "https://en.wikipedia.org/wiki/Film_grain",
+        "fonte": "Wikipedia"
+      },
+      {
+        "titulo": "Newsreel (cinejornal)",
+        "url": "https://en.wikipedia.org/wiki/Newsreel",
+        "fonte": "Wikipedia"
+      },
+      {
+        "titulo": "Stranger Things (2016): títulos com grão e ópticos de película",
+        "url": "https://www.artofthetitle.com/title/stranger-things/",
+        "fonte": "Art of the Title"
+      }
+    ]
+  },
+  {
+    "id": "estilo-vox",
+    "nome": "Explicativo estilo Vox (jornalismo em colagem)",
+    "nome_en": "Vox-style explainer",
+    "familia": "Cinema e documentário",
+    "descricao": "Jornalismo explicativo em camadas: recortes de arquivo em meio-tom, mapas, capturas de notícia com marca-texto, gráficos e papel texturizado. Sério e investigativo, mas acessível.",
+    "assinatura": [
+      "papel texturizado e recortes em meio-tom preto e branco",
+      "marca-texto amarelo e sublinhado sobre manchetes e documentos",
+      "uma cor de destaque (vermelho ou amarelo) no meio de neutros",
+      "câmera deslizando sobre uma 'mesa' 2.5D",
+      "cortes no ritmo da narração, a cada 1–3 s"
+    ],
+    "bom_para": [
+      "explicar",
+      "contar história",
+      "dados"
+    ],
+    "clima": [
+      "jornalístico",
+      "sério",
+      "didático"
+    ],
+    "tecnica_codigo": "Composição React em camadas: imagens de arquivo com filtro halftone/duotone, marca-texto animado com clip-path ou largura interpolada sobre o texto, papel como fundo; câmera = transform do container; gráficos em SVG.",
+    "dificuldade_codigo": "médio",
+    "precisa_assets": "fotos/vídeo reais",
+    "referencias": [
+      {
+        "titulo": "How Vox uses animation to make complicated topics digestible",
+        "url": "https://www.storybench.org/how-vox-uses-animation-to-make-complicated-topics-digestible-for-everyone/",
+        "fonte": "Storybench (artigo)"
+      },
+      {
+        "titulo": "Vox Media",
+        "url": "https://en.wikipedia.org/wiki/Vox_Media",
+        "fonte": "Wikipedia"
+      }
+    ]
+  },
+  {
+    "id": "quadro-investigacao",
+    "nome": "Quadro de investigação (fio vermelho)",
+    "nome_en": "Evidence board / conspiracy board",
+    "familia": "Cinema e documentário",
+    "descricao": "Fotos, recortes e documentos presos num mural de cortiça, ligados por fios vermelhos que se esticam enquanto a câmera investiga. Suspense de true crime; ótimo para ligar pessoas e fatos.",
+    "assinatura": [
+      "cortiça ou parede com polaroids, recortes e post-its",
+      "fio vermelho se esticando de alfinete a alfinete",
+      "câmera na mão, com foco trocando entre itens",
+      "luz baixa e dramática (luminária)",
+      "trilha tensa de suspense"
+    ],
+    "bom_para": [
+      "contar história",
+      "explicar"
+    ],
+    "clima": [
+      "sombrio",
+      "jornalístico",
+      "provocativo"
+    ],
+    "tecnica_codigo": "Cena 2.5D em React: itens como <Img> com sombra e rotação leve; fios como path SVG com evolvePath() entre as coordenadas dos alfinetes; câmera = transform + desfoque por camada para profundidade.",
+    "dificuldade_codigo": "médio",
+    "precisa_assets": "fotos/vídeo reais",
+    "referencias": [
+      {
+        "titulo": "Evidence board",
+        "url": "https://en.wikipedia.org/wiki/Conspiracy_board",
+        "fonte": "Wikipedia"
+      }
+    ]
+  },
+  {
+    "id": "trailer-epico",
+    "nome": "Trailer épico",
+    "nome_en": "Epic trailer / cinematic teaser",
+    "familia": "Cinema e documentário",
+    "descricao": "Cartelas de texto que batem no escuro entre cortes rápidos, BRAAAM grave, silêncio e um crescendo até o título final. Máxima tensão e expectativa, na linguagem de trailer de cinema.",
+    "assinatura": [
+      "cartelas curtas em serifada ou sans larga sobre preto",
+      "cortes que aceleram até o clímax",
+      "BRAAAMs, impactos graves e silêncios abruptos",
+      "letterbox 2.39:1 e cor teal & orange",
+      "revelação final do título com brilho e partículas"
+    ],
+    "bom_para": [
+      "anunciar/lançar",
+      "vender",
+      "abertura/vinheta"
+    ],
+    "clima": [
+      "épico",
+      "sombrio",
+      "enérgico"
+    ],
+    "tecnica_codigo": "Blocos curtos com <Series>; texto com tracking animado e flare; cortes sincronizados a marcadores do áudio; letterbox com divs pretas; imagens ou vídeos de fundo (reais ou gerados) com push-in lento.",
+    "dificuldade_codigo": "fácil",
+    "precisa_assets": "fotos/vídeo reais",
+    "referencias": [
+      {
+        "titulo": "BRAAAM",
+        "url": "https://en.wikipedia.org/wiki/BRAAAM",
+        "fonte": "Wikipedia"
+      },
+      {
+        "titulo": "BRAAAM!: The Sound that Invaded the Hollywood Soundtrack",
+        "url": "https://longreads.com/2016/12/08/braaam-inception-hollywood-soundtracks/",
+        "fonte": "Longreads"
+      },
+      {
+        "titulo": "Trailer (promotion)",
+        "url": "https://en.wikipedia.org/wiki/Trailer_(promotion)",
+        "fonte": "Wikipedia"
+      }
+    ]
+  },
+  {
+    "id": "manchete-jornal",
+    "nome": "Jornal girando / manchete de época",
+    "nome_en": "Spinning newspaper / period headline",
+    "familia": "Cinema e documentário",
+    "descricao": "O jornal gira em direção à câmera e para na manchete do dia, em papel envelhecido e tipografia de época. Clichê clássico do cinema para marcar um fato histórico com drama ou ironia.",
+    "assinatura": [
+      "jornal girando e se aproximando até a manchete ficar legível",
+      "papel amarelado com colunas densas de texto",
+      "manchete em serifada condensada",
+      "som de rotativa ou fanfarra",
+      "muitas vezes em preto e branco com grão"
+    ],
+    "bom_para": [
+      "contar história",
+      "divertir"
+    ],
+    "clima": [
+      "histórico",
+      "nostálgico",
+      "divertido"
+    ],
+    "tecnica_codigo": "Página de jornal montada em HTML/CSS (colunas, manchete) com textura de papel; rotate + scale interpolados com easing de saída e motion blur (@remotion/motion-blur).",
+    "dificuldade_codigo": "fácil",
+    "precisa_assets": "nenhum",
+    "referencias": [
+      {
+        "titulo": "Spinning newspaper",
+        "url": "https://en.wikipedia.org/wiki/Spinning_newspaper",
+        "fonte": "Wikipedia"
+      },
+      {
+        "titulo": "Motion blur",
+        "url": "https://www.remotion.dev/docs/motion-blur/",
+        "fonte": "Documentação Remotion"
+      }
+    ]
+  },
+  {
+    "id": "meme-edit",
+    "nome": "Edição meme (zoom e Vine boom)",
+    "nome_en": "Meme edit / shitpost editing",
+    "familia": "Humor e redes sociais",
+    "descricao": "Edição caótica de internet: zoom súbito na cara, 'boom' grave, texto em Impact, imagem estourada, tremor e cortes secos. Irreverente e viral; fala a língua de quem cresceu no feed.",
+    "assinatura": [
+      "zoom instantâneo com tremor de câmera",
+      "efeitos sonoros de meme (Vine boom, risada, 'bruh')",
+      "texto Impact branco com contorno preto",
+      "imagem com saturação e nitidez estouradas (deep fried)",
+      "cortes secos, freeze frame e 'to be continued'"
+    ],
+    "bom_para": [
+      "divertir",
+      "vender"
+    ],
+    "clima": [
+      "irreverente",
+      "divertido",
+      "enérgico"
+    ],
+    "tecnica_codigo": "Vídeo ou imagens com scale em saltos (sem easing), shake por random(frame), filtros CSS saturate/contrast extremos; efeitos sonoros como <Audio> dentro de <Sequence>; Impact com -webkit-text-stroke.",
+    "dificuldade_codigo": "fácil",
+    "precisa_assets": "fotos/vídeo reais",
+    "referencias": [
+      {
+        "titulo": "Vine Thud / Boom Sound Effect",
+        "url": "https://knowyourmeme.com/memes/vine-thud-boom-sound-effect",
+        "fonte": "Know Your Meme"
+      },
+      {
+        "titulo": "Internet meme",
+        "url": "https://en.wikipedia.org/wiki/Internet_meme",
+        "fonte": "Wikipedia"
+      },
+      {
+        "titulo": "Impact (typeface)",
+        "url": "https://en.wikipedia.org/wiki/Impact_(typeface)",
+        "fonte": "Wikipedia"
+      }
+    ]
+  },
+  {
+    "id": "legendas-palavra",
+    "nome": "Legendas palavra a palavra",
+    "nome_en": "Word-by-word captions (Hormozi style)",
+    "familia": "Humor e redes sociais",
+    "descricao": "Legendas grandes que surgem palavra por palavra no ritmo da fala, com a palavra-chave colorida e pulando. Feitas para o feed no mudo: retêm atenção e reforçam a mensagem.",
+    "assinatura": [
+      "caixa alta, fonte condensada pesada, contorno preto",
+      "1–3 palavras por vez, sincronizadas à fala",
+      "palavra atual em amarelo ou verde, com pop de escala",
+      "emojis e ícones pontuais",
+      "posição no terço inferior, centralizada"
+    ],
+    "bom_para": [
+      "vender",
+      "explicar",
+      "divertir"
+    ],
+    "clima": [
+      "enérgico",
+      "didático"
+    ],
+    "tecnica_codigo": "@remotion/captions: createTikTokStyleCaptions() a partir de timestamps por palavra (Whisper ou TTS); cada página vira uma <Sequence>; palavra ativa com spring() na escala e troca de cor.",
+    "dificuldade_codigo": "fácil",
+    "precisa_assets": "fotos/vídeo reais",
+    "referencias": [
+      {
+        "titulo": "Hormozi Captions: the exact font, color and specs",
+        "url": "https://ascynd.io/en/blog/hormozi-captions",
+        "fonte": "Ascynd (artigo)"
+      },
+      {
+        "titulo": "createTikTokStyleCaptions()",
+        "url": "https://www.remotion.dev/docs/captions/create-tiktok-style-captions",
+        "fonte": "Documentação Remotion"
+      }
+    ]
+  },
+  {
+    "id": "letreiro-variedades",
+    "nome": "Letreiro de TV de variedades (telop)",
+    "nome_en": "Variety show telop / TV captions",
+    "familia": "Humor e redes sociais",
+    "descricao": "Texto gigante, colorido e com contorno grosso que pula na tela para comentar a cena, como nos programas de variedades japoneses e coreanos. Exagerado, cômico e muito expressivo.",
+    "assinatura": [
+      "texto com contorno duplo grosso e cores fortes (amarelo, rosa)",
+      "entrada com bounce, tremor ou zoom",
+      "onomatopeias e reações escritas ('!?')",
+      "ícones, emojis e efeitos de brilho ou gota de suor",
+      "efeitos sonoros de programa de auditório"
+    ],
+    "bom_para": [
+      "divertir",
+      "vender"
+    ],
+    "clima": [
+      "divertido",
+      "enérgico",
+      "irreverente"
+    ],
+    "tecnica_codigo": "React/CSS: contorno duplo com vários text-shadow ou paint-order: stroke; entrada com spring() de overshoot; shake com random(frame); sobre vídeo real ou cena animada.",
+    "dificuldade_codigo": "fácil",
+    "precisa_assets": "fotos/vídeo reais",
+    "referencias": [
+      {
+        "titulo": "Telop",
+        "url": "https://en.wikipedia.org/wiki/Telop",
+        "fonte": "Wikipedia"
+      },
+      {
+        "titulo": "Japanese variety show",
+        "url": "https://en.wikipedia.org/wiki/Japanese_variety_show",
+        "fonte": "Wikipedia"
+      }
+    ]
+  },
+  {
+    "id": "boneco-palito",
+    "nome": "Boneco palito",
+    "nome_en": "Stick figure animation",
+    "familia": "Humor e redes sociais",
+    "descricao": "Personagens de traço mínimo (cabeça redonda e linhas) em ação exagerada ou piada seca, como xkcd e Animator vs. Animation. Humor inteligente, rápido de produzir e universal.",
+    "assinatura": [
+      "personagens de linha preta, cabeça circular, rosto mínimo",
+      "fundo branco e poucos objetos",
+      "ação exagerada (lutas, quedas) ou timing de piada seca",
+      "texto em balão manuscrito",
+      "efeitos sonoros de cartoon"
+    ],
+    "bom_para": [
+      "divertir",
+      "explicar"
+    ],
+    "clima": [
+      "divertido",
+      "irreverente"
+    ],
+    "tecnica_codigo": "SVG com esqueleto simples (juntas como pontos, membros como linhas) e cinemática direta: ângulos por junta animados com interpolate()/spring(); poses-chave em JSON interpoladas.",
+    "dificuldade_codigo": "fácil",
+    "precisa_assets": "nenhum",
+    "referencias": [
+      {
+        "titulo": "Animator vs. Animation (Alan Becker)",
+        "url": "https://en.wikipedia.org/wiki/Animator_vs._Animation",
+        "fonte": "Wikipedia"
+      },
+      {
+        "titulo": "Stick figure",
+        "url": "https://en.wikipedia.org/wiki/Stick_figure",
+        "fonte": "Wikipedia"
+      },
+      {
+        "titulo": "xkcd",
+        "url": "https://en.wikipedia.org/wiki/Xkcd",
+        "fonte": "Wikipedia"
+      }
+    ]
+  }
+]
