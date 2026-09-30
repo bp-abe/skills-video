@@ -6,7 +6,7 @@ Três peças para fazer vídeo animado com o Claude Code, de ponta a ponta, escr
 |---|---|
 | [`video-animado/`](video-animado/) | **A skill de produção.** A partir de um tema, roteiro, anotações ou gravação, gera o vídeo pronto (MP4 16:9 e/ou 9:16): roteiro, conceito visual, narração, trilha, efeitos, animação em [Remotion](https://www.remotion.dev), revisão por um crítico independente com nota e render. Também edita vídeo gravado (corta silêncio e tomada errada, zoom, legenda palavra a palavra, XML para Premiere). |
 | [`pedido-de-video/`](pedido-de-video/) | **A skill que monta o pedido.** Transforma uma ideia solta no pedido que a `video-animado` executa bem: o que precisa ser dito (objetivo, público, mensagem, verdade, limites) e o que pode ficar aberto (estilo, voz, trilha). |
-| [`mesa-de-estilos/`](mesa-de-estilos/) | **Página de referências.** 60 estilos de motion design, cada um com uma amostra animada feita em código, filtros e "copiar direção de estilo" para colar no pedido. Abra `mesa-de-estilos/mesa-de-estilos.html` no navegador. |
+| [`mesa-de-estilos/`](mesa-de-estilos/) | **Página de referências.** 60 estilos de motion design, cada um com uma amostra animada feita em código, filtros e "copiar direção de estilo" para colar no pedido. **[Abrir a página](https://bp-abe.github.io/skills-video/mesa-de-estilos/mesa-de-estilos.html)** (ou abra o HTML local no navegador). |
 
 ## Princípio
 
