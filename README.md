@@ -1,11 +1,12 @@
 # Skills de vídeo para Claude Code
 
-Três peças para fazer vídeo animado com o Claude Code, de ponta a ponta, escrevendo código:
+Quatro peças para fazer e entregar vídeo animado com o Claude Code, de ponta a ponta, escrevendo código:
 
 | Pasta | O que é |
 |---|---|
 | [`video-animado/`](video-animado/) | **A skill de produção.** A partir de um tema, roteiro, anotações ou gravação, gera o vídeo pronto (MP4 16:9 e/ou 9:16): roteiro, conceito visual, narração, trilha, efeitos, animação em [Remotion](https://www.remotion.dev), revisão por um crítico independente com nota e render. Também edita vídeo gravado (corta silêncio e tomada errada, zoom, legenda palavra a palavra, XML para Premiere). |
 | [`pedido-de-video/`](pedido-de-video/) | **A skill que monta o pedido.** Transforma uma ideia solta no pedido que a `video-animado` executa bem: o que precisa ser dito (objetivo, público, mensagem, verdade, limites) e o que pode ficar aberto (estilo, voz, trilha). |
+| [`subir-videos/`](subir-videos/) | **A skill de entrega.** Sobe os MP4 prontos para uma pasta de nuvem sincronizada (Google Drive, Dropbox) num padrão de nomes fixo (`VVS_<TITULO>_<DUR>_<FORMATO>`), confere dimensão e duração, e registra cada vídeo num CSV para cruzar depois com o resultado dos anúncios. |
 | [`mesa-de-estilos/`](mesa-de-estilos/) | **Página de referências.** 60 estilos de motion design, cada um com uma amostra animada feita em código, filtros e "copiar direção de estilo" para colar no pedido. **[Abrir a página](https://bp-abe.github.io/skills-video/mesa-de-estilos/mesa-de-estilos.html)** (ou abra o HTML local no navegador). |
 
 ## Princípio
@@ -46,7 +47,7 @@ brew install node ffmpeg python@3.10 espeak-ng
 # 2. skills no Claude Code
 git clone https://github.com/bp-abe/skills-video.git
 mkdir -p ~/.claude/skills
-cp -R skills-video/video-animado skills-video/pedido-de-video ~/.claude/skills/
+cp -R skills-video/video-animado skills-video/pedido-de-video skills-video/subir-videos ~/.claude/skills/
 
 # 3. dependências do Remotion (uma vez; cada projeto novo clona estas)
 cd ~/.claude/skills/video-animado/template && npm install
