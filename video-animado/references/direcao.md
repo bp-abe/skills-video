@@ -86,7 +86,7 @@ um movimento linear de propósito). Quebra sem porquê escrito é erro.
 - Nasce do conceito, como a paleta (não reaproveitar a de outro vídeo sem linha de estilo pedida).
 - **Andamento dita a energia** (referência, não receita): 60–80 bpm majestoso/cinematográfico · 90–110 suave ·
   115–123 elegante/cinético · acima disso, euforia (serve a poucos projetos).
-- Composta para a edição: curva de intensidade por bloco (`partitura` ou `trilha.intensidade`), dinâmica de verdade
+- Composta para a edição: curva de intensidade por bloco (no `musica.py`, na `partitura` ou em `trilha.intensidade`), dinâmica de verdade
   (contemplação baixa, clímax alto), eventos na tela (`revelacao`, `corte`, `sobe`/`desce`, `silencio`).
 - Prompt do Lyria: instrumentação concreta, andamento, clima, arco e final claro; sem adjetivo vazio ("cinematic").
 - Trilha recebida pronta: medir andamento e virada **pela energia** (`beatmap.py`), nunca confiar na grade automática.

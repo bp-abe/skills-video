@@ -9,6 +9,7 @@ Atualizar a cada vídeo (fase 10). Status: ✅ funciona · ⚠️ funciona com l
 | Imagem Gemini (3-pro, 3.1-flash, 3.1-flash-lite, 2.5-flash) | ✅ | 2026-09-29 | **Com billing: 3.1-flash OK em 2K** (~10 imagens num vídeo, sem 429); imagem de referência inline mantém o tratamento entre gerações; às vezes duplica objeto. Free tier: 429 cota zero |
 | Veo 3.1 / fast / lite (vídeo) | ⚠️ | 2026-09-25 | free tier: 429 cota zero. **Com chave com billing: lite OK** — image-to-video 4 s, 1280×720, 24 fps, vem com áudio AAC; ~40 s de geração. Download do `uri` exige o header da chave |
 | Pollinations (imagem, sem chave) | ⚠️ | 2026-09-25 | responde, mas modelo fraco (Sana), marca d'água e anacronismos: não serve para realista |
+| Trilha MIDI + VSCO 2 / GeneralUser GS (**padrão**) | ✅ | 2026-10-01 | composta no `musica.py`, tocada local com orquestra gravada (CC0) e General MIDI; batidas exatas no `beats.json`; ver `musica.md` |
 | Lyria 3 Pro (trilha) | ✅ | 2026-09-25 | 64 s pedidos, estrutura [[A]]…[[E]]; saída baixa: volume 0,32 no Soundtrack |
 | Alinhamento por palavra (faster-whisper `medium`, local) | ✅ | 2026-09-25 | `scripts/align.py`; transcrição PT-BR exata nos 7 blocos, ~1 min para 56 s de fala |
 | TTS local Kokoro-82M (Apache 2.0) | ⚠️ rascunho | 2026-09-25 | ~1–3 s/frase; lê números certo, mas **soa estrangeiro em PT** ("parece gringo"): só rascunho de sincronia |

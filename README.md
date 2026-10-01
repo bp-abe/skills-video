@@ -27,10 +27,14 @@ Testado em macOS 15, Apple Silicon (M-series), 24 GB de RAM.
 | [Remotion](https://www.remotion.dev) + `@remotion/*` | 4.0.528 | animação em React, render MP4 (versões fixas em `video-animado/template/package.json`) | sim |
 | ffmpeg (do sistema, `brew install ffmpeg`) | 9.0 | loudness −14 LUFS em duas passadas, cortes, folhas de revisão (o ffmpeg que vem com o Remotion não tem os filtros) | sim |
 | Python 3.10 + `numpy`, `pillow` | 3.10.0 | scripts do template (tempo, som, revisão, diversidade, imagem) | sim |
-| Chave da API do Gemini (`GEMINI_API_KEY`) | — | voz Gemini TTS, trilha Lyria, imagem (`gemini-3.1-flash-image`), vídeo Veo | não: há modo offline |
+| Chave da API do Gemini (`GEMINI_API_KEY`) | — | voz Gemini TTS, trilha Lyria (opcional; a trilha padrão é MIDI), imagem (`gemini-3.1-flash-image`), vídeo Veo | não: há modo offline |
 | venv `tts-local`: `faster-whisper`, `librosa`, `num2words`, `soundfile`, `kokoro`, `chatterbox-tts` | 1.2.1 / 0.11 / 0.5.14 / 0.14 / 0.9.4 / 0.1.7 | transcrição local (conferir voz, alinhar palavra a palavra, modo edição), mapa de batidas, vozes locais de rascunho | sim (a transcrição) |
 | venv `voxcpm`: [`voxcpm`](https://github.com/OpenBMB/VoxCPM) | 2.0.3 | **voz local padrão**: VoxCPM2 com clonagem de voz autorizada; roda sem API | recomendado |
 | venv `qwen-tts` (opcional) | 0.1.1 | alternativa de voz local | não |
+| FluidSynth (`brew install fluid-synth`) | 2.6.1 | toca a trilha MIDI em General MIDI | sim (trilha padrão) |
+| venv `musica`: `pretty_midi`, `mido`, `soundfile`, `scipy` | — | compõe a trilha em MIDI e toca os instrumentos gravados | sim (trilha padrão) |
+| [VSCO 2 Community Edition](https://github.com/sgossner/VSCO-2-CE) | — | orquestra gravada (cordas, metais, madeiras, percussão), 5 GB, CC0 | recomendado |
+| [GeneralUser GS](https://github.com/mrbumpy409/GeneralUser-GS) | 2.0.3 | SoundFont General MIDI (bateria, baixo, piano, synth), 31 MB, uso livre | sim (trilha padrão) |
 | `espeak-ng` (`brew install espeak-ng`) | — | fonemas em português para o Kokoro | só com Kokoro |
 | Google Chrome | — | bancada de teste da Mesa de Estilos (screenshots headless) | não |
 | `yt-dlp` | — | baixar vídeos de referência para estudar | não |
@@ -59,7 +63,14 @@ python3 -m pip install numpy pillow
 python3.10 -m venv ~/.venvs/tts-local && ~/.venvs/tts-local/bin/pip install faster-whisper librosa num2words soundfile kokoro misaki chatterbox-tts
 python3.10 -m venv ~/.venvs/voxcpm && ~/.venvs/voxcpm/bin/pip install voxcpm soundfile
 
-# 6. chave do Gemini (opcional) — num arquivo fora de qualquer repositório
+# 6. trilha em MIDI (padrão): sintetizador, ambiente e instrumentos gravados
+brew install fluid-synth
+python3.10 -m venv ~/.venvs/musica && ~/.venvs/musica/bin/pip install pretty_midi mido numpy soundfile scipy
+mkdir -p ~/.local/share/video-animado/instrumentos && cd ~/.local/share/video-animado/instrumentos
+git clone --depth 1 https://github.com/sgossner/VSCO-2-CE.git
+git clone --depth 1 https://github.com/mrbumpy409/GeneralUser-GS.git
+
+# 7. chave do Gemini (opcional) — num arquivo fora de qualquer repositório
 mkdir -p ~/.config && echo 'export GEMINI_API_KEY=sua-chave' >> ~/.config/secrets.env && chmod 600 ~/.config/secrets.env
 ```
 
@@ -94,6 +105,8 @@ sai em `out/`.
 | Componente | Licença |
 |---|---|
 | Kenney (efeitos) | CC0 |
+| VSCO 2 Community Edition (instrumentos) | CC0 |
+| GeneralUser GS (SoundFont) | GeneralUser GS License v2.0 (uso livre, inclusive comercial) |
 | VoxCPM2 | Apache 2.0 |
 | Kokoro | Apache 2.0 |
 | Chatterbox | MIT |

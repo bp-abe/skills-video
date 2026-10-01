@@ -47,7 +47,7 @@
   ],
   "tratamento_imagem": "",
   "imagens": [],
-  "_leia": "estilo, conceito e trilha vêm vazios de propósito: cada vídeo decide (ver SKILL.md). conceito.materiais = os do conceito escolhido em conceitos.json (o diversidade.py registra). trilha.fonte = lyria (prompt da música do conceito) | arquivo (música licenciada) | partitura (composta em código pela cena). Os scripts param se estiverem vazios. Voz padrão: VoxCPM2 clonada de uma referência autorizada (ver biblioteca/vozes/README.md); vídeo público pede voz com direito de uso. voz_params.controle = direção de leitura com o timbre da voz de referência (ex.: \"narrador de documentário, grave, solene\"); vazio = clone fiel. tratamento_imagem = o tratamento da bíblia em inglês, vai em todo prompt do img.py.",
+  "_leia": "estilo, conceito e trilha vêm vazios de propósito: cada vídeo decide (ver SKILL.md). conceito.materiais = os do conceito escolhido em conceitos.json (o diversidade.py registra). trilha.fonte vazio = MIDI (padrão: o musica.py compõe na timeline e toca com orquestra gravada; ver references/musica.md) | arquivo (música licenciada; trilha.arquivo preenchido já escolhe) | lyria (gênero fora da orquestra) | partitura (som sintético de propósito). Voz padrão: VoxCPM2 clonada de uma referência autorizada (ver biblioteca/vozes/README.md); vídeo público pede voz com direito de uso. voz_params.controle = direção de leitura com o timbre da voz de referência (ex.: \"narrador de documentário, grave, solene\"); vazio = clone fiel. tratamento_imagem = o tratamento da bíblia em inglês, vai em todo prompt do img.py.",
   "voz_params": {
     "referencia": "~/.claude/skills/video-animado/biblioteca/vozes/<sua-voz>/ref.wav",
     "referencia_texto": "",

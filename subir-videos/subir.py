@@ -44,10 +44,10 @@ def ler(p):
         return ''
 
 
-def como_foi_feito(v, camp, dur_nom, arquivos):
+def como_foi_feito(v, camp, dur_nom, arquivos, nome_video=''):
     """Documento do processo, montado a partir do projeto de origem (roteiro.json, ANALISE.md, RELATORIO.md)."""
     at = v.get('atributos', {}); proj = os.path.expanduser(at.get('projeto', ''))
-    L = [f"# {v['titulo']}", '', f"Campanha **{camp}** · duração nominal **{dur_nom}** · entregue em {datetime.date.today():%d/%m/%Y}", '',
+    L = [f"# {v['titulo']}", '', f"**Nome do vídeo:** `{nome_video}`", '', f"Campanha **{camp}** · duração nominal **{dur_nom}** · entregue em {datetime.date.today():%d/%m/%Y}", '',
          '## Arquivos', '', '| Arquivo | Formato | Dimensão | Duração real |', '|---|---|---|---|']
     L += [f'| `{nome}` | {fmt} | {w}×{h} | {f"{dur:.1f}".replace(".", ",")} s |' for nome, fmt, (w, h), dur in arquivos]
     ficha = [f'| {rot} | {at[k]} |' for k, rot in [('direcao', 'Direção criativa'), ('processo', 'Processo'), ('voz', 'Voz'), ('trilha', 'Trilha')] if at.get(k)]
@@ -117,7 +117,7 @@ def main():
             nome = f'{pre}_{fmt}_{slug}.mp4'
             plano.append((src, os.path.join(pasta, nome), f'{pre}_{slug}', fmt, dur, v.get('atributos', {}), tit))
             arqs.append((nome, fmt, (w, h), dur))
-        docs.append((os.path.join(pasta, 'como_foi_feito.md'), v, d, arqs))
+        docs.append((os.path.join(pasta, 'como_foi_feito.md'), v, d, arqs, f'{pre}_{slug}'))
     for slug, ds in por_slug.items():
         if len(ds) > 1:
             avisos.append(f'{pre}_{slug} existe em {", ".join(sorted(ds))}: mesmo nome de arquivo em pastas de duração '
@@ -151,9 +151,9 @@ def main():
             w.writerow([datetime.date.today().isoformat(), camp, pasta, os.path.basename(alvo), fmt, round(dur, 2),
                         os.path.relpath(alvo, dest), man.get('drive_link', ''), at.get('direcao', ''), at.get('processo', ''),
                         at.get('voz', ''), at.get('trilha', ''), at.get('projeto', ''), src, tit, ''])
-    for md, v, d, arqs in docs:
+    for md, v, d, arqs, nv in docs:
         os.makedirs(os.path.dirname(md), exist_ok=True)
-        open(md, 'w', encoding='utf-8').write(como_foi_feito(v, camp, d, arqs))
+        open(md, 'w', encoding='utf-8').write(como_foi_feito(v, camp, d, arqs, nv))
     print(f'\n{len(plano)} arquivos {"registrados" if so_reg else "copiados para a pasta sincronizada"} + {len(docs)} '
           f'como_foi_feito.md. Registro: {REGISTRO}')
     print('Conferir no Drive em alguns minutos (o sync sobe em segundo plano).')
