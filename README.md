@@ -79,6 +79,16 @@ mkdir -p ~/.config && echo 'export GEMINI_API_KEY=sua-chave' >> ~/.config/secret
 `template/roteiro.json` para essa pasta. **Clonagem só com autorização por escrito de quem fala.** Sem voz clonada,
 use uma voz do Gemini (`"voz": "Charon"`, por exemplo) ou uma voz desenhada do VoxCPM (`voz_params.descricao`).
 
+## Conferir a instalação
+
+```bash
+bash <(curl -s https://raw.githubusercontent.com/bp-abe/skills-video/main/verificar.sh)
+```
+
+Mostra o que está instalado e o que falta (versão da skill, ferramentas, instrumentos, vozes, chave do Gemini), sem
+imprimir chaves. Se o vídeo sair pior que o esperado, rode isto primeiro: a falta de geração de imagem e da orquestra
+gravada são as causas mais comuns.
+
 ## Primeiro vídeo
 
 No Claude Code:
