@@ -109,6 +109,8 @@ brief → roteiro → voz → medir → som + batidas → assets → storyboard 
 - **Tempo nunca é número solto**: `cue`, `cueW`, `blockStart`, `naBatida(frame)`, `batida(i)`, `virada()`.
 - **Formato**: `useFmt()` + `pick(paisagem, retrato)`; toda cena roda nos dois (reenquadrar, não recortar).
 - **Movimento**: `mola(frame, at, 'ui'|'padrao'|'pesada'|'viva')`; regras em [direcao.md](references/direcao.md).
+- **Efeitos sonoros**: o template não traz nenhum (a lista `SFX` começa vazia). Cada efeito entra por um motivo do
+  conceito, 3–5 por minuto; whoosh em transição é o vício a evitar (o `diversidade.py` acusa).
 - **Núcleo neutro** do template: `tema.ts` (cores e fontes do vídeo), `lib.ts` (tempo, formato, batidas, molas),
   `stage.tsx` (`SceneStack` com `corte`/`wipe`/`zoom` ou transição própria `TransFn`, `Sheet`, `Soundtrack`, `sfxVar`),
   `acabamento.tsx`. Peças prontas ficam na `biblioteca/componentes/`, opcionais, abertas só depois do conceito.

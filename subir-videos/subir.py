@@ -13,7 +13,7 @@ import csv, datetime, json, os, re, shutil, subprocess, sys, unicodedata
 
 FMT = {'vertical': (1080, 1920), 'wide': (1920, 1080), 'square': (1080, 1080)}
 SINONIMO = {'horizontal': 'wide', 'quadrado': 'square', '9x16': 'vertical', '16x9': 'wide', '1x1': 'square'}
-NOMINAL = {'6S': 6, '10S': 10, '15S': 15, '20S': 20, '30S': 30, '45S': 45, '60S': 60, '90S': 90}
+NOMINAL = {'6S': 6, '10S': 10, '15S': 15, '20S': 20, '30S': 30, '45S': 45, '60S': 60, '90S': 90, '120S': 120}
 FORA = set(('o a os as um uma uns umas de do da dos das d em no na nos nas num numa nuns numas dum duma duns dumas '
             'por pelo pela pelos pelas para pra pro pras pros com sem sob sobre ao aos ate entre contra '
             'desde apos perante ante tras e que').split())  # comparado já sem acento (à, até, após, trás)
@@ -112,7 +112,8 @@ def main():
             w, h, dur = probe(src)
             if (w, h) != FMT[fmt]:
                 erros.append(f'"{tit}" {fmt}: {w}×{h}, esperado {FMT[fmt][0]}×{FMT[fmt][1]}')
-            if d in NOMINAL and abs(dur - NOMINAL[d]) > 1.5:
+            # a duração nominal é o teto do anúncio: aceita até 1,5 s acima ou até 10% abaixo (57 s num 60S)
+            if d in NOMINAL and not (NOMINAL[d] * 0.9 <= dur <= NOMINAL[d] + 1.5):
                 erros.append(f'"{tit}" {fmt}: {dur:.1f} s não bate com {d}')
             nome = f'{pre}_{fmt}_{slug}.mp4'
             plano.append((src, os.path.join(pasta, nome), f'{pre}_{slug}', fmt, dur, v.get('atributos', {}), tit))

@@ -15,6 +15,9 @@ só vai para o ANALISE dele. Versão completa com datas e projetos: `historico/A
   do WAV, não pelo `words.json`.
 - Voz lenta (Gemini 2.5): `tempo_voz`/`tempo` por bloco (atempo) sem mudar o tom; estilo "dramático" faz ler palavra por
   palavra — slogan pede `estilo_voz` próprio ("numa só respiração").
+- Nunca desacelerar voz com atempo < 1: a voz clonada a 0,82–0,88 soou "chapado" (usuário, 01/10). Fala rápida se resolve no texto
+  ou na gravação, não esticando. Acelerar (até ~1,22) é seguro. E `estilo_voz` com "pausado" fez o Gemini arrastar (144 s
+  para 106 s de texto): pedir "ritmo firme e fluido".
 - Gravação pronta como narração: cortar por frase em `audio_raw/<id>.wav` + `.json`, **não rodar tts.py**;
   áudio já mixado com trilha: alinhar por palavra e tratar cada palavra como frase.
 - **Uma voz local pesada por vez na máquina**: VoxCPM2 ocupa 10–13 GB; duas juntas (agentes em paralelo) levaram o
