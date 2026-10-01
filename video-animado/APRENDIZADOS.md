@@ -52,10 +52,9 @@ só vai para o ANALISE dele. Versão completa com datas e projetos: `historico/A
 ## Som
 - Medir o mix por trecho (voz × trilha) antes de entregar; trilha de mercado vem alta (−14 dB RMS): baixar sob a voz.
 - Efeito em toda transição cansa: reservar para 3–5 momentos (feedback de uso).
-- `loudnorm` de uma passada entregou −16/−17 LUFS: o `render.sh` mede e aplica em duas (conferir no `relatorio.txt`).
 - `loudnorm` (mesmo em duas passadas, `linear=true`) cai sozinho para o modo dinâmico quando o pico não cabe no ganho
-  linear, e achata o arco da música (introdução e ápice ficam quase no mesmo volume). Para trilha: ganho fixo até o
-  alvo + `alimiter` só nos picos.
+  linear, e achata o arco da música (introdução e ápice ficam quase no mesmo volume). O `render.sh` e o `midi_lib.py`
+  medem o integrado, aplicam ganho fixo até −14 LUFS e limitam só os picos (`alimiter`). Conferir no `relatorio.txt`.
 - VSCO: a camada fraca das cordas curtas é baixa demais (acento que troca de camada vira solavanco de ~8 dB): curtas
   sempre na camada forte, dinâmica pelo ganho (o `midi_lib.py` já faz).
 - Lyria (clip) devolve mais que o pedido (18 s → 28,7 s): cortar pela edição, ancorando ataque e fim em eventos.

@@ -12,10 +12,11 @@ FF=$(command -v ffmpeg || { echo "precisa do ffmpeg do sistema (brew install ffm
 mkdir -p out/stills
 for F in $(echo $LIST); do
   npx remotion render "$COMP-$F" "out/_raw_$F.mp4" --crf=20 --log=error
-  # loudnorm em duas passadas (a de uma passada entrega 2–3 dB abaixo do alvo): mede, depois aplica linear
-  M=$($FF -hide_banner -i "out/_raw_$F.mp4" -af loudnorm=I=-14:TP=-1:LRA=11:print_format=json -f null - 2>&1 | python3 -c "import sys,json,re;j=json.loads(re.findall(r'\{[^{}]*\}',sys.stdin.read())[-1]);print(f\"measured_I={j['input_i']}:measured_TP={j['input_tp']}:measured_LRA={j['input_lra']}:measured_thresh={j['input_thresh']}:offset={j['target_offset']}\")")
+  # −14 LUFS sem achatar o arco: mede o integrado, aplica ganho fixo e limita só os picos.
+  # (o loudnorm, mesmo em duas passadas com linear=true, cai para o modo dinâmico quando o pico não cabe e comprime)
+  G=$($FF -hide_banner -i "out/_raw_$F.mp4" -af loudnorm=I=-14:TP=-1:LRA=20:print_format=json -f null - 2>&1 | python3 -c "import sys,json,re;j=json.loads(re.findall(r'\{[^{}]*\}',sys.stdin.read())[-1]);print(round(-14-float(j['input_i']),2))")
   $FF -v error -i "out/_raw_$F.mp4" -c:v libx264 -crf 23 -preset slow -pix_fmt yuv420p \
-    -af "loudnorm=I=-14:TP=-1:LRA=11:${M}:linear=true" -ar 48000 -c:a aac -b:a 192k -movflags +faststart -y "out/${SLUG}_$F.mp4"
+    -af "volume=${G}dB,alimiter=limit=0.89:attack=4:release=60:level=disabled" -ar 48000 -c:a aac -b:a 192k -movflags +faststart -y "out/${SLUG}_$F.mp4"
   rm "out/_raw_$F.mp4"
   # stills em 8 pontos do vídeo para revisar layout (abrir os PNG e olhar)
   for i in 1 2 3 4 5 6 7 8; do

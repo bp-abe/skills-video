@@ -1,6 +1,6 @@
 ---
 name: video-animado
-description: Produz vídeo animado de ponta a ponta (Remotion, MP4 16:9 e/ou 9:16) a partir de um tema, de um roteiro, de anotações soltas ou de instruções — inventa o conceito a partir do conteúdo (ou segue uma linha de estilo pedida), com narração local (voz clonada no VoxCPM2) ou Gemini TTS, trilha pelo Lyria ou composta em código, efeitos CC0 com verificação de diversidade e revisão por crítico independente com nota. Tem modo offline ("sem usar as APIs"). Também edita vídeo gravado (corte de silêncio e tomada errada, zoom, legenda palavra a palavra, XML para Premiere). Use quando o usuário pedir vídeo, animação, explainer, motion, reels/shorts, vídeo de produto/campanha/biográfico, ou editar/cortar uma gravação.
+description: Produz vídeo animado de ponta a ponta (Remotion, MP4 16:9 e/ou 9:16) a partir de um tema, de um roteiro, de anotações soltas ou de instruções — inventa o conceito a partir do conteúdo (ou segue uma linha de estilo pedida), com narração local (voz clonada no VoxCPM2) ou Gemini TTS, trilha composta em MIDI e tocada com orquestra gravada (ou Lyria, ou música fornecida), efeitos CC0 com verificação de diversidade e revisão por crítico independente com nota. Tem modo offline ("sem usar as APIs"). Também edita vídeo gravado (corte de silêncio e tomada errada, zoom, legenda palavra a palavra, XML para Premiere). Use quando o usuário pedir vídeo, animação, explainer, motion, reels/shorts, vídeo de produto/campanha/biográfico, ou editar/cortar uma gravação.
 ---
 
 # Vídeo animado (Remotion)
@@ -94,7 +94,7 @@ brief → roteiro → voz → medir → som + batidas → assets → storyboard 
 9. **Crítica**: `python3 scripts/qa_folhas.py out/<mp4>` + subagente limpo com nota ([critica.md](references/critica.md)),
    até tudo ≥ 8 (no máximo 3 rodadas; o crítico julga contra a bíblia do vídeo, não contra um gosto dele).
    `python3 scripts/diversidade.py` ok (continuidade pedida: `roteiro.linha_de_estilo`).
-10. **Render**: `bash scripts/render.sh` (−14 LUFS em duas passadas, os formatos do roteiro); conferir no
+10. **Render**: `bash scripts/render.sh` (−14 LUFS por ganho fixo + limitador de pico, sem achatar o arco; os formatos do roteiro); conferir no
     `relatorio.txt` do `qa_folhas.py` (−14 ± 1).
 11. **Entrega**: MP4s + frame de capa (`npx remotion still … out/capa.png`) + folhas de revisão + `ANALISE.md` (brief,
     decisões, fontes, notas da crítica, o que precisa de escuta humana) + arquivo mostrado no Finder (`open -R`).
