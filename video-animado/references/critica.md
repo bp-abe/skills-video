@@ -1,4 +1,4 @@
-# Crítica independente — o vídeo só sai com 8+ em tudo
+# Crítica independente — uma rodada, para apontar problemas (a aprovação é do usuário)
 
 Quem construiu o vídeo defende as próprias escolhas. A crítica é feita por **um subagente de contexto limpo**
 (ferramenta Agent, `general-purpose`), que não construiu o vídeo e **não recebe nem abre histórico da skill**
@@ -41,12 +41,13 @@ Depois:
 Responda só com as notas, os 3 problemas e as duas listas.
 ```
 
-## 3. Ciclo
+## 3. Depois da rodada
 
-Corrigir os 3 problemas (e o que der para tirar) → renderizar de novo (se o problema é localizado, conferir com
-`npx remotion still` nos frames afetados antes do render inteiro) → gerar as folhas → **novo subagente** (nunca o mesmo,
-para não herdar contexto) → repetir até **todas as notas ≥ 8**, no máximo 3 rodadas. Depois da 3ª, entregar com as
-notas abaixo de 8 e o que falta listados no ANALISE (e na mensagem de entrega). Registrar as notas de cada rodada.
+**Uma rodada só, sem barra de nota.** A nota serve para localizar onde o vídeo está fraco, não para aprovar: o crítico vê
+quadros estáticos (não vê movimento nem ouve) e não é calibrado contra o gosto do usuário — em out/2026, 3 rodadas em 3
+vídeos moveram a média em menos de 1 ponto. Corrigir o que for barato e certeiro (se localizado, conferir com
+`npx remotion still` antes do render inteiro); o que pedir outro tipo de asset ou refazer cena vai para o ANALISE e para
+a mensagem de entrega como opção, não vira retrabalho automático. Registrar notas, problemas e o que foi corrigido.
 
 A escuta continua humana: o crítico lê imagem, não ouve. Sincronia de som ele só avalia pelo relatório (picos) e pelo
 roteiro; o resto vai para "escuta humana" no ANALISE.
