@@ -14,9 +14,9 @@
 - [ ] Som + batidas (`sound.py`, `beatmap.py` se trilha pronta)
 - [ ] Passe de assets: um por ideia, mesmo tratamento (`img.py` com `ref`, ou desenho em código)
 - [ ] Storyboard (um still por momento) visto nos dois formatos
-- [ ] Animatic (`--scale=0.4`) visto
+- [ ] Animatic (`--scale=0.4`) visto e aprovado pelo usuário (ou portão pulado, com o porquê)
 - [ ] Passe completo
-- [ ] Crítica: rodada 1 ☐ · rodada 2 ☐ · rodada 3 ☐ (notas abaixo)
+- [ ] Crítica: 1 rodada (notas e problemas abaixo; o que foi corrigido)
 - [ ] `diversidade.py` ok
 - [ ] Render: `relatorio.txt` com −14 ± 1 LUFS
 - [ ] Entrega: MP4s, capa, folhas, `open -R`; nota (1–5) pedida a quem pediu

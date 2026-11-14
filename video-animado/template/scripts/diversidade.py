@@ -146,6 +146,8 @@ if total:
     print(f"  efeitos: {total} toques, {len(hits)} famílias, sintetizados {synth / total:.0%}")
     if total >= 10 and len(hits) < MIN_FAMILIAS: prob.append(f"efeitos: só {len(hits)} famílias para {total} toques (mín. {MIN_FAMILIAS})")
     if total >= 10 and ntop / total > MAX_TOPO: prob.append(f"efeitos: '{top}' tem {ntop / total:.0%} dos toques (máx. {MAX_TOPO:.0%})")
+    if hits.get('synth/whoosh', 0) >= 2:
+        prob.append(f"efeitos: whoosh sintetizado {hits['synth/whoosh']}× — é o som genérico de transição; tirar, ou usar um som do material do conceito em 1–2 momentos")
     if synth / total > MAX_SYNTH: prob.append(f"efeitos: sintetizados em {synth / total:.0%} (máx. {MAX_SYNTH:.0%}) — usar sons gravados do material do conceito")
 if paleta and set(paleta) <= {"#808080", "#a6a6a6", "#d9d9d9", "#1a1a1a", "#4d4d4d", "#666666", "#bfbfbf", "#000000"}:
     prob.append("paleta: tema.ts ainda é o placeholder cinza do template")

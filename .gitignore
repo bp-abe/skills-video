@@ -11,3 +11,4 @@ __pycache__/
 .env
 secrets.env
 publicar.py
+_publico/

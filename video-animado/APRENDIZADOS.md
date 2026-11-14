@@ -15,6 +15,9 @@ só vai para o ANALISE dele. Versão completa com datas e projetos: `historico/A
   do WAV, não pelo `words.json`.
 - Voz lenta (Gemini 2.5): `tempo_voz`/`tempo` por bloco (atempo) sem mudar o tom; estilo "dramático" faz ler palavra por
   palavra — slogan pede `estilo_voz` próprio ("numa só respiração").
+- Nunca desacelerar voz com atempo < 1: a voz clonada a 0,82–0,88 soou "chapado" (usuário, 01/10). Fala rápida se resolve no texto
+  ou na gravação, não esticando. Acelerar (até ~1,22) é seguro. E `estilo_voz` com "pausado" fez o Gemini arrastar (144 s
+  para 106 s de texto): pedir "ritmo firme e fluido".
 - Gravação pronta como narração: cortar por frase em `audio_raw/<id>.wav` + `.json`, **não rodar tts.py**;
   áudio já mixado com trilha: alinhar por palavra e tratar cada palavra como frase.
 - **Uma voz local pesada por vez na máquina**: VoxCPM2 ocupa 10–13 GB; duas juntas (agentes em paralelo) levaram o
@@ -56,7 +59,11 @@ só vai para o ANALISE dele. Versão completa com datas e projetos: `historico/A
 ## Som
 - Medir o mix por trecho (voz × trilha) antes de entregar; trilha de mercado vem alta (−14 dB RMS): baixar sob a voz.
 - Efeito em toda transição cansa: reservar para 3–5 momentos (feedback de uso).
-- `loudnorm` de uma passada entregou −16/−17 LUFS: o `render.sh` mede e aplica em duas (conferir no `relatorio.txt`). O `linear=true` não segura o pico (saiu −0,0 dBFS): `alimiter` antes e depois, com limite ~0,78, porque o AAC passa uns 0,5 dB.
+- `loudnorm` (mesmo em duas passadas, `linear=true`) cai sozinho para o modo dinâmico quando o pico não cabe no ganho
+  linear, e achata o arco da música (introdução e ápice ficam quase no mesmo volume). O `render.sh` e o `midi_lib.py`
+  medem o integrado, aplicam ganho fixo até −14 LUFS e limitam só os picos (`alimiter`). Conferir no `relatorio.txt`.
+- VSCO: a camada fraca das cordas curtas é baixa demais (acento que troca de camada vira solavanco de ~8 dB): curtas
+  sempre na camada forte, dinâmica pelo ganho (o `midi_lib.py` já faz).
 - Lyria (clip) devolve mais que o pedido (18 s → 28,7 s): cortar pela edição, ancorando ataque e fim em eventos.
 - Trilha real com cadência final: entrar a cadência com o último bloco, não pelo fim do vídeo (o CTA fica mudo).
 - API com teto de gasto (429 "monthly spending cap") ou sem cota: cair para `partitura`/voz local sem insistir.

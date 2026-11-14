@@ -2,14 +2,14 @@
  * EXEMPLO NEUTRO — só demonstra sincronia e formato. Não é estilo: substituir por completo.
  * - todo tempo vem de cue()/cueEnd()/blockStart() (medido no WAV), nunca de número solto;
  * - layout por formato com pick(paisagem, retrato);
- * - cada elemento que entra tem um efeito sonoro na lista SFX;
+ * - efeito sonoro só quando o conceito pedir (a lista SFX começa vazia de propósito);
  * - cores só de src/tema.ts.
  */
 import React from 'react';
 import {AbsoluteFill, interpolate, useCurrentFrame} from 'remotion';
-import {blockStart, cue, cueEnd, useFmt} from './lib';
+import {blockStart, cue, useFmt} from './lib';
 import {Finish} from './acabamento';
-import {Scene, SceneStack, sfx, Sheet, Soundtrack} from './stage';
+import {Scene, SceneStack, Sfx, Sheet, Soundtrack} from './stage';
 import {T} from './tema';
 
 const T0 = (id: string) => blockStart(id) - 12;
@@ -45,14 +45,9 @@ const SCENES: Scene[] = [
 	{el: (from, to) => <Block id="b3" from={from} to={to} n={1} />},
 ];
 
-const SFX = [
-	sfx(cue('b1', 0), 'click', 0.4),
-	sfx(T0('b2'), 'whoosh', 0.4),
-	...[0, 1, 2, 3].map((i) => sfx(cue('b2', i), 'click', 0.4)), // placeholder: trocar pela paleta sonora do conceito (sfxVar + biblioteca/sfx/INDEX.md)
-	sfx(T0('b3'), 'whoosh', 0.4),
-	sfx(cue('b3', 0), 'click', 0.4),
-	sfx(cueEnd('b3', 0) + 4, 'chime', 0.3),
-];
+// Efeitos sonoros: NENHUM por padrão. Só os que o conceito pedir, escolhidos da paleta sonora do vídeo
+// (sfxVar + biblioteca/sfx/INDEX.md), 3–5 por minuto, nunca em toda transição.
+const SFX: Sfx[] = [];
 
 export const Video: React.FC = () => (
 	<AbsoluteFill style={{backgroundColor: T.bg}}>

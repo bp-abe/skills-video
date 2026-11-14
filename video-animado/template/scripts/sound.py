@@ -6,7 +6,9 @@ Trilha (roteiro.json -> trilha.fonte):
 - "lyria": usa public/audio/music_src.wav gerado por scripts/music.py (música do Gemini Lyria, no tamanho do vídeo)
 - "arquivo": usa trilha.arquivo (música licenciada fornecida), convertida para public/audio/music_src.wav
 - "partitura": música em camadas composta pela cena (trilha.tom, modo, bpm, intensidade por bloco, progressao)
-Nos casos lyria/arquivo: ajuste à duração (corte com fade ou loop com crossfade) + acentos por frase
+- "midi" (PADRÃO quando não há trilha.arquivo): o musica.py do projeto compõe em MIDI no tempo do vídeo e toca com
+  instrumentos gravados (scripts/midi_lib.py, ambiente ~/.venvs/musica); este script roda o musica.py sozinho
+Nos casos lyria/arquivo/midi: ajuste à duração (corte com fade ou loop com crossfade) + acentos por frase
 (bloco.acentos = [[indice_frase, "hit"|"chime"|"boom"], ...]).
 Efeitos sintetizados saem em VARIAÇÕES (semente = título do vídeo): cada vídeo soa diferente e nada repete igual.
 """
@@ -77,8 +79,10 @@ def pad(ms, n, cutoff=900):
 
 TR = R.get("trilha", {})
 FONTE, HUMOR = TR.get("fonte"), TR.get("humor")
-if FONTE not in ("lyria", "arquivo", "partitura", "sintetizada"):
-    raise SystemExit("roteiro.json: definir trilha.fonte (lyria | arquivo | partitura | sintetizada) — sem padrão, de propósito")
+if not FONTE:  # padrão: música fornecida, se houver; senão, composição em MIDI com instrumentos gravados
+    FONTE = "arquivo" if TR.get("arquivo") else "midi"
+if FONTE not in ("lyria", "arquivo", "partitura", "sintetizada", "midi"):
+    raise SystemExit("roteiro.json: trilha.fonte = midi (padrão) | arquivo | lyria | partitura")
 
 
 def ffmpeg_bin():
@@ -187,15 +191,21 @@ def partitura():
     return out
 
 
-if FONTE in ("lyria", "arquivo"):
+if FONTE in ("lyria", "arquivo", "midi"):
     src = ROOT / "public" / "audio" / "music_src.wav"
+    if FONTE == "midi":  # a timeline já está gravada: compõe a trilha em cima dela
+        comp = ROOT / "musica.py"; py = Path.home() / ".venvs" / "musica" / "bin" / "python"
+        if not comp.exists(): raise SystemExit("trilha midi: falta musica.py no projeto (copiar de ~/.claude/skills/video-animado/template/)")
+        if not py.exists(): raise SystemExit("trilha midi: falta o ambiente ~/.venvs/musica (ver references/musica.md)")
+        subprocess.run([str(py), str(comp)], check=True, cwd=ROOT)
     if FONTE == "arquivo":
         arq = Path(TR.get("arquivo", "")).expanduser()
         if not arq.exists(): raise SystemExit(f"trilha.arquivo não encontrado: {arq}")
         subprocess.run(ffmpeg_bin() + ["-v", "error", "-y", "-i", str(arq), "-ar", str(SR), "-ac", "2", "-c:a", "pcm_s16le", str(src)], check=True, cwd=ROOT)
     if not src.exists(): raise SystemExit("falta public/audio/music_src.wav — rodar scripts/music.py antes (trilha.fonte = lyria)")
+    if FONTE == "midi": HUMOR = f"midi {json.load(open(ROOT / 'public' / 'beats.json')).get('bpm')} bpm"
     music = fit(read_wav(src), N) * 0.9
-    HUMOR = FONTE
+    HUMOR = HUMOR if FONTE == "midi" else FONTE
 else:  # "partitura" (e "sintetizada", nome antigo): música composta pela cena, sem preset de estilo
     music = partitura()
     HUMOR = f"partitura {TR.get('tom', 'D')} {TR.get('modo', 'menor')} {TR.get('bpm', 90)} bpm"

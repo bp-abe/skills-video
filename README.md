@@ -1,12 +1,13 @@
 # Skills de vídeo para Claude Code
 
-Três peças para fazer vídeo animado com o Claude Code, de ponta a ponta, escrevendo código:
+Quatro peças para fazer e entregar vídeo animado com o Claude Code, de ponta a ponta, escrevendo código:
 
 | Pasta | O que é |
 |---|---|
 | [`video-animado/`](video-animado/) | **A skill de produção.** A partir de um tema, roteiro, anotações ou gravação, gera o vídeo pronto (MP4 16:9 e/ou 9:16): roteiro, conceito visual, narração, trilha, efeitos, animação em [Remotion](https://www.remotion.dev), revisão por um crítico independente com nota e render. Também edita vídeo gravado (corta silêncio e tomada errada, zoom, legenda palavra a palavra, XML para Premiere). |
 | [`pedido-de-video/`](pedido-de-video/) | **A skill que monta o pedido.** Transforma uma ideia solta no pedido que a `video-animado` executa bem: o que precisa ser dito (objetivo, público, mensagem, verdade, limites) e o que pode ficar aberto (estilo, voz, trilha). |
-| [`mesa-de-estilos/`](mesa-de-estilos/) | **Página de referências.** 60 estilos de motion design, cada um com uma amostra animada feita em código, filtros e "copiar direção de estilo" para colar no pedido. Abra `mesa-de-estilos/mesa-de-estilos.html` no navegador. |
+| [`subir-videos/`](subir-videos/) | **A skill de entrega.** Sobe os MP4 prontos para uma pasta de nuvem sincronizada (Google Drive, Dropbox) num padrão de nomes fixo (`vvs_<formato>_<palavras do título>.mp4`), confere dimensão e duração, escreve um `como_foi_feito.md` com o processo de criação em cada pasta e registra cada vídeo num CSV para cruzar depois com o resultado dos anúncios. |
+| [`mesa-de-estilos/`](mesa-de-estilos/) | **Página de referências.** 60 estilos de motion design, cada um com uma amostra animada feita em código, filtros e "copiar direção de estilo" para colar no pedido. **[Abrir a página](https://bp-abe.github.io/skills-video/mesa-de-estilos/mesa-de-estilos.html)** (ou abra o HTML local no navegador). |
 
 ## Princípio
 
@@ -26,10 +27,14 @@ Testado em macOS 15, Apple Silicon (M-series), 24 GB de RAM.
 | [Remotion](https://www.remotion.dev) + `@remotion/*` | 4.0.528 | animação em React, render MP4 (versões fixas em `video-animado/template/package.json`) | sim |
 | ffmpeg (do sistema, `brew install ffmpeg`) | 9.0 | loudness −14 LUFS em duas passadas, cortes, folhas de revisão (o ffmpeg que vem com o Remotion não tem os filtros) | sim |
 | Python 3.10 + `numpy`, `pillow` | 3.10.0 | scripts do template (tempo, som, revisão, diversidade, imagem) | sim |
-| Chave da API do Gemini (`GEMINI_API_KEY`) | — | voz Gemini TTS, trilha Lyria, imagem (`gemini-3.1-flash-image`), vídeo Veo | não: há modo offline |
+| Chave da API do Gemini (`GEMINI_API_KEY`) | — | voz Gemini TTS, trilha Lyria (opcional; a trilha padrão é MIDI), imagem (`gemini-3.1-flash-image`), vídeo Veo | não: há modo offline |
 | venv `tts-local`: `faster-whisper`, `librosa`, `num2words`, `soundfile`, `kokoro`, `chatterbox-tts` | 1.2.1 / 0.11 / 0.5.14 / 0.14 / 0.9.4 / 0.1.7 | transcrição local (conferir voz, alinhar palavra a palavra, modo edição), mapa de batidas, vozes locais de rascunho | sim (a transcrição) |
 | venv `voxcpm`: [`voxcpm`](https://github.com/OpenBMB/VoxCPM) | 2.0.3 | **voz local padrão**: VoxCPM2 com clonagem de voz autorizada; roda sem API | recomendado |
 | venv `qwen-tts` (opcional) | 0.1.1 | alternativa de voz local | não |
+| FluidSynth (`brew install fluid-synth`) | 2.6.1 | toca a trilha MIDI em General MIDI | sim (trilha padrão) |
+| venv `musica`: `pretty_midi`, `mido`, `soundfile`, `scipy` | — | compõe a trilha em MIDI e toca os instrumentos gravados | sim (trilha padrão) |
+| [VSCO 2 Community Edition](https://github.com/sgossner/VSCO-2-CE) | — | orquestra gravada (cordas, metais, madeiras, percussão), 5 GB, CC0 | recomendado |
+| [GeneralUser GS](https://github.com/mrbumpy409/GeneralUser-GS) | 2.0.3 | SoundFont General MIDI (bateria, baixo, piano, synth), 31 MB, uso livre | sim (trilha padrão) |
 | `espeak-ng` (`brew install espeak-ng`) | — | fonemas em português para o Kokoro | só com Kokoro |
 | Google Chrome | — | bancada de teste da Mesa de Estilos (screenshots headless) | não |
 | `yt-dlp` | — | baixar vídeos de referência para estudar | não |
@@ -46,7 +51,7 @@ brew install node ffmpeg python@3.10 espeak-ng
 # 2. skills no Claude Code
 git clone https://github.com/bp-abe/skills-video.git
 mkdir -p ~/.claude/skills
-cp -R skills-video/video-animado skills-video/pedido-de-video ~/.claude/skills/
+cp -R skills-video/video-animado skills-video/pedido-de-video skills-video/subir-videos ~/.claude/skills/
 
 # 3. dependências do Remotion (uma vez; cada projeto novo clona estas)
 cd ~/.claude/skills/video-animado/template && npm install
@@ -58,7 +63,14 @@ python3 -m pip install numpy pillow
 python3.10 -m venv ~/.venvs/tts-local && ~/.venvs/tts-local/bin/pip install faster-whisper librosa num2words soundfile kokoro misaki chatterbox-tts
 python3.10 -m venv ~/.venvs/voxcpm && ~/.venvs/voxcpm/bin/pip install voxcpm soundfile
 
-# 6. chave do Gemini (opcional) — num arquivo fora de qualquer repositório
+# 6. trilha em MIDI (padrão): sintetizador, ambiente e instrumentos gravados
+brew install fluid-synth
+python3.10 -m venv ~/.venvs/musica && ~/.venvs/musica/bin/pip install pretty_midi mido numpy soundfile scipy
+mkdir -p ~/.local/share/video-animado/instrumentos && cd ~/.local/share/video-animado/instrumentos
+git clone --depth 1 https://github.com/sgossner/VSCO-2-CE.git
+git clone --depth 1 https://github.com/mrbumpy409/GeneralUser-GS.git
+
+# 7. chave do Gemini (opcional) — num arquivo fora de qualquer repositório
 mkdir -p ~/.config && echo 'export GEMINI_API_KEY=sua-chave' >> ~/.config/secrets.env && chmod 600 ~/.config/secrets.env
 ```
 
@@ -66,6 +78,16 @@ mkdir -p ~/.config && echo 'export GEMINI_API_KEY=sua-chave' >> ~/.config/secret
 (12–17 s de fala natural) e o `texto.txt` com a transcrição exata. Depois aponte `voz_params` no
 `template/roteiro.json` para essa pasta. **Clonagem só com autorização por escrito de quem fala.** Sem voz clonada,
 use uma voz do Gemini (`"voz": "Charon"`, por exemplo) ou uma voz desenhada do VoxCPM (`voz_params.descricao`).
+
+## Conferir a instalação
+
+```bash
+bash <(curl -s https://raw.githubusercontent.com/bp-abe/skills-video/main/verificar.sh)
+```
+
+Mostra o que está instalado e o que falta (versão da skill, ferramentas, instrumentos, vozes, chave do Gemini), sem
+imprimir chaves. Se o vídeo sair pior que o esperado, rode isto primeiro: a falta de geração de imagem e da orquestra
+gravada são as causas mais comuns.
 
 ## Primeiro vídeo
 
@@ -93,6 +115,8 @@ sai em `out/`.
 | Componente | Licença |
 |---|---|
 | Kenney (efeitos) | CC0 |
+| VSCO 2 Community Edition (instrumentos) | CC0 |
+| GeneralUser GS (SoundFont) | GeneralUser GS License v2.0 (uso livre, inclusive comercial) |
 | VoxCPM2 | Apache 2.0 |
 | Kokoro | Apache 2.0 |
 | Chatterbox | MIT |

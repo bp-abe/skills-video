@@ -1,6 +1,6 @@
 ---
 name: video-animado
-description: Produz vídeo animado de ponta a ponta (Remotion, MP4 16:9 e/ou 9:16) a partir de um tema, de um roteiro, de anotações soltas ou de instruções — inventa o conceito a partir do conteúdo (ou segue uma linha de estilo pedida), com narração local (voz clonada no VoxCPM2) ou Gemini TTS, trilha pelo Lyria ou composta em código, efeitos CC0 com verificação de diversidade e revisão por crítico independente com nota. Tem modo offline ("sem usar as APIs"). Também edita vídeo gravado (corte de silêncio e tomada errada, zoom, legenda palavra a palavra, XML para Premiere). Use quando o usuário pedir vídeo, animação, explainer, motion, reels/shorts, vídeo de produto/campanha/biográfico, ou editar/cortar uma gravação.
+description: Produz vídeo animado de ponta a ponta (Remotion, MP4 16:9 e/ou 9:16) a partir de um tema, de um roteiro, de anotações soltas ou de instruções — inventa o conceito a partir do conteúdo (ou segue uma linha de estilo pedida), com narração local (voz clonada no VoxCPM2) ou Gemini TTS, trilha composta em MIDI e tocada com orquestra gravada (ou Lyria, ou música fornecida), efeitos CC0 com verificação de diversidade e uma rodada de crítico independente (a aprovação é do usuário). Tem modo offline ("sem usar as APIs"). Também edita vídeo gravado (corte de silêncio e tomada errada, zoom, legenda palavra a palavra, XML para Premiere). Use quando o usuário pedir vídeo, animação, explainer, motion, reels/shorts, vídeo de produto/campanha/biográfico, ou editar/cortar uma gravação.
 ---
 
 # Vídeo animado (Remotion)
@@ -15,7 +15,7 @@ nascem do conteúdo a cada vídeo. Ao evoluir a skill, nunca acrescentar exemplo
 
 | Sempre | Sob demanda |
 |---|---|
-| este arquivo · `APRENDIZADOS.md` (técnica) · [direcao.md](references/direcao.md) (ofício) | [gemini.md](references/gemini.md) (vozes, APIs, capacidades) · [assets.md](references/assets.md) (licenças, fontes de asset) · [edicao.md](references/edicao.md) (gravação) · [critica.md](references/critica.md) (revisão) · [referencias.md](references/referencias.md) (só quando o pedido citar um dos vídeos estudados) · `biblioteca/` (só depois do conceito escolhido) · `VIDEOS.md` e projetos antigos (**só com linha de estilo pedida** — nem para "ver que voz os outros usaram") · `historico/` (quando um problema parecer conhecido) |
+| este arquivo · `APRENDIZADOS.md` (técnica) · [direcao.md](references/direcao.md) (ofício) | [gemini.md](references/gemini.md) (vozes, APIs, capacidades) · [assets.md](references/assets.md) (licenças, fontes de asset) · [edicao.md](references/edicao.md) (gravação) · [musica.md](references/musica.md) (trilha em MIDI) · [critica.md](references/critica.md) (revisão) · [referencias.md](references/referencias.md) (só quando o pedido citar um dos vídeos estudados) · `biblioteca/` (só depois do conceito escolhido) · `VIDEOS.md` e projetos antigos (**só com linha de estilo pedida** — nem para "ver que voz os outros usaram") · `historico/` (quando um problema parecer conhecido) |
 
 ## Ler o pedido
 
@@ -80,19 +80,23 @@ brief → roteiro → voz → medir → som + batidas → assets → storyboard 
 2. **Roteiro** em `roteiro.json` (fonte única) + `ROTEIRO.md` com fontes. Checagem factual antes da voz, sempre.
 3. **Voz**: `python3 scripts/tts.py` (só regrava blocos alterados). Conferir: `~/.venvs/tts-local/bin/python scripts/check_voz.py`.
 4. **Medir**: `python3 scripts/tighten.py`; fala natural ou ATENÇÃO → `~/.venvs/tts-local/bin/python scripts/align.py` (`cueW`).
-5. **Som + batidas**: trilha (`lyria` → `scripts/music.py`; `arquivo`; `partitura` composta em código, com
-   `intensidade` por bloco e `eventos` da cena) e `python3 scripts/sound.py` (timeline, efeitos, picos, `beats.json` da
-   partitura). Trilha pronta → `~/.venvs/tts-local/bin/python scripts/beatmap.py`. Efeitos por família
+5. **Som + batidas**: trilha **padrão em MIDI** (`trilha.fonte` vazio): escrever o `musica.py` do projeto, composto na
+   timeline e tocado com orquestra gravada ([musica.md](references/musica.md)); `arquivo` quando o pedido trouxer música;
+   `lyria` (`scripts/music.py`) para gênero fora da orquestra; `partitura` para som sintético de propósito. Depois
+   `python3 scripts/sound.py` (timeline, roda o `musica.py`, efeitos, picos, `beats.json`). Trilha pronta (arquivo,
+   lyria) → `~/.venvs/tts-local/bin/python scripts/beatmap.py`. Efeitos por família
    (`biblioteca/sfx/INDEX.md`), escolhidas pelo material, via `sfxVar` (o pico cai na ação sozinho).
 6. **Storyboard**: um still por momento do roteiro, criticado contra a bíblia e contra "o que dá para tirar?".
-7. **Animatic**: render rápido (`npx remotion render Video-9x16 out/animatic.mp4 --scale=0.4`) para acertar ritmo e
-   batidas antes do acabamento.
+7. **Animatic + aprovação do usuário**: render rápido (`npx remotion render Video-9x16 out/animatic.mp4 --scale=0.4`)
+   para acertar ritmo e batidas, e **mostrar a ele antes do passe completo** (com os quadros dos conceitos se ainda não
+   viu). Acabamento só em cima de conceito e tom aprovados. "Faz direto" ou rodada sem ninguém para responder: seguir e
+   registrar que o portão foi pulado.
 8. **Passe completo** em `src/Video.tsx` (o exemplo do template é só sincronia: substituir; construir os componentes
    que o conceito pedir). Vídeo longo: dividir grupos de cenas entre subagentes, com `tema.ts` e regras centrais.
-9. **Crítica**: `python3 scripts/qa_folhas.py out/<mp4>` + subagente limpo com nota ([critica.md](references/critica.md)),
-   até tudo ≥ 8 (no máximo 3 rodadas; o crítico julga contra a bíblia do vídeo, não contra um gosto dele).
+9. **Crítica**: `python3 scripts/qa_folhas.py out/<mp4>` + **uma** rodada de subagente limpo ([critica.md](references/critica.md)):
+   aponta problemas, não bloqueia. Corrigir o que for barato e certeiro; o portão de aprovação é o usuário.
    `python3 scripts/diversidade.py` ok (continuidade pedida: `roteiro.linha_de_estilo`).
-10. **Render**: `bash scripts/render.sh` (−14 LUFS em duas passadas, os formatos do roteiro); conferir no
+10. **Render**: `bash scripts/render.sh` (−14 LUFS por ganho fixo + limitador de pico, sem achatar o arco; os formatos do roteiro); conferir no
     `relatorio.txt` do `qa_folhas.py` (−14 ± 1).
 11. **Entrega**: MP4s + frame de capa (`npx remotion still … out/capa.png`) + folhas de revisão + `ANALISE.md` (brief,
     decisões, fontes, notas da crítica, o que precisa de escuta humana) + arquivo mostrado no Finder (`open -R`).
@@ -107,6 +111,8 @@ brief → roteiro → voz → medir → som + batidas → assets → storyboard 
 - **Tempo nunca é número solto**: `cue`, `cueW`, `blockStart`, `naBatida(frame)`, `batida(i)`, `virada()`.
 - **Formato**: `useFmt()` + `pick(paisagem, retrato)`; toda cena roda nos dois (reenquadrar, não recortar).
 - **Movimento**: `mola(frame, at, 'ui'|'padrao'|'pesada'|'viva')`; regras em [direcao.md](references/direcao.md).
+- **Efeitos sonoros**: o template não traz nenhum (a lista `SFX` começa vazia). Cada efeito entra por um motivo do
+  conceito, 3–5 por minuto; whoosh em transição é o vício a evitar (o `diversidade.py` acusa).
 - **Núcleo neutro** do template: `tema.ts` (cores e fontes do vídeo), `lib.ts` (tempo, formato, batidas, molas),
   `stage.tsx` (`SceneStack` com `corte`/`wipe`/`zoom` ou transição própria `TransFn`, `Sheet`, `Soundtrack`, `sfxVar`),
   `acabamento.tsx`. Peças prontas ficam na `biblioteca/componentes/`, opcionais, abertas só depois do conceito.
