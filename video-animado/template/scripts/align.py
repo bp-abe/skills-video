@@ -6,18 +6,22 @@ Rodar depois do tighten, quando ele acusar ATENÇÃO ou trecho com duração est
 Texto do roteiro × transcrição casados por difflib (número por extenso, hífen etc. não quebram)."""
 import difflib, json, re, unicodedata
 from pathlib import Path
+import os
 from faster_whisper import WhisperModel
+import json as _json
+from pathlib import Path as _Path
+IDIOMA = _json.load(open(_Path(__file__).resolve().parent.parent / "roteiro.json")).get("idioma", "pt")  # narração em outro idioma: roteiro.idioma = "en"
 
 ROOT = Path(__file__).resolve().parent.parent
 A = ROOT / "public" / "audio"
 R = json.load(open(ROOT / "roteiro.json"))
 D = json.load(open(A / "durations.json"))
 norm = lambda w: re.sub(r"[^a-z0-9]", "", unicodedata.normalize("NFKD", w.lower()).encode("ascii", "ignore").decode())
-model = WhisperModel("medium", compute_type="int8")
+model = WhisperModel(os.environ.get("WHISPER_MODEL", "medium"), compute_type="int8")  # WHISPER_MODEL=small em máquina lenta (8 GB)
 words_out = {}
 for b in R["blocos"]:
     bid, text = b["id"], b["texto"].strip()
-    segs, _ = model.transcribe(str(A / f"{bid}.wav"), language="pt", word_timestamps=True, initial_prompt=text)
+    segs, _ = model.transcribe(str(A / f"{bid}.wav"), language=IDIOMA, word_timestamps=True, initial_prompt=text)
     hw = [(w.word.strip(), w.start, w.end) for s in segs for w in s.words]
     tw = text.split()
     sm = difflib.SequenceMatcher(None, [norm(w) for w in tw], [norm(w[0]) for w in hw], autojunk=False)

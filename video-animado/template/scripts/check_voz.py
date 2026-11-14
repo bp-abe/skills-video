@@ -21,13 +21,16 @@ def palavras(t):
     t = re.sub(r"(\d)\.(\d{3})", r"\1\2", t)  # "28.800" → "28800" (o Whisper escreve milhar com ponto)
     try:
         from num2words import num2words
-        t = re.sub(r"\d+", lambda m: num2words(int(m.group()), lang="pt_BR").replace(",", ""), t)
+        t = re.sub(r"\d+", lambda m: num2words(int(m.group()), lang={"pt":"pt_BR"}.get(IDIOMA, IDIOMA)).replace(",", ""), t)
     except ImportError:
         pass
     return re.findall(r"[a-zà-ÿ0-9]+", t)
 
 
 from faster_whisper import WhisperModel
+import json as _json
+from pathlib import Path as _Path
+IDIOMA = _json.load(open(_Path(__file__).resolve().parent.parent / "roteiro.json")).get("idioma", "pt")  # narração em outro idioma: roteiro.idioma = "en"
 model = WhisperModel("small", device="cpu", compute_type="int8")
 only = set(sys.argv[1:])
 ruins = []
@@ -36,7 +39,7 @@ for b in R["blocos"]:
     wav = ROOT / "audio_raw" / f"{b['id']}.wav"
     if not wav.exists():
         print(f"{b['id']}: sem áudio"); continue
-    segs, _ = model.transcribe(str(wav), language="pt", beam_size=5)
+    segs, _ = model.transcribe(str(wav), language=IDIOMA, beam_size=5)
     ouvido = " ".join(s.text.strip() for s in segs)
     ref, hyp = palavras(b["texto"]), palavras(ouvido)
     sm = difflib.SequenceMatcher(a=ref, b=hyp, autojunk=False)
