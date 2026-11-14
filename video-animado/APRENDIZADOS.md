@@ -22,7 +22,9 @@ só vai para o ANALISE dele. Versão completa com datas e projetos: `historico/A
   Vídeos em paralelo: gravar as vozes em sequência, ou usar Gemini TTS nos demais.
 - Não misturar modelos de TTS num vídeo (timbre muda); cota do Gemini 3.8 é intermitente e acaba — voz local resolve.
 - VoxCPM2 corta o fim de bloco longo (~40+ palavras): dividir o bloco (b11 → b11 + b11b); `check_voz` acusa 'faltou …'.
-- `cueW` ignora maiúsculas: palavra repetida no bloco ("Eu"/"eu", "foi") → passar o índice `n`.
+- `cueW` ignora maiúsculas: palavra repetida no bloco ("Eu"/"eu", "foi") → passar o índice `n`. Contração perde o apóstrofo ("wasn't" → `'wasnt'`).
+- Narração em inglês: `roteiro.idioma = "en"`, senão o `check_voz`/`align` transcrevem em PT e "traduzem" (100% de diferença falsa).
+- Gemini TTS às vezes deixa um estouro curto (~0,1 s, −5 dB) depois do silêncio final do bloco (o usuário ouve como "chiado"): cortar o rabo antes do `tighten` (estouro < 0,45 s precedido de ≥ 0,2 s de silêncio).
 
 ## Revisão
 - **A folha do MP4 pega o que os quadros-chave não pegam** (momento-chave comido pela transição, texto sumindo no fundo da
@@ -47,15 +49,23 @@ só vai para o ANALISE dele. Versão completa com datas e projetos: `historico/A
   (senão cai em fonte do sistema e o layout muda no render).
 - Render com `--scale` que não dá dimensão inteira (0,6667) faz camadas pularem: usar 0,5 ou 0,4.
 - Traço animado com `vectorEffect="non-scaling-stroke"` + dasharray sai picotado (dash em px de tela): usar `pathLength={1}` e dasharray `1 1`.
+- Ilustração em `<canvas>`: camada estática pintada **uma vez** (OffscreenCanvas em cache no módulo) e só o que se mexe por frame; todo aleatório com semente (`Math.random` muda entre abas do render). Mundo maior que o quadro: margem `(W − largura/zoom)/2` tem que cobrir `pan × profundidade` da camada mais rápida no último frame.
+- Mancha irregular com rotação aleatória, quando fina, vira hachura em X (nuvem "arranhada"): forma fina = elipse quase horizontal. Partícula que nasce de uma fonte (fumaça) precisa de alpha cheio em ~8% da vida, senão descola da origem.
 - `<filter>` com região em % corta traço grosso quase reto (bbox sem espessura): `filterUnits="userSpaceOnUse"` no quadro inteiro.
 
 ## Som
 - Medir o mix por trecho (voz × trilha) antes de entregar; trilha de mercado vem alta (−14 dB RMS): baixar sob a voz.
 - Efeito em toda transição cansa: reservar para 3–5 momentos (feedback de uso).
-- `loudnorm` de uma passada entregou −16/−17 LUFS: o `render.sh` mede e aplica em duas (conferir no `relatorio.txt`).
+- `loudnorm` de uma passada entregou −16/−17 LUFS: o `render.sh` mede e aplica em duas (conferir no `relatorio.txt`). O `linear=true` não segura o pico (saiu −0,0 dBFS): `alimiter` antes e depois, com limite ~0,78, porque o AAC passa uns 0,5 dB.
 - Lyria (clip) devolve mais que o pedido (18 s → 28,7 s): cortar pela edição, ancorando ataque e fim em eventos.
 - Trilha real com cadência final: entrar a cadência com o último bloco, não pelo fim do vídeo (o CTA fica mudo).
 - API com teto de gasto (429 "monthly spending cap") ou sem cota: cair para `partitura`/voz local sem insistir.
+
+## Imagem local (Qwen-Image 2.1 / mflux)
+- O Qwen não entrega verde puro: o fundo vem verde-oliva ou com halo claro. Recortar medindo a cor da borda (distância de cor) em vez de `g − max(r, b)` fixo; erosão maior (MinFilter 7) em cabelo.
+- O `mflux` não sobrescreve: com o arquivo existente ele salva `<nome>_1.png`. Apagar ou mover antes de regerar.
+- ~2–4 min por imagem a 30 passos (`--low-ram`, ~16 GB). Prompts de objeto de época precisam nomear a forma ("square punched-tin box with a sliding shutter, no glass globe"), senão vem o genérico moderno.
+- Vigia em segundo plano: `pgrep -f <script>` acha o próprio comando do vigia e nunca sai. Esperar pelo PID (`kill -0`).
 
 ## Rede e ambiente
 - Firewall corporativo intercepta alguns sites com certificado próprio: não desligar a verificação, buscar
